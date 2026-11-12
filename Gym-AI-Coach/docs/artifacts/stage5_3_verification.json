@@ -1,0 +1,323 @@
+{
+  "stage": "5.3",
+  "scope": "exactly one single-frame feature adapter, no full-video extractor",
+  "recorded_at_utc": "2026-10-08T13:29:32.605821+00:00",
+  "git_repository": false,
+  "environment": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "ai-coach-gym": "0.5.2",
+      "pydantic": "2.13.5",
+      "pytest": "9.1.1",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "mediapipe": "0.10.14",
+      "opencv-contrib-python": "5.0.0.93",
+      "opencv-python": "5.0.0.93",
+      "protobuf": "4.25.9",
+      "setuptools": "84.0.0"
+    }
+  },
+  "new_dependencies": [],
+  "install": {
+    "command": "& .venv/Scripts/python.exe -m pip install --no-index --no-deps --no-build-isolation -e .",
+    "exit_code": 0,
+    "package_version": "0.5.2"
+  },
+  "pip_check": {
+    "command": "& .venv/Scripts/python.exe -m pip check",
+    "exit_code": 0,
+    "output": "No broken requirements found."
+  },
+  "test_runs": [
+    {
+      "command": "& .venv/Scripts/python.exe -m pytest -q tests/test_feature_observation.py tests/test_feature_observation_integration.py --junitxml=outputs/stage5_3/verification-c46ebb73601c43e58941bbae1d36adeb/new-tests.xml",
+      "exit_code": 0,
+      "passed": 120,
+      "tests": 120,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "warnings": 1,
+      "terminal_elapsed_seconds": 9.75,
+      "junit_elapsed_seconds": 9.748,
+      "junit_relative_path": "outputs/stage5_3/verification-c46ebb73601c43e58941bbae1d36adeb/new-tests.xml",
+      "junit_sha256": "361082a5dc928d694378c754cdb3f15b66d907537c3bcec23a949db4754049b1"
+    },
+    {
+      "command": "& .venv/Scripts/python.exe -m pytest -q tests/test_feature_observation.py tests/test_feature_observation_integration.py --junitxml=outputs/stage5_3/verification-c46ebb73601c43e58941bbae1d36adeb/new-tests-final.xml",
+      "exit_code": 0,
+      "passed": 120,
+      "tests": 120,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "warnings": 0,
+      "terminal_elapsed_seconds": 9.2,
+      "junit_elapsed_seconds": 9.188,
+      "junit_relative_path": "outputs/stage5_3/verification-c46ebb73601c43e58941bbae1d36adeb/new-tests-final.xml",
+      "junit_sha256": "6c94effe6b6465b079ce157d0484d95573818156276e2e1ce3549a94f0b58b4b"
+    },
+    {
+      "command": "& .venv/Scripts/python.exe -m pytest -q --junitxml=outputs/stage5_3/verification-c46ebb73601c43e58941bbae1d36adeb/full-suite.xml",
+      "exit_code": 0,
+      "passed": 448,
+      "tests": 448,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "warnings": 4,
+      "terminal_elapsed_seconds": 43.94,
+      "junit_elapsed_seconds": 43.919,
+      "junit_relative_path": "outputs/stage5_3/verification-c46ebb73601c43e58941bbae1d36adeb/full-suite.xml",
+      "junit_sha256": "51d590aed9ce9023f9057ee48c534f80ab5281d3a99e023887c3369bb643821a"
+    }
+  ],
+  "warnings": {
+    "initial_new_tests": "One PydanticSerializationUnexpectedValue warning from deliberately malformed definition; adapter intake now treats serializer mismatches as structured input errors via warnings=error, not suppression.",
+    "final_new_tests": 0,
+    "full_suite": {
+      "count": 4,
+      "category": "UserWarning",
+      "origin": "google/protobuf/symbol_database.py:55",
+      "message": "SymbolDatabase.GetPrototype() is deprecated. Please use message_factory.GetMessageClass() instead. SymbolDatabase.GetPrototype() will be removed soon.",
+      "tests": [
+        "tests/test_pose_integration.py (2 videos)",
+        "tests/test_preprocessing_integration.py (2 videos)"
+      ],
+      "suppressed": false
+    }
+  },
+  "feature_id": "squat_knee_angle_left_deg",
+  "numeric_schema_version": "0.2.0",
+  "legacy_schema_version": "0.1.0",
+  "adapter_version": "squat-left-knee-v1",
+  "primitive_version": "joint-angle-2d-v1",
+  "registry_version": "gym-feature-registry-v1",
+  "registry_hash": "bf0917f6b6ac24d9fd8f3316f4b662a9dcce618bea496bb2e0114643d8051d2a",
+  "definition_hash": "875e6351320ea402ffcb377a00b95c0429d9008b9528f83b86b236d3f30bcce6",
+  "geometry_functions_ast_sha256": "047ff8bbdce06ac42a2d047c09efc5c60c2094c1caf510f38f87a88087c79e51",
+  "geometry_arithmetic_functions_unchanged": true,
+  "absolute_geometry_tolerance_degrees": 1e-10,
+  "relative_geometry_tolerance": 0,
+  "source_files": {
+    "configs/default.toml": "59dab11637458f6e1a21be8a8dee62c2d72fae77942f868f16bc15f4bb5b23ec",
+    "configs/preprocessing_s3_v1.toml": "506e223606255b36465e30269986b65307f8a9797f6a7abbaa60a820a3bcb2e7",
+    "pyproject.toml": "5dc9d4b253096db37364547ccc14ab953903b5a6fd3ff4b94e9f81742cb63d62",
+    "src/gym_coach/__init__.py": "a0888bc3e10cd4d885c5e98ab299b020e40cd0e58af9b3ff402754fd584e7a17",
+    "src/gym_coach/_version.py": "c9a142e22a7dda949cd536bea42d182f961f0c9a327883513301f943c7f3b5be",
+    "src/gym_coach/assessment/__init__.py": "7e1955cf7c2ef3e8d4b49d23f7454cf1b9b622e93c428c06baac17d76cbc4adb",
+    "src/gym_coach/config.py": "0aad88c81854721eac323697f9dc648265892e85b87383bad347b75c72f91b3f",
+    "src/gym_coach/contracts.py": "ba88e3862e93042b4de6b2d5e23f94dc6f10a8a39b11b043af0209c864608ee9",
+    "src/gym_coach/features/__init__.py": "64f7157c8ae9044afbb984e6cc31aecad513c46a8195c8481f2c0ceeaab4d1cb",
+    "src/gym_coach/features/adapter.py": "a614e3f26e4902bdac93d14d24c3295e738a8a217dce83ff05ba17346713a700",
+    "src/gym_coach/features/models.py": "ca50ce0b1490f98dc4267d1327d7b5dad153158ecc2971efc2c3210c3fa67f52",
+    "src/gym_coach/features/observation.py": "276f840317fb55f878ee9431eefa746d15ed388e613bcef5eaf922757d151e34",
+    "src/gym_coach/features/policy.py": "b003a4095d8d58182eb3974f25056575937cd82bb80a9b756480dee7b1796762",
+    "src/gym_coach/features/registry.py": "2758638c6a730e453549fc045c9fa9c0cc5ce0e3aa6dffc377e436d316e2dab5",
+    "src/gym_coach/flags.py": "22fbeefc9cbbc32d4fa6054a51bd78121c5be7c938a97fa66420a73be4e2f332",
+    "src/gym_coach/geometry.py": "c054c437adca8c00050a2a61f0a5f75177180734b156c0e466432d4814d268bc",
+    "src/gym_coach/pose/__init__.py": "f244809c6f3225eafcdd50b2c9778db4357ba61daa002bfc69a9636495194206",
+    "src/gym_coach/pose/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/gym_coach/pose/cli.py": "a7a9aa3568f54c4bbe4fcc529d9d2de0e0e832115dfd8f43bf24c2123520faf7",
+    "src/gym_coach/pose/coverage.py": "073690381a3814718fa09c3302f55d5784505f75628ae2577d56640f2e808388",
+    "src/gym_coach/pose/extractor.py": "3fc518b5f84ac12727a1e3649834757335689bd1e5d3ff5884a8784fc536f87f",
+    "src/gym_coach/pose/mapping.py": "01d225b79ed468d84fc475d9010c222a0d1ccc7b69cdb88e49f2612b252c3d8e",
+    "src/gym_coach/pose/models.py": "0887d0321c4a2512d9551a46b94c4f4f0320146d25886b7a909d1be26051db12",
+    "src/gym_coach/pose/run.py": "9ddfc9b828a15f334610b27d95187a56eef18b168023b022d559da2bd546f890",
+    "src/gym_coach/pose/serialization.py": "9b5a17ab30532bf7afe44c1c1bc39a628666a6ecf10468bebf808bb8aa46dd28",
+    "src/gym_coach/preprocessing/__init__.py": "c908343b79a741e5d34f7cf38e26640422703a25030efeafc2b9b2f0d4c75cb0",
+    "src/gym_coach/preprocessing/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/gym_coach/preprocessing/cli.py": "45bcb5f47cd0e9b16c339b40b0c45fdbc0ebcda3c8270722efd2484c4ee0ced6",
+    "src/gym_coach/preprocessing/diagnostics.py": "a469903bd5727274109d7b98e696ca51d8050e373bfc9de277d11590b0d61c2a",
+    "src/gym_coach/preprocessing/models.py": "7ffb6f69be09f28e1153b9b666da0455a4b969e8c07732252217d98ca13ba6fd",
+    "src/gym_coach/preprocessing/pipeline.py": "bdd2a4b2591836fc5d6bdd09332fa9233dbc3ee2f69fb0a347eaa85d041ab012",
+    "src/gym_coach/preprocessing/serialization.py": "519ef4c53d8600249e4fa5c9754d780bea8b4fc4a4058ada51f18ff22b70cdb3",
+    "src/gym_coach/quality/__init__.py": "315e6371f913af1080e90f0b79e8beae87641d938570be9f2da44ce0afa881fb",
+    "src/gym_coach/quality/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/gym_coach/quality/cli.py": "109fda9fbadce6d75bba28f262793a1c34a32daa84263db2391756cb2e410bfb",
+    "src/gym_coach/quality/gate.py": "5cfab6c590daedb692aaf861ea54e1e8d2539f191c1d2ad14b2cb4dbaf38b515",
+    "src/gym_coach/quality/models.py": "186bb80235656a6abcb2514588b8293fac024f2b873a19c858242d3af539cd25",
+    "src/gym_coach/reporting/__init__.py": "4aa9ea2bb8a6e720950e5a9cdd87d9cd80e28f3104e6f7c3fda5fe15faa49999",
+    "src/gym_coach/reporting/schema.py": "d4e98dd8eb5be1ec187258683a830a118b1de8184f43ebf3cd09b8cda3b0232c",
+    "src/gym_coach/segmentation/__init__.py": "5e4619db787ba97a561d4085672d9bffe2727025c672a5f8b237905a2cccfe14",
+    "src/gym_coach/video/__init__.py": "6d7a35757c76ffe690fac9513f052b5a8fc384d0ceefea5d5492bb264984ace4",
+    "src/gym_coach/video/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/gym_coach/video/cli.py": "907c7995091e8146db8304f390a208dac1a703d68af82700b2109254f4f16bb6",
+    "src/gym_coach/video/models.py": "daaa7e33633c3fa7458ecc79cb2da7d20ae320601ade42ea23a3aead0904cd83",
+    "src/gym_coach/video/reader.py": "a18633ac17f86eb38df83b94afd73d5f072cd8cf8e792f8c614eaef353f23fd2",
+    "tests/test_feature_observation.py": "2f457dd704b66d3802ac8683ce2ebf0b98613af4557cac55aa8c1459107fd635",
+    "tests/test_feature_observation_integration.py": "91449e6e7fbbc69d762b1593e994a99c777f30d39cf765711bd0a473cdf27058",
+    "tests/test_features.py": "f022443e609701ec5072eb4796ad666a0cba8e2116d0639d282b81cb47e245c1",
+    "tests/test_features_integration.py": "64c17b4209f04906eb7fade83660d7aab59ff5d307857ce651eece03ca6b92c3",
+    "tests/test_foundation.py": "186eea5b3f4f5d1ac6da514e9b147adc9d2ddb815d1a4dc9c57613dacebe98f5",
+    "tests/test_geometry.py": "a1ee696bdaf2799067b7214a66e32f2f7fbc65deee98781c8bd2929075c284f8",
+    "tests/test_pose.py": "5621fdde1c6d8a2e2f6948a4e4768eee8c89dcd69128f0d5e84baf3e8433d3e7",
+    "tests/test_pose_integration.py": "a22ad07e85c996b8c7d5b0f1bf67dac898b0395073e3160ac7b9d65b7e4f27a3",
+    "tests/test_preprocessing.py": "f892404bac6868605fcbc9e328afdff20b07c6a98857a5e69edf7ae0f6bd8200",
+    "tests/test_preprocessing_integration.py": "f608e81f3c926659081ceabfcf08ceba9c176035aa7befd06ff8fbdd925d1ddf",
+    "tests/test_quality.py": "d8a7f80fcfb61973a79c7c5ff9313a582a9bb0920506eca6bed377aac342e701",
+    "tests/test_video.py": "1cba6302371333154c3cccc684009b4275d394457b0be8ad10e278039ea3dcd7"
+  },
+  "source_tree_sha256": "3daed9fb7b069bed11b89ba82cfe55f3589cb3e2660473d5b8ffaa20516d1d3b",
+  "source_hash_scope": "src/gym_coach, configs, tests, pyproject.toml; excludes docs/data/archive/outputs/pycache/pyc/generated metadata",
+  "preservation_audit": {
+    "before_manifest_relative_path": "outputs/stage5_3/verification-c46ebb73601c43e58941bbae1d36adeb/before_manifest.json",
+    "before_manifest_sha256": "7eaa453182eb71564ffcac6ed055f8360358760e00b4b359d789e90f901e372a",
+    "pre_existing_file_count": 197,
+    "changed_existing_files": [
+      "docs/IMPLEMENTATION_PLAN.md",
+      "docs/PROJECT_STATE.md",
+      "docs/SCHEMA_CONVENTIONS.md",
+      "docs/TASKS.md",
+      "README.md",
+      "src/gym_coach/_version.py",
+      "src/gym_coach/features/__init__.py",
+      "src/gym_coach/flags.py",
+      "src/gym_coach/geometry.py"
+    ],
+    "unchanged_existing_files": 188,
+    "old_outputs_unchanged": true,
+    "feature_models_registry_policy_and_upstream_source_tests_configs_unchanged": true,
+    "historical_reports_unchanged": true,
+    "archive_dataset_not_modified": true
+  },
+  "final_real_input_artifact_directory": "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858",
+  "real_input_samples": [
+    {
+      "exercise": "BodyWeightSquats",
+      "feature_id": "squat_knee_angle_left_deg",
+      "video_id": "v_BodyWeightSquats_g01_c01.avi",
+      "source_relative_path": "Data/UCF-101_GYM/BodyWeightSquats/v_BodyWeightSquats_g01_c01.avi",
+      "stage4_artifact_relative_path": "outputs/stage4/integration-7fba808fe3d54a57b5d132b037d574bb/BodyWeightSquats.processed.json",
+      "total_frames": 267,
+      "sample_count": 3,
+      "available": 0,
+      "unavailable": 3,
+      "primitive_calls": 0,
+      "quality_action": "skip",
+      "viewpoint": "unknown",
+      "input_unchanged": true,
+      "samples": [
+        {
+          "frame_index": 0,
+          "timestamp_seconds": 0.0,
+          "status": "unavailable",
+          "value": null,
+          "reasons": [
+            "viewpoint_unknown",
+            "feature_quality_blocked",
+            "feature_metric_eligibility_missing"
+          ],
+          "observation_hash": "7d8fceaae2d6a9cace467274c07eb471c7a3e4a216486483e97c2eaf948d01f9",
+          "output_relative_path": "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/BodyWeightSquats.frame-0.observation.json"
+        },
+        {
+          "frame_index": 133,
+          "timestamp_seconds": 5.32,
+          "status": "unavailable",
+          "value": null,
+          "reasons": [
+            "viewpoint_unknown",
+            "feature_quality_blocked",
+            "feature_metric_eligibility_missing"
+          ],
+          "observation_hash": "67a2bf664fe2c6c6ebfa75234bd19e3ad03d9b3f4827ffea5f4fa1e11560c864",
+          "output_relative_path": "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/BodyWeightSquats.frame-133.observation.json"
+        },
+        {
+          "frame_index": 266,
+          "timestamp_seconds": 10.64,
+          "status": "unavailable",
+          "value": null,
+          "reasons": [
+            "viewpoint_unknown",
+            "feature_quality_blocked",
+            "feature_metric_eligibility_missing"
+          ],
+          "observation_hash": "fb5ef1cd9befe6008c40ad5cab0f5f65cf05e3d34c43deb652f0c2230e696c0c",
+          "output_relative_path": "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/BodyWeightSquats.frame-266.observation.json"
+        }
+      ],
+      "scope": "three independent frame observations, no full-video extraction or accuracy claim"
+    },
+    {
+      "exercise": "HandstandPushups",
+      "feature_id": "squat_knee_angle_left_deg",
+      "video_id": "v_HandStandPushups_g01_c01.avi",
+      "source_relative_path": "Data/UCF-101_GYM/HandstandPushups/v_HandStandPushups_g01_c01.avi",
+      "stage4_artifact_relative_path": "outputs/stage4/integration-7fba808fe3d54a57b5d132b037d574bb/HandstandPushups.processed.json",
+      "total_frames": 78,
+      "sample_count": 3,
+      "available": 0,
+      "unavailable": 3,
+      "primitive_calls": 0,
+      "quality_action": "skip",
+      "viewpoint": "unknown",
+      "input_unchanged": true,
+      "samples": [
+        {
+          "frame_index": 0,
+          "timestamp_seconds": 0.0,
+          "status": "unavailable",
+          "value": null,
+          "reasons": [
+            "unsupported_exercise",
+            "viewpoint_unknown",
+            "feature_quality_blocked",
+            "feature_metric_eligibility_missing",
+            "feature_provenance_rejected",
+            "feature_joint_unusable"
+          ],
+          "observation_hash": "2c413f4742b5fd3653c1cd69304d256ce21c877f25cc2c01ffa82bf1e19fe90e",
+          "output_relative_path": "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/HandstandPushups.frame-0.observation.json"
+        },
+        {
+          "frame_index": 39,
+          "timestamp_seconds": 1.56,
+          "status": "unavailable",
+          "value": null,
+          "reasons": [
+            "unsupported_exercise",
+            "viewpoint_unknown",
+            "feature_quality_blocked",
+            "feature_metric_eligibility_missing",
+            "feature_provenance_rejected",
+            "feature_joint_unusable"
+          ],
+          "observation_hash": "53814389f4d29b40be7fb11b714601d829b04e23445182e2b673957971d32b99",
+          "output_relative_path": "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/HandstandPushups.frame-39.observation.json"
+        },
+        {
+          "frame_index": 77,
+          "timestamp_seconds": 3.08,
+          "status": "unavailable",
+          "value": null,
+          "reasons": [
+            "unsupported_exercise",
+            "viewpoint_unknown",
+            "feature_quality_blocked",
+            "feature_metric_eligibility_missing",
+            "feature_provenance_rejected",
+            "feature_joint_unusable"
+          ],
+          "observation_hash": "bc81eef815d3bb6bb0f639335b02f026cdf82da30ead787b522c51c1faa27baa",
+          "output_relative_path": "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/HandstandPushups.frame-77.observation.json"
+        }
+      ],
+      "scope": "three independent frame observations, no full-video extraction or accuracy claim"
+    }
+  ],
+  "real_artifact_sha256": {
+    "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/BodyWeightSquats.frame-0.observation.json": "04a214c3ccc5a99a0bba3622b59675f89953a12a87b4f19ca5e5a5f4f37c8cc6",
+    "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/BodyWeightSquats.frame-133.observation.json": "1ca918974af1597e71470e390deb1ab4b8c1e138fd83e75014dc144ef667ce9a",
+    "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/BodyWeightSquats.frame-266.observation.json": "da4fa2bf92f5c3cabe49472719cfff06013d96afb668fa8720bbcb5ab69a08d1",
+    "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/BodyWeightSquats.summary.json": "42cd274860833f5f4443776f304d096790c197040364bf5d4d2b4fd3f384024d",
+    "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/HandstandPushups.frame-0.observation.json": "fabd5a0fee311bffe464792cd0c6788a14ca685bebb6d14a18a13f3d8b29ad3b",
+    "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/HandstandPushups.frame-39.observation.json": "4d50857198326e08d9501a9db375264f48b5addb9a36daf9f41583e9fd176b21",
+    "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/HandstandPushups.frame-77.observation.json": "6bba1a3f3250fb550cbe28c185ba0dd7694b814d92daea2b172a003ebdd0c0fe",
+    "outputs/stage5_3/integration-563152cdd3aa4a3394bebd0619d16858/HandstandPushups.summary.json": "e175143bb7fd3f6598a7554d912a2a277f2e16839f8c8a14587905ecb55025e9"
+  },
+  "interpretation": "available numeric outputs are synthetic measurements; all real-input samples unavailable, no accuracy/form validation; imputed available uses a new synthetic report contract fixture not QualityGate output; original real and synthetic pipeline reports not promoted"
+}
