@@ -1,0 +1,24 @@
+{
+  "video": "coach_HLV05_running_v001.mp4",
+  "fps": 60.0,
+  "total_frames": 826,
+  "phases": {
+    "vao_cho": {
+      "start_frame": 584,
+      "end_frame": 634
+    },
+    "static": {
+      "start_frame": 635,
+      "end_frame": 729
+    },
+    "sprint_start": {
+      "start_frame": 730,
+      "end_frame": 758
+    },
+    "drive_phase": {
+      "start_frame": 759,
+      "end_frame": 807
+    }
+  },
+  "marked_by": "manual"
+}
