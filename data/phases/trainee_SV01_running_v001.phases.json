@@ -1,0 +1,24 @@
+{
+  "video": "trainee_SV01_running_v001.mp4",
+  "fps": 29.0,
+  "total_frames": 699,
+  "phases": {
+    "vao_cho": {
+      "start_frame": 562,
+      "end_frame": 589
+    },
+    "static": {
+      "start_frame": 590,
+      "end_frame": 648
+    },
+    "sprint_start": {
+      "start_frame": 649,
+      "end_frame": 664
+    },
+    "drive_phase": {
+      "start_frame": 665,
+      "end_frame": 684
+    }
+  },
+  "marked_by": "manual"
+}
