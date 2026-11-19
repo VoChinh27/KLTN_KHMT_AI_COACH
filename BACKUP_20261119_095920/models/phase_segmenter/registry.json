@@ -1,0 +1,25 @@
+{
+  "current": "v5",
+  "versions": {
+    "v1": {
+      "model": "v1.joblib",
+      "meta": "v1.meta.json"
+    },
+    "v2": {
+      "model": "v2.joblib",
+      "meta": "v2.meta.json"
+    },
+    "v3": {
+      "model": "v3.joblib",
+      "meta": "v3.meta.json"
+    },
+    "v4": {
+      "model": "v4.joblib",
+      "meta": "v4.meta.json"
+    },
+    "v5": {
+      "model": "v5.joblib",
+      "meta": "v5.meta.json"
+    }
+  }
+}

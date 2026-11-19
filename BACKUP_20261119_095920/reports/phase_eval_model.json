@@ -1,0 +1,192 @@
+{
+  "method": "model",
+  "group": "coach",
+  "tolerance_frames": 3,
+  "n_clips": 23,
+  "n_people": 23,
+  "within_tol_clip_mean": 0.417391304347826,
+  "within_tol_clip_ci95": [
+    0.3130434782608696,
+    0.5217391304347826
+  ],
+  "boundary_summary": {
+    "start:vao_cho": {
+      "n": 18,
+      "n_truth": 23,
+      "tol": 3,
+      "within_tol": 0.1111111111111111,
+      "within_tol_all": 0.08695652173913043,
+      "bias": 7.111111111111111,
+      "mae": 21.444444444444443,
+      "median_abs": 17.0,
+      "p90_abs": 46.2,
+      "missed": 5,
+      "spurious": 0
+    },
+    "start:static": {
+      "n": 23,
+      "n_truth": 23,
+      "tol": 3,
+      "within_tol": 0.5217391304347826,
+      "within_tol_all": 0.5217391304347826,
+      "bias": 2.9565217391304346,
+      "mae": 9.478260869565217,
+      "median_abs": 3.0,
+      "p90_abs": 32.60000000000001,
+      "missed": 0,
+      "spurious": 0
+    },
+    "start:sprint_start": {
+      "n": 23,
+      "n_truth": 23,
+      "tol": 3,
+      "within_tol": 0.5217391304347826,
+      "within_tol_all": 0.5217391304347826,
+      "bias": 0.782608695652174,
+      "mae": 5.826086956521739,
+      "median_abs": 3.0,
+      "p90_abs": 11.600000000000001,
+      "missed": 0,
+      "spurious": 0
+    },
+    "start:drive_phase": {
+      "n": 23,
+      "n_truth": 23,
+      "tol": 3,
+      "within_tol": 0.6086956521739131,
+      "within_tol_all": 0.6086956521739131,
+      "bias": -2.260869565217391,
+      "mae": 5.043478260869565,
+      "median_abs": 3.0,
+      "p90_abs": 14.200000000000003,
+      "missed": 0,
+      "spurious": 0
+    },
+    "end:last": {
+      "n": 23,
+      "n_truth": 23,
+      "tol": 3,
+      "within_tol": 0.34782608695652173,
+      "within_tol_all": 0.34782608695652173,
+      "bias": 1.6521739130434783,
+      "mae": 6.869565217391305,
+      "median_abs": 6.0,
+      "p90_abs": 15.600000000000001,
+      "missed": 0,
+      "spurious": 0
+    }
+  },
+  "segment_f1": {
+    "vao_cho": 0.5365853658536586,
+    "static": 0.9565217391304348,
+    "sprint_start": 0.8260869565217391,
+    "drive_phase": 1.0,
+    "macro": 0.8297985153764581
+  },
+  "folds": [
+    {
+      "held_out_person": "coach:HLV01",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV011",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV012",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV013",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV014",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV015",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV016",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV017",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV018",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV019",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV02",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV020",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV021",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV022",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV023",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV03",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV04",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV05",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV06",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV07",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV08",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV09",
+      "n_test": 1
+    },
+    {
+      "held_out_person": "coach:HLV10",
+      "n_test": 1
+    }
+  ],
+  "frame_macro_f1": {
+    "macro_f1": 0.7937678271805598,
+    "accuracy": 0.9163281352378456,
+    "per_class": {
+      "0": 0.9623889437314906,
+      "1": 0.5793562708102109,
+      "2": 0.9312231340367331,
+      "3": 0.7710622710622711,
+      "4": 0.8450226244343891,
+      "5": 0.6735537190082644
+    }
+  }
+}

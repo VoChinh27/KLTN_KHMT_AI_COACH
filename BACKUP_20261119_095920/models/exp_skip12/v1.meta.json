@@ -1,0 +1,413 @@
+{
+  "version": "v1",
+  "model": "v1.joblib",
+  "backend": "logreg",
+  "n_clips": 23,
+  "n_people": 23,
+  "phase_sources": [
+    "manual"
+  ],
+  "oof_metrics": {
+    "start:vao_cho": {
+      "n": 21,
+      "n_truth": 23,
+      "tol": 3,
+      "within_tol": 0.09523809523809523,
+      "within_tol_all": 0.08695652173913043,
+      "bias": -15.380952380952381,
+      "mae": 31.952380952380953,
+      "median_abs": 22.0,
+      "p90_abs": 87.0,
+      "missed": 2,
+      "spurious": 0
+    },
+    "start:static": {
+      "n": 23,
+      "n_truth": 23,
+      "tol": 3,
+      "within_tol": 0.4782608695652174,
+      "within_tol_all": 0.4782608695652174,
+      "bias": 0.6956521739130435,
+      "mae": 8.695652173913043,
+      "median_abs": 4.0,
+      "p90_abs": 22.400000000000006,
+      "missed": 0,
+      "spurious": 0
+    },
+    "start:sprint_start": {
+      "n": 23,
+      "n_truth": 23,
+      "tol": 3,
+      "within_tol": 0.34782608695652173,
+      "within_tol_all": 0.34782608695652173,
+      "bias": 0.43478260869565216,
+      "mae": 8.782608695652174,
+      "median_abs": 6.0,
+      "p90_abs": 20.400000000000002,
+      "missed": 0,
+      "spurious": 0
+    },
+    "start:drive_phase": {
+      "n": 23,
+      "n_truth": 23,
+      "tol": 3,
+      "within_tol": 0.5217391304347826,
+      "within_tol_all": 0.5217391304347826,
+      "bias": -0.08695652173913043,
+      "mae": 4.869565217391305,
+      "median_abs": 3.0,
+      "p90_abs": 10.400000000000002,
+      "missed": 0,
+      "spurious": 0
+    },
+    "end:last": {
+      "n": 23,
+      "n_truth": 23,
+      "tol": 3,
+      "within_tol": 0.30434782608695654,
+      "within_tol_all": 0.30434782608695654,
+      "bias": -4.478260869565218,
+      "mae": 11.782608695652174,
+      "median_abs": 5.0,
+      "p90_abs": 17.6,
+      "missed": 0,
+      "spurious": 0
+    }
+  },
+  "within_tol_clip_mean": 0.34782608695652184,
+  "within_tol_clip_ci95": [
+    0.26086956521739135,
+    0.4347826086956523
+  ],
+  "folds": [
+    {
+      "held_out_person": "coach:HLV01",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV011",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV012",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV013",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV014",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV015",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV016",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV017",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV018",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV019",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV02",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV020",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV021",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV022",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV023",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV03",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV04",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV05",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV06",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV07",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV08",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV09",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    },
+    {
+      "held_out_person": "coach:HLV10",
+      "n_train_clips": 22,
+      "n_test_clips": 1,
+      "backend": "logreg",
+      "decoder_params": {
+        "skip_penalty": 12.0,
+        "emission_scale": 0.5,
+        "prior_power": 0.0
+      },
+      "inner_search": {
+        "reason": "tune_disabled"
+      }
+    }
+  ],
+  "final_decoder_search": {
+    "reason": "tune_disabled"
+  },
+  "seed": 0,
+  "tuned_decoder": false,
+  "augment": false,
+  "group": "coach"
+}
