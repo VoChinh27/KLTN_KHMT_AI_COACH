@@ -1,6 +1,0 @@
-PyQt5>=5.15
-opencv-python>=4.8
-numpy
-pyyaml
-pillow
-pytest

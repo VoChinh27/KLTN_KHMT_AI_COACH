@@ -1,9 +1,0 @@
-{
-  "current": "v1",
-  "versions": {
-    "v1": {
-      "model": "v1.joblib",
-      "meta": "v1.meta.json"
-    }
-  }
-}
