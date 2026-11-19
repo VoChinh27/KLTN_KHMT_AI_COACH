@@ -1,0 +1,941 @@
+{
+  "schema_version": 2,
+  "video": "input_HOCVIEN004_20261118_140026.mp4",
+  "fps": 30.0,
+  "total_frames": 425,
+  "phases": {
+    "vao_cho": {
+      "start_frame": 45,
+      "end_frame": 104
+    },
+    "static": {
+      "start_frame": 105,
+      "end_frame": 339
+    },
+    "sprint_start": {
+      "start_frame": 340,
+      "end_frame": 359
+    },
+    "drive_phase": {
+      "start_frame": 360,
+      "end_frame": 389
+    }
+  },
+  "reps": [
+    {
+      "phases": {
+        "vao_cho": {
+          "start_frame": 45,
+          "end_frame": 104
+        },
+        "static": {
+          "start_frame": 105,
+          "end_frame": 339
+        },
+        "sprint_start": {
+          "start_frame": 340,
+          "end_frame": 359
+        },
+        "drive_phase": {
+          "start_frame": 360,
+          "end_frame": 389
+        }
+      }
+    }
+  ],
+  "marked_by": "auto_reviewed",
+  "annotator_id": "",
+  "labeled_at": "2026-11-18T07:02:31+00:00",
+  "auto_meta": {
+    "model_version": "v5",
+    "created": "2026-11-18T07:02:31+00:00",
+    "boundary_conf": [
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "boundary_conf_raw": [
+      0.0,
+      0.9165,
+      0.8606,
+      0.9998,
+      0.9417
+    ],
+    "confidence_level": [
+      "thấp",
+      "cao",
+      "cao",
+      "cao",
+      "cao"
+    ],
+    "flags": [
+      "missing_phase"
+    ]
+  },
+  "auto_phases": {
+    "vao_cho": {
+      "absent": true
+    },
+    "static": {
+      "start_frame": 252,
+      "end_frame": 332
+    },
+    "sprint_start": {
+      "start_frame": 333,
+      "end_frame": 355
+    },
+    "drive_phase": {
+      "start_frame": 356,
+      "end_frame": 389
+    }
+  },
+  "review": {
+    "edits": [
+      {
+        "boundary": 1,
+        "from": 252,
+        "to": 253
+      },
+      {
+        "boundary": 0,
+        "from": 252,
+        "to": 251
+      },
+      {
+        "boundary": 0,
+        "from": 251,
+        "to": 249
+      },
+      {
+        "boundary": 0,
+        "from": 249,
+        "to": 247
+      },
+      {
+        "boundary": 0,
+        "from": 247,
+        "to": 236
+      },
+      {
+        "boundary": 0,
+        "from": 236,
+        "to": 225
+      },
+      {
+        "boundary": 0,
+        "from": 225,
+        "to": 213
+      },
+      {
+        "boundary": 0,
+        "from": 213,
+        "to": 197
+      },
+      {
+        "boundary": 0,
+        "from": 197,
+        "to": 175
+      },
+      {
+        "boundary": 0,
+        "from": 175,
+        "to": 161
+      },
+      {
+        "boundary": 0,
+        "from": 161,
+        "to": 144
+      },
+      {
+        "boundary": 0,
+        "from": 144,
+        "to": 131
+      },
+      {
+        "boundary": 0,
+        "from": 131,
+        "to": 126
+      },
+      {
+        "boundary": 0,
+        "from": 126,
+        "to": 124
+      },
+      {
+        "boundary": 0,
+        "from": 124,
+        "to": 123
+      },
+      {
+        "boundary": 0,
+        "from": 123,
+        "to": 122
+      },
+      {
+        "boundary": 0,
+        "from": 122,
+        "to": 119
+      },
+      {
+        "boundary": 0,
+        "from": 119,
+        "to": 116
+      },
+      {
+        "boundary": 0,
+        "from": 116,
+        "to": 115
+      },
+      {
+        "boundary": 0,
+        "from": 115,
+        "to": 114
+      },
+      {
+        "boundary": 0,
+        "from": 114,
+        "to": 113
+      },
+      {
+        "boundary": 0,
+        "from": 113,
+        "to": 112
+      },
+      {
+        "boundary": 1,
+        "from": 253,
+        "to": 252
+      },
+      {
+        "boundary": 1,
+        "from": 252,
+        "to": 251
+      },
+      {
+        "boundary": 1,
+        "from": 251,
+        "to": 246
+      },
+      {
+        "boundary": 1,
+        "from": 246,
+        "to": 242
+      },
+      {
+        "boundary": 1,
+        "from": 242,
+        "to": 235
+      },
+      {
+        "boundary": 1,
+        "from": 235,
+        "to": 225
+      },
+      {
+        "boundary": 1,
+        "from": 225,
+        "to": 220
+      },
+      {
+        "boundary": 1,
+        "from": 220,
+        "to": 217
+      },
+      {
+        "boundary": 1,
+        "from": 217,
+        "to": 213
+      },
+      {
+        "boundary": 1,
+        "from": 213,
+        "to": 205
+      },
+      {
+        "boundary": 1,
+        "from": 205,
+        "to": 201
+      },
+      {
+        "boundary": 1,
+        "from": 201,
+        "to": 199
+      },
+      {
+        "boundary": 1,
+        "from": 199,
+        "to": 196
+      },
+      {
+        "boundary": 1,
+        "from": 196,
+        "to": 193
+      },
+      {
+        "boundary": 1,
+        "from": 193,
+        "to": 186
+      },
+      {
+        "boundary": 1,
+        "from": 186,
+        "to": 178
+      },
+      {
+        "boundary": 1,
+        "from": 178,
+        "to": 172
+      },
+      {
+        "boundary": 1,
+        "from": 172,
+        "to": 167
+      },
+      {
+        "boundary": 1,
+        "from": 167,
+        "to": 163
+      },
+      {
+        "boundary": 1,
+        "from": 163,
+        "to": 160
+      },
+      {
+        "boundary": 1,
+        "from": 160,
+        "to": 156
+      },
+      {
+        "boundary": 1,
+        "from": 156,
+        "to": 155
+      },
+      {
+        "boundary": 1,
+        "from": 155,
+        "to": 154
+      },
+      {
+        "boundary": 0,
+        "from": 112,
+        "to": 109
+      },
+      {
+        "boundary": 0,
+        "from": 109,
+        "to": 108
+      },
+      {
+        "boundary": 0,
+        "from": 108,
+        "to": 107
+      },
+      {
+        "boundary": 0,
+        "from": 107,
+        "to": 106
+      },
+      {
+        "boundary": 0,
+        "from": 106,
+        "to": 104
+      },
+      {
+        "boundary": 0,
+        "from": 104,
+        "to": 102
+      },
+      {
+        "boundary": 0,
+        "from": 102,
+        "to": 99
+      },
+      {
+        "boundary": 0,
+        "from": 99,
+        "to": 98
+      },
+      {
+        "boundary": 0,
+        "from": 98,
+        "to": 95
+      },
+      {
+        "boundary": 0,
+        "from": 95,
+        "to": 94
+      },
+      {
+        "boundary": 0,
+        "from": 94,
+        "to": 89
+      },
+      {
+        "boundary": 0,
+        "from": 89,
+        "to": 84
+      },
+      {
+        "boundary": 0,
+        "from": 84,
+        "to": 77
+      },
+      {
+        "boundary": 0,
+        "from": 77,
+        "to": 74
+      },
+      {
+        "boundary": 0,
+        "from": 74,
+        "to": 71
+      },
+      {
+        "boundary": 0,
+        "from": 71,
+        "to": 70
+      },
+      {
+        "boundary": 0,
+        "from": 70,
+        "to": 66
+      },
+      {
+        "boundary": 0,
+        "from": 66,
+        "to": 65
+      },
+      {
+        "boundary": 0,
+        "from": 65,
+        "to": 64
+      },
+      {
+        "boundary": 0,
+        "from": 64,
+        "to": 63
+      },
+      {
+        "boundary": 0,
+        "from": 63,
+        "to": 61
+      },
+      {
+        "boundary": 0,
+        "from": 61,
+        "to": 60
+      },
+      {
+        "boundary": 0,
+        "from": 60,
+        "to": 59
+      },
+      {
+        "boundary": 0,
+        "from": 59,
+        "to": 57
+      },
+      {
+        "boundary": 0,
+        "from": 57,
+        "to": 56
+      },
+      {
+        "boundary": 0,
+        "from": 56,
+        "to": 54
+      },
+      {
+        "boundary": 0,
+        "from": 54,
+        "to": 53
+      },
+      {
+        "boundary": 0,
+        "from": 53,
+        "to": 52
+      },
+      {
+        "boundary": 0,
+        "from": 52,
+        "to": 51
+      },
+      {
+        "boundary": 0,
+        "from": 51,
+        "to": 50
+      },
+      {
+        "boundary": 0,
+        "from": 50,
+        "to": 49
+      },
+      {
+        "boundary": 0,
+        "from": 49,
+        "to": 48
+      },
+      {
+        "boundary": 0,
+        "from": 48,
+        "to": 47
+      },
+      {
+        "boundary": 0,
+        "from": 47,
+        "to": 46
+      },
+      {
+        "boundary": 0,
+        "from": 46,
+        "to": 45
+      },
+      {
+        "boundary": 1,
+        "from": 154,
+        "to": 152
+      },
+      {
+        "boundary": 1,
+        "from": 152,
+        "to": 151
+      },
+      {
+        "boundary": 1,
+        "from": 151,
+        "to": 150
+      },
+      {
+        "boundary": 1,
+        "from": 150,
+        "to": 147
+      },
+      {
+        "boundary": 1,
+        "from": 147,
+        "to": 145
+      },
+      {
+        "boundary": 1,
+        "from": 145,
+        "to": 143
+      },
+      {
+        "boundary": 1,
+        "from": 143,
+        "to": 142
+      },
+      {
+        "boundary": 1,
+        "from": 142,
+        "to": 137
+      },
+      {
+        "boundary": 1,
+        "from": 137,
+        "to": 134
+      },
+      {
+        "boundary": 1,
+        "from": 134,
+        "to": 133
+      },
+      {
+        "boundary": 1,
+        "from": 133,
+        "to": 132
+      },
+      {
+        "boundary": 1,
+        "from": 132,
+        "to": 130
+      },
+      {
+        "boundary": 1,
+        "from": 130,
+        "to": 128
+      },
+      {
+        "boundary": 1,
+        "from": 128,
+        "to": 127
+      },
+      {
+        "boundary": 1,
+        "from": 127,
+        "to": 124
+      },
+      {
+        "boundary": 1,
+        "from": 124,
+        "to": 123
+      },
+      {
+        "boundary": 1,
+        "from": 123,
+        "to": 119
+      },
+      {
+        "boundary": 1,
+        "from": 119,
+        "to": 118
+      },
+      {
+        "boundary": 1,
+        "from": 118,
+        "to": 117
+      },
+      {
+        "boundary": 1,
+        "from": 117,
+        "to": 116
+      },
+      {
+        "boundary": 1,
+        "from": 116,
+        "to": 114
+      },
+      {
+        "boundary": 1,
+        "from": 114,
+        "to": 111
+      },
+      {
+        "boundary": 1,
+        "from": 111,
+        "to": 105
+      },
+      {
+        "boundary": 1,
+        "from": 105,
+        "to": 103
+      },
+      {
+        "boundary": 1,
+        "from": 103,
+        "to": 102
+      },
+      {
+        "boundary": 1,
+        "from": 102,
+        "to": 100
+      },
+      {
+        "boundary": 1,
+        "from": 100,
+        "to": 98
+      },
+      {
+        "boundary": 1,
+        "from": 98,
+        "to": 97
+      },
+      {
+        "boundary": 1,
+        "from": 97,
+        "to": 95
+      },
+      {
+        "boundary": 1,
+        "from": 95,
+        "to": 92
+      },
+      {
+        "boundary": 1,
+        "from": 92,
+        "to": 90
+      },
+      {
+        "boundary": 1,
+        "from": 90,
+        "to": 89
+      },
+      {
+        "boundary": 1,
+        "from": 89,
+        "to": 88
+      },
+      {
+        "boundary": 1,
+        "from": 88,
+        "to": 86
+      },
+      {
+        "boundary": 1,
+        "from": 86,
+        "to": 83
+      },
+      {
+        "boundary": 1,
+        "from": 83,
+        "to": 82
+      },
+      {
+        "boundary": 1,
+        "from": 82,
+        "to": 78
+      },
+      {
+        "boundary": 1,
+        "from": 78,
+        "to": 75
+      },
+      {
+        "boundary": 1,
+        "from": 75,
+        "to": 74
+      },
+      {
+        "boundary": 1,
+        "from": 74,
+        "to": 73
+      },
+      {
+        "boundary": 1,
+        "from": 73,
+        "to": 74
+      },
+      {
+        "boundary": 1,
+        "from": 74,
+        "to": 75
+      },
+      {
+        "boundary": 1,
+        "from": 75,
+        "to": 76
+      },
+      {
+        "boundary": 1,
+        "from": 76,
+        "to": 77
+      },
+      {
+        "boundary": 1,
+        "from": 77,
+        "to": 78
+      },
+      {
+        "boundary": 1,
+        "from": 78,
+        "to": 79
+      },
+      {
+        "boundary": 1,
+        "from": 79,
+        "to": 80
+      },
+      {
+        "boundary": 1,
+        "from": 80,
+        "to": 81
+      },
+      {
+        "boundary": 1,
+        "from": 81,
+        "to": 82
+      },
+      {
+        "boundary": 1,
+        "from": 82,
+        "to": 83
+      },
+      {
+        "boundary": 1,
+        "from": 83,
+        "to": 84
+      },
+      {
+        "boundary": 1,
+        "from": 84,
+        "to": 85
+      },
+      {
+        "boundary": 1,
+        "from": 85,
+        "to": 86
+      },
+      {
+        "boundary": 1,
+        "from": 86,
+        "to": 87
+      },
+      {
+        "boundary": 1,
+        "from": 87,
+        "to": 88
+      },
+      {
+        "boundary": 1,
+        "from": 88,
+        "to": 89
+      },
+      {
+        "boundary": 1,
+        "from": 89,
+        "to": 90
+      },
+      {
+        "boundary": 1,
+        "from": 90,
+        "to": 91
+      },
+      {
+        "boundary": 1,
+        "from": 91,
+        "to": 92
+      },
+      {
+        "boundary": 1,
+        "from": 92,
+        "to": 94
+      },
+      {
+        "boundary": 1,
+        "from": 94,
+        "to": 96
+      },
+      {
+        "boundary": 1,
+        "from": 96,
+        "to": 97
+      },
+      {
+        "boundary": 1,
+        "from": 97,
+        "to": 98
+      },
+      {
+        "boundary": 1,
+        "from": 98,
+        "to": 99
+      },
+      {
+        "boundary": 1,
+        "from": 99,
+        "to": 100
+      },
+      {
+        "boundary": 1,
+        "from": 100,
+        "to": 101
+      },
+      {
+        "boundary": 1,
+        "from": 101,
+        "to": 102
+      },
+      {
+        "boundary": 1,
+        "from": 102,
+        "to": 103
+      },
+      {
+        "boundary": 1,
+        "from": 103,
+        "to": 104
+      },
+      {
+        "boundary": 1,
+        "from": 104,
+        "to": 105
+      },
+      {
+        "boundary": 2,
+        "from": 333,
+        "to": 332
+      },
+      {
+        "boundary": 2,
+        "from": 332,
+        "to": 333
+      },
+      {
+        "boundary": 2,
+        "from": 333,
+        "to": 334
+      },
+      {
+        "boundary": 2,
+        "from": 334,
+        "to": 335
+      },
+      {
+        "boundary": 2,
+        "from": 335,
+        "to": 336
+      },
+      {
+        "boundary": 2,
+        "from": 336,
+        "to": 337
+      },
+      {
+        "boundary": 2,
+        "from": 337,
+        "to": 338
+      },
+      {
+        "boundary": 2,
+        "from": 338,
+        "to": 337
+      },
+      {
+        "boundary": 2,
+        "from": 337,
+        "to": 338
+      },
+      {
+        "boundary": 2,
+        "from": 338,
+        "to": 339
+      },
+      {
+        "boundary": 2,
+        "from": 339,
+        "to": 340
+      },
+      {
+        "boundary": 3,
+        "from": 356,
+        "to": 354
+      },
+      {
+        "boundary": 3,
+        "from": 354,
+        "to": 355
+      },
+      {
+        "boundary": 3,
+        "from": 355,
+        "to": 356
+      },
+      {
+        "boundary": 3,
+        "from": 356,
+        "to": 357
+      },
+      {
+        "boundary": 3,
+        "from": 357,
+        "to": 358
+      },
+      {
+        "boundary": 3,
+        "from": 358,
+        "to": 359
+      },
+      {
+        "boundary": 3,
+        "from": 359,
+        "to": 360
+      }
+    ],
+    "seconds_spent": 106.38,
+    "accepted_all": false,
+    "source_file": "C:\\Users\\FPTSHOP\\Desktop\\KLTN_AI_COACH\\app_data\\sessions\\HOCVIEN004_20261118_140026\\phases_auto.phases.json"
+  }
+}

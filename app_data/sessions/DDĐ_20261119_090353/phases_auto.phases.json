@@ -1,0 +1,93 @@
+{
+  "schema_version": 2,
+  "video": "input_DDĐ_20261119_090353.mov",
+  "fps": 59.96503496503497,
+  "total_frames": 343,
+  "phases": {
+    "vao_cho": {
+      "start_frame": 152,
+      "end_frame": 169
+    },
+    "static": {
+      "start_frame": 170,
+      "end_frame": 227
+    },
+    "sprint_start": {
+      "start_frame": 228,
+      "end_frame": 259
+    },
+    "drive_phase": {
+      "start_frame": 260,
+      "end_frame": 315
+    }
+  },
+  "reps": [
+    {
+      "phases": {
+        "vao_cho": {
+          "start_frame": 152,
+          "end_frame": 169
+        },
+        "static": {
+          "start_frame": 170,
+          "end_frame": 227
+        },
+        "sprint_start": {
+          "start_frame": 228,
+          "end_frame": 259
+        },
+        "drive_phase": {
+          "start_frame": 260,
+          "end_frame": 315
+        }
+      }
+    }
+  ],
+  "marked_by": "auto",
+  "annotator_id": "",
+  "labeled_at": "2026-11-19T02:04:11+00:00",
+  "auto_meta": {
+    "model_version": "v5",
+    "created": "2026-11-19T02:04:11+00:00",
+    "boundary_conf": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "boundary_conf_raw": [
+      0.7732,
+      0.9431,
+      0.9845,
+      0.9779,
+      0.9494
+    ],
+    "confidence_level": [
+      "cao",
+      "cao",
+      "cao",
+      "cao",
+      "cao"
+    ],
+    "flags": []
+  },
+  "auto_phases": {
+    "vao_cho": {
+      "start_frame": 152,
+      "end_frame": 169
+    },
+    "static": {
+      "start_frame": 170,
+      "end_frame": 227
+    },
+    "sprint_start": {
+      "start_frame": 228,
+      "end_frame": 259
+    },
+    "drive_phase": {
+      "start_frame": 260,
+      "end_frame": 315
+    }
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "schema_version": 2,
+  "video": "input_aaaaaa_20261119_092305.mov",
+  "fps": 59.95466565923687,
+  "total_frames": 529,
+  "phases": {
+    "vao_cho": {
+      "start_frame": 206,
+      "end_frame": 299
+    },
+    "static": {
+      "start_frame": 300,
+      "end_frame": 361
+    },
+    "sprint_start": {
+      "start_frame": 362,
+      "end_frame": 387
+    },
+    "drive_phase": {
+      "start_frame": 388,
+      "end_frame": 448
+    }
+  },
+  "reps": [
+    {
+      "phases": {
+        "vao_cho": {
+          "start_frame": 206,
+          "end_frame": 299
+        },
+        "static": {
+          "start_frame": 300,
+          "end_frame": 361
+        },
+        "sprint_start": {
+          "start_frame": 362,
+          "end_frame": 387
+        },
+        "drive_phase": {
+          "start_frame": 388,
+          "end_frame": 448
+        }
+      }
+    }
+  ],
+  "marked_by": "auto_reviewed",
+  "annotator_id": "",
+  "labeled_at": "2026-11-19T02:24:03+00:00",
+  "auto_meta": {
+    "model_version": "v5",
+    "created": "2026-11-19T02:24:03+00:00",
+    "boundary_conf": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "boundary_conf_raw": [
+      0.8787,
+      0.9192,
+      0.8956,
+      0.8667,
+      0.8842
+    ],
+    "confidence_level": [
+      "cao",
+      "cao",
+      "cao",
+      "cao",
+      "cao"
+    ],
+    "flags": []
+  },
+  "auto_phases": {
+    "vao_cho": {
+      "start_frame": 279,
+      "end_frame": 299
+    },
+    "static": {
+      "start_frame": 300,
+      "end_frame": 361
+    },
+    "sprint_start": {
+      "start_frame": 362,
+      "end_frame": 387
+    },
+    "drive_phase": {
+      "start_frame": 388,
+      "end_frame": 448
+    }
+  },
+  "review": {
+    "edits": [
+      {
+        "boundary": 0,
+        "from": 279,
+        "to": 276
+      },
+      {
+        "boundary": 0,
+        "from": 276,
+        "to": 275
+      },
+      {
+        "boundary": 0,
+        "from": 275,
+        "to": 268
+      },
+      {
+        "boundary": 0,
+        "from": 268,
+        "to": 267
+      },
+      {
+        "boundary": 0,
+        "from": 267,
+        "to": 265
+      },
+      {
+        "boundary": 0,
+        "from": 265,
+        "to": 264
+      },
+      {
+        "boundary": 0,
+        "from": 264,
+        "to": 263
+      },
+      {
+        "boundary": 0,
+        "from": 263,
+        "to": 259
+      },
+      {
+        "boundary": 0,
+        "from": 259,
+        "to": 256
+      },
+      {
+        "boundary": 0,
+        "from": 256,
+        "to": 254
+      },
+      {
+        "boundary": 0,
+        "from": 254,
+        "to": 252
+      },
+      {
+        "boundary": 0,
+        "from": 252,
+        "to": 251
+      },
+      {
+        "boundary": 0,
+        "from": 251,
+        "to": 248
+      },
+      {
+        "boundary": 0,
+        "from": 248,
+        "to": 245
+      },
+      {
+        "boundary": 0,
+        "from": 245,
+        "to": 238
+      },
+      {
+        "boundary": 0,
+        "from": 238,
+        "to": 232
+      },
+      {
+        "boundary": 0,
+        "from": 232,
+        "to": 231
+      },
+      {
+        "boundary": 0,
+        "from": 231,
+        "to": 230
+      },
+      {
+        "boundary": 0,
+        "from": 230,
+        "to": 225
+      },
+      {
+        "boundary": 0,
+        "from": 225,
+        "to": 218
+      },
+      {
+        "boundary": 0,
+        "from": 218,
+        "to": 213
+      },
+      {
+        "boundary": 0,
+        "from": 213,
+        "to": 211
+      },
+      {
+        "boundary": 0,
+        "from": 211,
+        "to": 209
+      },
+      {
+        "boundary": 0,
+        "from": 209,
+        "to": 206
+      }
+    ],
+    "seconds_spent": 28.31,
+    "accepted_all": false,
+    "source_file": "C:\\Users\\FPTSHOP\\Desktop\\KLTN_AI_COACH\\app_data\\sessions\\aaaaaa_20261119_092305\\phases_auto.phases.json"
+  }
+}

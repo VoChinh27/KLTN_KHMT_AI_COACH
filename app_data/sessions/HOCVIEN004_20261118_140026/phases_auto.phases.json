@@ -1,0 +1,89 @@
+{
+  "schema_version": 2,
+  "video": "input_HOCVIEN004_20261118_140026.mp4",
+  "fps": 30.0,
+  "total_frames": 425,
+  "phases": {
+    "static": {
+      "start_frame": 252,
+      "end_frame": 332
+    },
+    "sprint_start": {
+      "start_frame": 333,
+      "end_frame": 355
+    },
+    "drive_phase": {
+      "start_frame": 356,
+      "end_frame": 389
+    }
+  },
+  "reps": [
+    {
+      "phases": {
+        "vao_cho": {
+          "absent": true
+        },
+        "static": {
+          "start_frame": 252,
+          "end_frame": 332
+        },
+        "sprint_start": {
+          "start_frame": 333,
+          "end_frame": 355
+        },
+        "drive_phase": {
+          "start_frame": 356,
+          "end_frame": 389
+        }
+      }
+    }
+  ],
+  "marked_by": "auto",
+  "annotator_id": "",
+  "labeled_at": "2026-11-18T07:00:45+00:00",
+  "auto_meta": {
+    "model_version": "v5",
+    "created": "2026-11-18T07:00:45+00:00",
+    "boundary_conf": [
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "boundary_conf_raw": [
+      0.0,
+      0.9165,
+      0.8606,
+      0.9998,
+      0.9417
+    ],
+    "confidence_level": [
+      "thấp",
+      "cao",
+      "cao",
+      "cao",
+      "cao"
+    ],
+    "flags": [
+      "missing_phase"
+    ]
+  },
+  "auto_phases": {
+    "vao_cho": {
+      "absent": true
+    },
+    "static": {
+      "start_frame": 252,
+      "end_frame": 332
+    },
+    "sprint_start": {
+      "start_frame": 333,
+      "end_frame": 355
+    },
+    "drive_phase": {
+      "start_frame": 356,
+      "end_frame": 389
+    }
+  }
+}
