@@ -1,0 +1,31 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+outputs/
+
+# Local environment and editor state
+.venv/
+.vscode/
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+
+# Local datasets, archived implementations, and editor/agent state
+/Data/
+/KLTN_AI_COACH/
+/_archive/
+/retired/
+/.agent/
+

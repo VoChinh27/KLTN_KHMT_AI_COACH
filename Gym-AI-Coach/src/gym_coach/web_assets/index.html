@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gym · Phân tích squat 2D</title><link rel="stylesheet" href="/app.css"><script src="/app.js" defer></script></head>
+<body><header><div class="brand">GYM <span>/ LOCAL LAB</span></div><span class="badge">BODYWEIGHTSQUATS · EXPERIMENTAL</span></header>
+<main><div class="intro"><p class="eyebrow">PHÂN TÍCH CHUYỂN ĐỘNG / 01</p><h1>Quan sát squat.<br>Hiểu dữ liệu đo.</h1><p class="lead">Video, skeleton và góc gối projected 2D trên một bên cố định.</p></div>
+<aside class="notice"><strong>Chưa kiểm chứng độ chính xác — không chấm đúng/sai động tác.</strong><p>Bài squat do bạn khai báo, chưa có nhận dạng bài tập tự động. Chất lượng dữ liệu không phải chất lượng kỹ thuật. Phase, repetition, pause và lời khuyên kỹ thuật: Unavailable.</p><small>NOT_VALIDATED · official_eligibility=false · assessment=false · REFERENCE_PENDING<br>G5.7 blocked · G6 IN_PROGRESS</small></aside>
+<div class="columns"><section class="card"><h2><span>01</span> Video & lựa chọn</h2>
+<label for="file">Chọn video trên máy</label><input id="file" type="file" accept=".avi,.mp4,.mov,.mkv,.webm"><p class="hint">Tối đa 250 MiB. Video chỉ được gửi tới backend 127.0.0.1 trên máy này.</p>
+<p id="uploadStatus" role="status">Chưa chọn video.</p><label for="upload">Video đã tiếp nhận trong phiên</label><select id="upload"><option value="">Chưa có video</option></select>
+<p id="metadata" class="hint"></p><video id="preview" controls preload="metadata" hidden></video><p id="previewNote" class="hint">Preview phụ thuộc codec trình duyệt. AVI không phát được ở đây chưa phải lỗi pipeline.</p>
+<div class="choices"><div><label for="side">Bên gối cố định</label><select id="side"><option value="left">Trái</option><option value="right">Phải</option></select></div><div><label for="mode">Chế độ phân tích</label><select id="mode"><option value="strict">Strict — mặc định</option><option value="exploratory">Exploratory — giả định side</option></select></div></div>
+<label class="check" id="ackLabel"><input id="ack" type="checkbox" disabled> Tôi xác nhận đây chỉ là giả định side-view chưa kiểm chứng; không phải annotation chính thức.</label>
+<label class="check"><input id="cache" type="checkbox" checked> Dùng pose cache nếu source/model/config identity khớp</label>
+<button id="start" class="primary" disabled>Bắt đầu phân tích</button><p class="hint">Một job tại một thời điểm. Refresh hoặc đóng tab không hủy job. Chưa hỗ trợ hủy an toàn.</p>
+</section><section class="card"><h2><span>02</span> Tiến độ & kết quả</h2>
+<label for="jobs">Theo dõi job trong phiên</label><select id="jobs"><option value="">Chưa có job</option></select>
+<div class="stage"><h3 id="stage">Sẵn sàng</h3><span id="elapsed">—</span></div><progress id="progress" max="1" value="0" aria-label="Tiến độ stage hiện hành"></progress><p id="counts" class="hint">Tiến độ từng stage; không có phần trăm tổng giả lập.</p>
+<p id="cacheState" class="hint">Pose cache: chưa kiểm tra</p><p id="message" role="status" aria-live="polite"></p><p id="error" role="alert" hidden></p>
+<div id="result" hidden><div class="coverage"><strong id="coverage">—</strong><span>frame có số đo / tổng frame</span></div><p id="resultNote"></p><video id="overlay" controls preload="metadata"></video><p class="hint">Skeleton từ raw pose; góc từ processed coordinates. Null là không đủ điều kiện đo, không thay bằng 0°.</p><a id="report" class="button">Mở báo cáo</a><p class="hint">Dùng nút Quay lại của browser để tiếp tục xem job.</p><label for="artifact">Artifacts đã xác minh</label><div class="download"><select id="artifact"></select><a id="download" class="button" download>Tải file</a></div></div>
+<details><summary>Nhật ký stage & vị trí evidence</summary><pre id="log"></pre><p id="evidence" class="hint"></p></details>
+</section></div><footer>Local-only · Không upload ra dịch vụ ngoài · Dừng server bằng Ctrl+C và đợi job hoàn tất.<br>Kết quả mô tả trên development input; không phải bằng chứng accuracy hoặc generalization.</footer></main></body></html>
