@@ -1,0 +1,1166 @@
+{
+  "registry_schema_version": "0.1.0",
+  "registry_version": "gym-feature-registry-v1",
+  "features": [
+    {
+      "feature_schema_version": "0.1.0",
+      "definition_version": "0.1.0",
+      "feature_id": "hspu_body_line_angle_deg",
+      "name": "HSPU projected shoulder-hip axis to image vertical",
+      "exercises": [
+        "HandstandPushups"
+      ],
+      "measurement_definition": "Directed projected mid-hip to mid-shoulder axis angle to image-up vertical (0,-1); not full-body alignment",
+      "measurement_method": "midpoint_axis_angle_vertical",
+      "formula": "angle_between(midpoint(shoulders) - midpoint(hips), image_up=(0,-1))",
+      "required_joints": [
+        "left_hip",
+        "right_hip",
+        "left_shoulder",
+        "right_shoulder"
+      ],
+      "joint_policy": {
+        "coordinate_source": "stage4_processed_xy",
+        "allowed_provenance": [
+          "observed",
+          "imputed"
+        ],
+        "require_usable": true,
+        "require_finite_xy": true,
+        "imputation_policy_reason": "Explicit Stage 4 imputation with endpoints may support description; retain source status and never promote quality"
+      },
+      "quantity_kind": "angle",
+      "unit": "degrees",
+      "measurement_tier": "M2",
+      "source_tiers": [
+        "S3",
+        "TBD-EXPERT"
+      ],
+      "source_references": [
+        "docs/GYM_TECHNICAL_GROUND_TRUTH_SPEC.md §§0.2,2.2,4.2-4.3"
+      ],
+      "validation": {
+        "measurement_status": "unvalidated",
+        "reason": "Mathematical candidate definition only; no geometry implementation, pose accuracy or form validation",
+        "calculation_status": "not_implemented",
+        "assessment_status": "blocked_pending_expert_validation"
+      },
+      "viewpoint_policy": {
+        "supported": [
+          "side"
+        ],
+        "unsupported": [
+          {
+            "viewpoint": "unknown",
+            "reason": "No annotated viewpoint; image plane applicability cannot be established"
+          },
+          {
+            "viewpoint": "front",
+            "reason": "Front projection is outside this sagittal candidate policy; no symmetry/form inference"
+          },
+          {
+            "viewpoint": "oblique",
+            "reason": "Oblique projection/foreshortening protocol has not been validated"
+          }
+        ],
+        "policy_reason": "Conservative S3 side-view candidate policy, not a validated camera protocol; HSPU also needs visible joints",
+        "source_tier": "S3"
+      },
+      "quality_policy": {
+        "metric_key": "hspu_body_line_angle_deg",
+        "require_sequence_allow": true,
+        "require_metric_allow": true,
+        "require_exact_metric_joints": true,
+        "requires_valid_scale": false,
+        "requires_mid_hip_origin": false,
+        "reason": "Conservative S3 allow-only quality policy; no degrade/skip promotion; distance/ratio forbid normalization fallbacks"
+      },
+      "roles": [
+        "descriptive",
+        "informational"
+      ],
+      "unavailable_reasons": [
+        "unsupported_exercise",
+        "invalid_feature_input",
+        "feature_definition_blocked",
+        "missing_joint",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "non_finite_landmark",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch"
+      ],
+      "limitations": [
+        "Single-camera 2D image projection, no physical calibration or expert form ground truth",
+        "Side viewpoint is supplied metadata, not classified or empirically validated",
+        "Degenerate vectors and arithmetic safety remain calculation-stage checks; readiness is not a numeric result",
+        "No bilateral fusion, side switching, repetition or phase logic"
+      ]
+    },
+    {
+      "feature_schema_version": "0.1.0",
+      "definition_version": "0.1.0",
+      "feature_id": "hspu_elbow_angle_left_deg",
+      "name": "HSPU left projected elbow angle",
+      "exercises": [
+        "HandstandPushups"
+      ],
+      "measurement_definition": "Projected internal angle at ordered joint B, vectors B->A and B->C, mathematical range [0,180] degrees",
+      "measurement_method": "joint_angle_abc",
+      "formula": "angle(left_shoulder, left_elbow, left_wrist)",
+      "required_joints": [
+        "left_shoulder",
+        "left_elbow",
+        "left_wrist"
+      ],
+      "joint_policy": {
+        "coordinate_source": "stage4_processed_xy",
+        "allowed_provenance": [
+          "observed",
+          "imputed"
+        ],
+        "require_usable": true,
+        "require_finite_xy": true,
+        "imputation_policy_reason": "Explicit Stage 4 imputation with endpoints may support description; retain source status and never promote quality"
+      },
+      "quantity_kind": "angle",
+      "unit": "degrees",
+      "measurement_tier": "M1",
+      "source_tiers": [
+        "S3"
+      ],
+      "source_references": [
+        "docs/GYM_TECHNICAL_GROUND_TRUTH_SPEC.md §§0.2,2.2,4.2-4.3"
+      ],
+      "validation": {
+        "measurement_status": "unvalidated",
+        "reason": "Mathematical candidate definition only; no geometry implementation, pose accuracy or form validation",
+        "calculation_status": "not_implemented",
+        "assessment_status": "blocked_pending_expert_validation"
+      },
+      "viewpoint_policy": {
+        "supported": [
+          "side"
+        ],
+        "unsupported": [
+          {
+            "viewpoint": "unknown",
+            "reason": "No annotated viewpoint; image plane applicability cannot be established"
+          },
+          {
+            "viewpoint": "front",
+            "reason": "Front projection is outside this sagittal candidate policy; no symmetry/form inference"
+          },
+          {
+            "viewpoint": "oblique",
+            "reason": "Oblique projection/foreshortening protocol has not been validated"
+          }
+        ],
+        "policy_reason": "Conservative S3 side-view candidate policy, not a validated camera protocol; HSPU also needs visible joints",
+        "source_tier": "S3"
+      },
+      "quality_policy": {
+        "metric_key": "hspu_elbow_angle_left_deg",
+        "require_sequence_allow": true,
+        "require_metric_allow": true,
+        "require_exact_metric_joints": true,
+        "requires_valid_scale": false,
+        "requires_mid_hip_origin": false,
+        "reason": "Conservative S3 allow-only quality policy; no degrade/skip promotion; distance/ratio forbid normalization fallbacks"
+      },
+      "roles": [
+        "descriptive",
+        "segmentation_candidate"
+      ],
+      "unavailable_reasons": [
+        "unsupported_exercise",
+        "invalid_feature_input",
+        "feature_definition_blocked",
+        "missing_joint",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "non_finite_landmark",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch"
+      ],
+      "limitations": [
+        "Single-camera 2D image projection, no physical calibration or expert form ground truth",
+        "Side viewpoint is supplied metadata, not classified or empirically validated",
+        "Degenerate vectors and arithmetic safety remain calculation-stage checks; readiness is not a numeric result",
+        "No bilateral fusion, side switching, repetition or phase logic"
+      ]
+    },
+    {
+      "feature_schema_version": "0.1.0",
+      "definition_version": "0.1.0",
+      "feature_id": "hspu_elbow_angle_right_deg",
+      "name": "HSPU right projected elbow angle",
+      "exercises": [
+        "HandstandPushups"
+      ],
+      "measurement_definition": "Projected internal angle at ordered joint B, vectors B->A and B->C, mathematical range [0,180] degrees",
+      "measurement_method": "joint_angle_abc",
+      "formula": "angle(right_shoulder, right_elbow, right_wrist)",
+      "required_joints": [
+        "right_shoulder",
+        "right_elbow",
+        "right_wrist"
+      ],
+      "joint_policy": {
+        "coordinate_source": "stage4_processed_xy",
+        "allowed_provenance": [
+          "observed",
+          "imputed"
+        ],
+        "require_usable": true,
+        "require_finite_xy": true,
+        "imputation_policy_reason": "Explicit Stage 4 imputation with endpoints may support description; retain source status and never promote quality"
+      },
+      "quantity_kind": "angle",
+      "unit": "degrees",
+      "measurement_tier": "M1",
+      "source_tiers": [
+        "S3"
+      ],
+      "source_references": [
+        "docs/GYM_TECHNICAL_GROUND_TRUTH_SPEC.md §§0.2,2.2,4.2-4.3"
+      ],
+      "validation": {
+        "measurement_status": "unvalidated",
+        "reason": "Mathematical candidate definition only; no geometry implementation, pose accuracy or form validation",
+        "calculation_status": "not_implemented",
+        "assessment_status": "blocked_pending_expert_validation"
+      },
+      "viewpoint_policy": {
+        "supported": [
+          "side"
+        ],
+        "unsupported": [
+          {
+            "viewpoint": "unknown",
+            "reason": "No annotated viewpoint; image plane applicability cannot be established"
+          },
+          {
+            "viewpoint": "front",
+            "reason": "Front projection is outside this sagittal candidate policy; no symmetry/form inference"
+          },
+          {
+            "viewpoint": "oblique",
+            "reason": "Oblique projection/foreshortening protocol has not been validated"
+          }
+        ],
+        "policy_reason": "Conservative S3 side-view candidate policy, not a validated camera protocol; HSPU also needs visible joints",
+        "source_tier": "S3"
+      },
+      "quality_policy": {
+        "metric_key": "hspu_elbow_angle_right_deg",
+        "require_sequence_allow": true,
+        "require_metric_allow": true,
+        "require_exact_metric_joints": true,
+        "requires_valid_scale": false,
+        "requires_mid_hip_origin": false,
+        "reason": "Conservative S3 allow-only quality policy; no degrade/skip promotion; distance/ratio forbid normalization fallbacks"
+      },
+      "roles": [
+        "descriptive",
+        "segmentation_candidate"
+      ],
+      "unavailable_reasons": [
+        "unsupported_exercise",
+        "invalid_feature_input",
+        "feature_definition_blocked",
+        "missing_joint",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "non_finite_landmark",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch"
+      ],
+      "limitations": [
+        "Single-camera 2D image projection, no physical calibration or expert form ground truth",
+        "Side viewpoint is supplied metadata, not classified or empirically validated",
+        "Degenerate vectors and arithmetic safety remain calculation-stage checks; readiness is not a numeric result",
+        "No bilateral fusion, side switching, repetition or phase logic"
+      ]
+    },
+    {
+      "feature_schema_version": "0.1.0",
+      "definition_version": "0.1.0",
+      "feature_id": "hspu_shoulder_angle_left_deg",
+      "name": "HSPU left projected shoulder angle",
+      "exercises": [
+        "HandstandPushups"
+      ],
+      "measurement_definition": "Projected internal angle at ordered joint B, vectors B->A and B->C, mathematical range [0,180] degrees",
+      "measurement_method": "joint_angle_abc",
+      "formula": "angle(left_hip, left_shoulder, left_elbow)",
+      "required_joints": [
+        "left_hip",
+        "left_shoulder",
+        "left_elbow"
+      ],
+      "joint_policy": {
+        "coordinate_source": "stage4_processed_xy",
+        "allowed_provenance": [
+          "observed",
+          "imputed"
+        ],
+        "require_usable": true,
+        "require_finite_xy": true,
+        "imputation_policy_reason": "Explicit Stage 4 imputation with endpoints may support description; retain source status and never promote quality"
+      },
+      "quantity_kind": "angle",
+      "unit": "degrees",
+      "measurement_tier": "M2",
+      "source_tiers": [
+        "S3"
+      ],
+      "source_references": [
+        "docs/GYM_TECHNICAL_GROUND_TRUTH_SPEC.md §§0.2,2.2,4.2-4.3"
+      ],
+      "validation": {
+        "measurement_status": "unvalidated",
+        "reason": "Mathematical candidate definition only; no geometry implementation, pose accuracy or form validation",
+        "calculation_status": "not_implemented",
+        "assessment_status": "blocked_pending_expert_validation"
+      },
+      "viewpoint_policy": {
+        "supported": [
+          "side"
+        ],
+        "unsupported": [
+          {
+            "viewpoint": "unknown",
+            "reason": "No annotated viewpoint; image plane applicability cannot be established"
+          },
+          {
+            "viewpoint": "front",
+            "reason": "Front projection is outside this sagittal candidate policy; no symmetry/form inference"
+          },
+          {
+            "viewpoint": "oblique",
+            "reason": "Oblique projection/foreshortening protocol has not been validated"
+          }
+        ],
+        "policy_reason": "Conservative S3 side-view candidate policy, not a validated camera protocol; HSPU also needs visible joints",
+        "source_tier": "S3"
+      },
+      "quality_policy": {
+        "metric_key": "hspu_shoulder_angle_left_deg",
+        "require_sequence_allow": true,
+        "require_metric_allow": true,
+        "require_exact_metric_joints": true,
+        "requires_valid_scale": false,
+        "requires_mid_hip_origin": false,
+        "reason": "Conservative S3 allow-only quality policy; no degrade/skip promotion; distance/ratio forbid normalization fallbacks"
+      },
+      "roles": [
+        "descriptive",
+        "segmentation_candidate"
+      ],
+      "unavailable_reasons": [
+        "unsupported_exercise",
+        "invalid_feature_input",
+        "feature_definition_blocked",
+        "missing_joint",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "non_finite_landmark",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch"
+      ],
+      "limitations": [
+        "Single-camera 2D image projection, no physical calibration or expert form ground truth",
+        "Side viewpoint is supplied metadata, not classified or empirically validated",
+        "Degenerate vectors and arithmetic safety remain calculation-stage checks; readiness is not a numeric result",
+        "No bilateral fusion, side switching, repetition or phase logic"
+      ]
+    },
+    {
+      "feature_schema_version": "0.1.0",
+      "definition_version": "0.1.0",
+      "feature_id": "hspu_shoulder_angle_right_deg",
+      "name": "HSPU right projected shoulder angle",
+      "exercises": [
+        "HandstandPushups"
+      ],
+      "measurement_definition": "Projected internal angle at ordered joint B, vectors B->A and B->C, mathematical range [0,180] degrees",
+      "measurement_method": "joint_angle_abc",
+      "formula": "angle(right_hip, right_shoulder, right_elbow)",
+      "required_joints": [
+        "right_hip",
+        "right_shoulder",
+        "right_elbow"
+      ],
+      "joint_policy": {
+        "coordinate_source": "stage4_processed_xy",
+        "allowed_provenance": [
+          "observed",
+          "imputed"
+        ],
+        "require_usable": true,
+        "require_finite_xy": true,
+        "imputation_policy_reason": "Explicit Stage 4 imputation with endpoints may support description; retain source status and never promote quality"
+      },
+      "quantity_kind": "angle",
+      "unit": "degrees",
+      "measurement_tier": "M2",
+      "source_tiers": [
+        "S3"
+      ],
+      "source_references": [
+        "docs/GYM_TECHNICAL_GROUND_TRUTH_SPEC.md §§0.2,2.2,4.2-4.3"
+      ],
+      "validation": {
+        "measurement_status": "unvalidated",
+        "reason": "Mathematical candidate definition only; no geometry implementation, pose accuracy or form validation",
+        "calculation_status": "not_implemented",
+        "assessment_status": "blocked_pending_expert_validation"
+      },
+      "viewpoint_policy": {
+        "supported": [
+          "side"
+        ],
+        "unsupported": [
+          {
+            "viewpoint": "unknown",
+            "reason": "No annotated viewpoint; image plane applicability cannot be established"
+          },
+          {
+            "viewpoint": "front",
+            "reason": "Front projection is outside this sagittal candidate policy; no symmetry/form inference"
+          },
+          {
+            "viewpoint": "oblique",
+            "reason": "Oblique projection/foreshortening protocol has not been validated"
+          }
+        ],
+        "policy_reason": "Conservative S3 side-view candidate policy, not a validated camera protocol; HSPU also needs visible joints",
+        "source_tier": "S3"
+      },
+      "quality_policy": {
+        "metric_key": "hspu_shoulder_angle_right_deg",
+        "require_sequence_allow": true,
+        "require_metric_allow": true,
+        "require_exact_metric_joints": true,
+        "requires_valid_scale": false,
+        "requires_mid_hip_origin": false,
+        "reason": "Conservative S3 allow-only quality policy; no degrade/skip promotion; distance/ratio forbid normalization fallbacks"
+      },
+      "roles": [
+        "descriptive",
+        "segmentation_candidate"
+      ],
+      "unavailable_reasons": [
+        "unsupported_exercise",
+        "invalid_feature_input",
+        "feature_definition_blocked",
+        "missing_joint",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "non_finite_landmark",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch"
+      ],
+      "limitations": [
+        "Single-camera 2D image projection, no physical calibration or expert form ground truth",
+        "Side viewpoint is supplied metadata, not classified or empirically validated",
+        "Degenerate vectors and arithmetic safety remain calculation-stage checks; readiness is not a numeric result",
+        "No bilateral fusion, side switching, repetition or phase logic"
+      ]
+    },
+    {
+      "feature_schema_version": "0.1.0",
+      "definition_version": "0.1.0",
+      "feature_id": "squat_hip_angle_left_deg",
+      "name": "Squat left projected hip angle",
+      "exercises": [
+        "BodyWeightSquats"
+      ],
+      "measurement_definition": "Projected internal angle at ordered joint B, vectors B->A and B->C, mathematical range [0,180] degrees",
+      "measurement_method": "joint_angle_abc",
+      "formula": "angle(left_shoulder, left_hip, left_knee)",
+      "required_joints": [
+        "left_shoulder",
+        "left_hip",
+        "left_knee"
+      ],
+      "joint_policy": {
+        "coordinate_source": "stage4_processed_xy",
+        "allowed_provenance": [
+          "observed",
+          "imputed"
+        ],
+        "require_usable": true,
+        "require_finite_xy": true,
+        "imputation_policy_reason": "Explicit Stage 4 imputation with endpoints may support description; retain source status and never promote quality"
+      },
+      "quantity_kind": "angle",
+      "unit": "degrees",
+      "measurement_tier": "M1",
+      "source_tiers": [
+        "S3"
+      ],
+      "source_references": [
+        "docs/GYM_TECHNICAL_GROUND_TRUTH_SPEC.md §§0.2,2.2,3.2-3.3"
+      ],
+      "validation": {
+        "measurement_status": "unvalidated",
+        "reason": "Mathematical candidate definition only; no geometry implementation, pose accuracy or form validation",
+        "calculation_status": "not_implemented",
+        "assessment_status": "blocked_pending_expert_validation"
+      },
+      "viewpoint_policy": {
+        "supported": [
+          "side"
+        ],
+        "unsupported": [
+          {
+            "viewpoint": "unknown",
+            "reason": "No annotated viewpoint; image plane applicability cannot be established"
+          },
+          {
+            "viewpoint": "front",
+            "reason": "Front projection is outside this sagittal candidate policy; no symmetry/form inference"
+          },
+          {
+            "viewpoint": "oblique",
+            "reason": "Oblique projection/foreshortening protocol has not been validated"
+          }
+        ],
+        "policy_reason": "Conservative S3 side-view candidate policy, not a validated camera protocol; HSPU also needs visible joints",
+        "source_tier": "S3"
+      },
+      "quality_policy": {
+        "metric_key": "squat_hip_angle_left_deg",
+        "require_sequence_allow": true,
+        "require_metric_allow": true,
+        "require_exact_metric_joints": true,
+        "requires_valid_scale": false,
+        "requires_mid_hip_origin": false,
+        "reason": "Conservative S3 allow-only quality policy; no degrade/skip promotion; distance/ratio forbid normalization fallbacks"
+      },
+      "roles": [
+        "descriptive",
+        "segmentation_candidate"
+      ],
+      "unavailable_reasons": [
+        "unsupported_exercise",
+        "invalid_feature_input",
+        "feature_definition_blocked",
+        "missing_joint",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "non_finite_landmark",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch"
+      ],
+      "limitations": [
+        "Single-camera 2D image projection, no physical calibration or expert form ground truth",
+        "Side viewpoint is supplied metadata, not classified or empirically validated",
+        "Degenerate vectors and arithmetic safety remain calculation-stage checks; readiness is not a numeric result",
+        "No bilateral fusion, side switching, repetition or phase logic"
+      ]
+    },
+    {
+      "feature_schema_version": "0.1.0",
+      "definition_version": "0.1.0",
+      "feature_id": "squat_hip_angle_right_deg",
+      "name": "Squat right projected hip angle",
+      "exercises": [
+        "BodyWeightSquats"
+      ],
+      "measurement_definition": "Projected internal angle at ordered joint B, vectors B->A and B->C, mathematical range [0,180] degrees",
+      "measurement_method": "joint_angle_abc",
+      "formula": "angle(right_shoulder, right_hip, right_knee)",
+      "required_joints": [
+        "right_shoulder",
+        "right_hip",
+        "right_knee"
+      ],
+      "joint_policy": {
+        "coordinate_source": "stage4_processed_xy",
+        "allowed_provenance": [
+          "observed",
+          "imputed"
+        ],
+        "require_usable": true,
+        "require_finite_xy": true,
+        "imputation_policy_reason": "Explicit Stage 4 imputation with endpoints may support description; retain source status and never promote quality"
+      },
+      "quantity_kind": "angle",
+      "unit": "degrees",
+      "measurement_tier": "M1",
+      "source_tiers": [
+        "S3"
+      ],
+      "source_references": [
+        "docs/GYM_TECHNICAL_GROUND_TRUTH_SPEC.md §§0.2,2.2,3.2-3.3"
+      ],
+      "validation": {
+        "measurement_status": "unvalidated",
+        "reason": "Mathematical candidate definition only; no geometry implementation, pose accuracy or form validation",
+        "calculation_status": "not_implemented",
+        "assessment_status": "blocked_pending_expert_validation"
+      },
+      "viewpoint_policy": {
+        "supported": [
+          "side"
+        ],
+        "unsupported": [
+          {
+            "viewpoint": "unknown",
+            "reason": "No annotated viewpoint; image plane applicability cannot be established"
+          },
+          {
+            "viewpoint": "front",
+            "reason": "Front projection is outside this sagittal candidate policy; no symmetry/form inference"
+          },
+          {
+            "viewpoint": "oblique",
+            "reason": "Oblique projection/foreshortening protocol has not been validated"
+          }
+        ],
+        "policy_reason": "Conservative S3 side-view candidate policy, not a validated camera protocol; HSPU also needs visible joints",
+        "source_tier": "S3"
+      },
+      "quality_policy": {
+        "metric_key": "squat_hip_angle_right_deg",
+        "require_sequence_allow": true,
+        "require_metric_allow": true,
+        "require_exact_metric_joints": true,
+        "requires_valid_scale": false,
+        "requires_mid_hip_origin": false,
+        "reason": "Conservative S3 allow-only quality policy; no degrade/skip promotion; distance/ratio forbid normalization fallbacks"
+      },
+      "roles": [
+        "descriptive",
+        "segmentation_candidate"
+      ],
+      "unavailable_reasons": [
+        "unsupported_exercise",
+        "invalid_feature_input",
+        "feature_definition_blocked",
+        "missing_joint",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "non_finite_landmark",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch"
+      ],
+      "limitations": [
+        "Single-camera 2D image projection, no physical calibration or expert form ground truth",
+        "Side viewpoint is supplied metadata, not classified or empirically validated",
+        "Degenerate vectors and arithmetic safety remain calculation-stage checks; readiness is not a numeric result",
+        "No bilateral fusion, side switching, repetition or phase logic"
+      ]
+    },
+    {
+      "feature_schema_version": "0.1.0",
+      "definition_version": "0.1.0",
+      "feature_id": "squat_knee_angle_left_deg",
+      "name": "Squat left projected knee angle",
+      "exercises": [
+        "BodyWeightSquats"
+      ],
+      "measurement_definition": "Projected internal angle at ordered joint B, vectors B->A and B->C, mathematical range [0,180] degrees",
+      "measurement_method": "joint_angle_abc",
+      "formula": "angle(left_hip, left_knee, left_ankle)",
+      "required_joints": [
+        "left_hip",
+        "left_knee",
+        "left_ankle"
+      ],
+      "joint_policy": {
+        "coordinate_source": "stage4_processed_xy",
+        "allowed_provenance": [
+          "observed",
+          "imputed"
+        ],
+        "require_usable": true,
+        "require_finite_xy": true,
+        "imputation_policy_reason": "Explicit Stage 4 imputation with endpoints may support description; retain source status and never promote quality"
+      },
+      "quantity_kind": "angle",
+      "unit": "degrees",
+      "measurement_tier": "M1",
+      "source_tiers": [
+        "S3"
+      ],
+      "source_references": [
+        "docs/GYM_TECHNICAL_GROUND_TRUTH_SPEC.md §§0.2,2.2,3.2-3.3"
+      ],
+      "validation": {
+        "measurement_status": "unvalidated",
+        "reason": "Mathematical candidate definition only; no geometry implementation, pose accuracy or form validation",
+        "calculation_status": "not_implemented",
+        "assessment_status": "blocked_pending_expert_validation"
+      },
+      "viewpoint_policy": {
+        "supported": [
+          "side"
+        ],
+        "unsupported": [
+          {
+            "viewpoint": "unknown",
+            "reason": "No annotated viewpoint; image plane applicability cannot be established"
+          },
+          {
+            "viewpoint": "front",
+            "reason": "Front projection is outside this sagittal candidate policy; no symmetry/form inference"
+          },
+          {
+            "viewpoint": "oblique",
+            "reason": "Oblique projection/foreshortening protocol has not been validated"
+          }
+        ],
+        "policy_reason": "Conservative S3 side-view candidate policy, not a validated camera protocol; HSPU also needs visible joints",
+        "source_tier": "S3"
+      },
+      "quality_policy": {
+        "metric_key": "squat_knee_angle_left_deg",
+        "require_sequence_allow": true,
+        "require_metric_allow": true,
+        "require_exact_metric_joints": true,
+        "requires_valid_scale": false,
+        "requires_mid_hip_origin": false,
+        "reason": "Conservative S3 allow-only quality policy; no degrade/skip promotion; distance/ratio forbid normalization fallbacks"
+      },
+      "roles": [
+        "descriptive",
+        "segmentation_candidate"
+      ],
+      "unavailable_reasons": [
+        "unsupported_exercise",
+        "invalid_feature_input",
+        "feature_definition_blocked",
+        "missing_joint",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "non_finite_landmark",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch"
+      ],
+      "limitations": [
+        "Single-camera 2D image projection, no physical calibration or expert form ground truth",
+        "Side viewpoint is supplied metadata, not classified or empirically validated",
+        "Degenerate vectors and arithmetic safety remain calculation-stage checks; readiness is not a numeric result",
+        "No bilateral fusion, side switching, repetition or phase logic"
+      ]
+    },
+    {
+      "feature_schema_version": "0.1.0",
+      "definition_version": "0.1.0",
+      "feature_id": "squat_knee_angle_right_deg",
+      "name": "Squat right projected knee angle",
+      "exercises": [
+        "BodyWeightSquats"
+      ],
+      "measurement_definition": "Projected internal angle at ordered joint B, vectors B->A and B->C, mathematical range [0,180] degrees",
+      "measurement_method": "joint_angle_abc",
+      "formula": "angle(right_hip, right_knee, right_ankle)",
+      "required_joints": [
+        "right_hip",
+        "right_knee",
+        "right_ankle"
+      ],
+      "joint_policy": {
+        "coordinate_source": "stage4_processed_xy",
+        "allowed_provenance": [
+          "observed",
+          "imputed"
+        ],
+        "require_usable": true,
+        "require_finite_xy": true,
+        "imputation_policy_reason": "Explicit Stage 4 imputation with endpoints may support description; retain source status and never promote quality"
+      },
+      "quantity_kind": "angle",
+      "unit": "degrees",
+      "measurement_tier": "M1",
+      "source_tiers": [
+        "S3"
+      ],
+      "source_references": [
+        "docs/GYM_TECHNICAL_GROUND_TRUTH_SPEC.md §§0.2,2.2,3.2-3.3"
+      ],
+      "validation": {
+        "measurement_status": "unvalidated",
+        "reason": "Mathematical candidate definition only; no geometry implementation, pose accuracy or form validation",
+        "calculation_status": "not_implemented",
+        "assessment_status": "blocked_pending_expert_validation"
+      },
+      "viewpoint_policy": {
+        "supported": [
+          "side"
+        ],
+        "unsupported": [
+          {
+            "viewpoint": "unknown",
+            "reason": "No annotated viewpoint; image plane applicability cannot be established"
+          },
+          {
+            "viewpoint": "front",
+            "reason": "Front projection is outside this sagittal candidate policy; no symmetry/form inference"
+          },
+          {
+            "viewpoint": "oblique",
+            "reason": "Oblique projection/foreshortening protocol has not been validated"
+          }
+        ],
+        "policy_reason": "Conservative S3 side-view candidate policy, not a validated camera protocol; HSPU also needs visible joints",
+        "source_tier": "S3"
+      },
+      "quality_policy": {
+        "metric_key": "squat_knee_angle_right_deg",
+        "require_sequence_allow": true,
+        "require_metric_allow": true,
+        "require_exact_metric_joints": true,
+        "requires_valid_scale": false,
+        "requires_mid_hip_origin": false,
+        "reason": "Conservative S3 allow-only quality policy; no degrade/skip promotion; distance/ratio forbid normalization fallbacks"
+      },
+      "roles": [
+        "descriptive",
+        "segmentation_candidate"
+      ],
+      "unavailable_reasons": [
+        "unsupported_exercise",
+        "invalid_feature_input",
+        "feature_definition_blocked",
+        "missing_joint",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "non_finite_landmark",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch"
+      ],
+      "limitations": [
+        "Single-camera 2D image projection, no physical calibration or expert form ground truth",
+        "Side viewpoint is supplied metadata, not classified or empirically validated",
+        "Degenerate vectors and arithmetic safety remain calculation-stage checks; readiness is not a numeric result",
+        "No bilateral fusion, side switching, repetition or phase logic"
+      ]
+    },
+    {
+      "feature_schema_version": "0.1.0",
+      "definition_version": "0.1.0",
+      "feature_id": "squat_knee_to_ankle_horizontal_left_ratio",
+      "name": "Squat left projected knee-to-ankle offset candidate",
+      "exercises": [
+        "BodyWeightSquats"
+      ],
+      "measurement_definition": "Projected horizontal knee-to-ankle offset relative to torso length; no toe or depth assertion",
+      "measurement_method": "horizontal_offset_torso_ratio",
+      "formula": "abs(left_knee.x_processed - left_ankle.x_processed); equivalent to abs(delta_x_working)/valid_torso_scale, no second division",
+      "required_joints": [
+        "left_knee",
+        "left_ankle"
+      ],
+      "joint_policy": {
+        "coordinate_source": "stage4_processed_xy",
+        "allowed_provenance": [
+          "observed",
+          "imputed"
+        ],
+        "require_usable": true,
+        "require_finite_xy": true,
+        "imputation_policy_reason": "Explicit Stage 4 imputation with endpoints may support description; retain source status and never promote quality"
+      },
+      "quantity_kind": "ratio",
+      "unit": "dimensionless_ratio",
+      "measurement_tier": "M2",
+      "source_tiers": [
+        "S3",
+        "TBD-EXPERT"
+      ],
+      "source_references": [
+        "docs/GYM_TECHNICAL_GROUND_TRUTH_SPEC.md §§0.2,2.2,3.2-3.3"
+      ],
+      "validation": {
+        "measurement_status": "blocked",
+        "reason": "Viewpoint/scale measurement protocol and interpretation require development/expert validation; metadata retained only",
+        "calculation_status": "not_implemented",
+        "assessment_status": "blocked_pending_expert_validation"
+      },
+      "viewpoint_policy": {
+        "supported": [
+          "side"
+        ],
+        "unsupported": [
+          {
+            "viewpoint": "unknown",
+            "reason": "No annotated viewpoint; image plane applicability cannot be established"
+          },
+          {
+            "viewpoint": "front",
+            "reason": "Front projection is outside this sagittal candidate policy; no symmetry/form inference"
+          },
+          {
+            "viewpoint": "oblique",
+            "reason": "Oblique projection/foreshortening protocol has not been validated"
+          }
+        ],
+        "policy_reason": "Conservative S3 side-view candidate policy, not a validated camera protocol; HSPU also needs visible joints",
+        "source_tier": "S3"
+      },
+      "quality_policy": {
+        "metric_key": "squat_knee_to_ankle_horizontal_left_ratio",
+        "require_sequence_allow": true,
+        "require_metric_allow": true,
+        "require_exact_metric_joints": true,
+        "requires_valid_scale": true,
+        "requires_mid_hip_origin": true,
+        "reason": "Conservative S3 allow-only quality policy; no degrade/skip promotion; distance/ratio forbid normalization fallbacks"
+      },
+      "roles": [
+        "descriptive",
+        "informational"
+      ],
+      "unavailable_reasons": [
+        "unsupported_exercise",
+        "invalid_feature_input",
+        "feature_definition_blocked",
+        "missing_joint",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "non_finite_landmark",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch",
+        "normalization_origin_fallback",
+        "normalization_scale_fallback"
+      ],
+      "limitations": [
+        "Single-camera 2D image projection, no physical calibration or expert form ground truth",
+        "Side viewpoint is supplied metadata, not classified or empirically validated",
+        "Degenerate vectors and arithmetic safety remain calculation-stage checks; readiness is not a numeric result",
+        "No bilateral fusion, side switching, repetition or phase logic"
+      ]
+    },
+    {
+      "feature_schema_version": "0.1.0",
+      "definition_version": "0.1.0",
+      "feature_id": "squat_knee_to_ankle_horizontal_right_ratio",
+      "name": "Squat right projected knee-to-ankle offset candidate",
+      "exercises": [
+        "BodyWeightSquats"
+      ],
+      "measurement_definition": "Projected horizontal knee-to-ankle offset relative to torso length; no toe or depth assertion",
+      "measurement_method": "horizontal_offset_torso_ratio",
+      "formula": "abs(right_knee.x_processed - right_ankle.x_processed); equivalent to abs(delta_x_working)/valid_torso_scale, no second division",
+      "required_joints": [
+        "right_knee",
+        "right_ankle"
+      ],
+      "joint_policy": {
+        "coordinate_source": "stage4_processed_xy",
+        "allowed_provenance": [
+          "observed",
+          "imputed"
+        ],
+        "require_usable": true,
+        "require_finite_xy": true,
+        "imputation_policy_reason": "Explicit Stage 4 imputation with endpoints may support description; retain source status and never promote quality"
+      },
+      "quantity_kind": "ratio",
+      "unit": "dimensionless_ratio",
+      "measurement_tier": "M2",
+      "source_tiers": [
+        "S3",
+        "TBD-EXPERT"
+      ],
+      "source_references": [
+        "docs/GYM_TECHNICAL_GROUND_TRUTH_SPEC.md §§0.2,2.2,3.2-3.3"
+      ],
+      "validation": {
+        "measurement_status": "blocked",
+        "reason": "Viewpoint/scale measurement protocol and interpretation require development/expert validation; metadata retained only",
+        "calculation_status": "not_implemented",
+        "assessment_status": "blocked_pending_expert_validation"
+      },
+      "viewpoint_policy": {
+        "supported": [
+          "side"
+        ],
+        "unsupported": [
+          {
+            "viewpoint": "unknown",
+            "reason": "No annotated viewpoint; image plane applicability cannot be established"
+          },
+          {
+            "viewpoint": "front",
+            "reason": "Front projection is outside this sagittal candidate policy; no symmetry/form inference"
+          },
+          {
+            "viewpoint": "oblique",
+            "reason": "Oblique projection/foreshortening protocol has not been validated"
+          }
+        ],
+        "policy_reason": "Conservative S3 side-view candidate policy, not a validated camera protocol; HSPU also needs visible joints",
+        "source_tier": "S3"
+      },
+      "quality_policy": {
+        "metric_key": "squat_knee_to_ankle_horizontal_right_ratio",
+        "require_sequence_allow": true,
+        "require_metric_allow": true,
+        "require_exact_metric_joints": true,
+        "requires_valid_scale": true,
+        "requires_mid_hip_origin": true,
+        "reason": "Conservative S3 allow-only quality policy; no degrade/skip promotion; distance/ratio forbid normalization fallbacks"
+      },
+      "roles": [
+        "descriptive",
+        "informational"
+      ],
+      "unavailable_reasons": [
+        "unsupported_exercise",
+        "invalid_feature_input",
+        "feature_definition_blocked",
+        "missing_joint",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "non_finite_landmark",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch",
+        "normalization_origin_fallback",
+        "normalization_scale_fallback"
+      ],
+      "limitations": [
+        "Single-camera 2D image projection, no physical calibration or expert form ground truth",
+        "Side viewpoint is supplied metadata, not classified or empirically validated",
+        "Degenerate vectors and arithmetic safety remain calculation-stage checks; readiness is not a numeric result",
+        "No bilateral fusion, side switching, repetition or phase logic"
+      ]
+    },
+    {
+      "feature_schema_version": "0.1.0",
+      "definition_version": "0.1.0",
+      "feature_id": "squat_torso_angle_vertical_deg",
+      "name": "Squat projected torso axis to image vertical",
+      "exercises": [
+        "BodyWeightSquats"
+      ],
+      "measurement_definition": "Directed projected mid-hip to mid-shoulder axis angle to image-up vertical (0,-1); not full-body alignment",
+      "measurement_method": "midpoint_axis_angle_vertical",
+      "formula": "angle_between(midpoint(shoulders) - midpoint(hips), image_up=(0,-1))",
+      "required_joints": [
+        "left_hip",
+        "right_hip",
+        "left_shoulder",
+        "right_shoulder"
+      ],
+      "joint_policy": {
+        "coordinate_source": "stage4_processed_xy",
+        "allowed_provenance": [
+          "observed",
+          "imputed"
+        ],
+        "require_usable": true,
+        "require_finite_xy": true,
+        "imputation_policy_reason": "Explicit Stage 4 imputation with endpoints may support description; retain source status and never promote quality"
+      },
+      "quantity_kind": "angle",
+      "unit": "degrees",
+      "measurement_tier": "M2",
+      "source_tiers": [
+        "S3",
+        "TBD-EXPERT"
+      ],
+      "source_references": [
+        "docs/GYM_TECHNICAL_GROUND_TRUTH_SPEC.md §§0.2,2.2,3.2-3.3"
+      ],
+      "validation": {
+        "measurement_status": "unvalidated",
+        "reason": "Mathematical candidate definition only; no geometry implementation, pose accuracy or form validation",
+        "calculation_status": "not_implemented",
+        "assessment_status": "blocked_pending_expert_validation"
+      },
+      "viewpoint_policy": {
+        "supported": [
+          "side"
+        ],
+        "unsupported": [
+          {
+            "viewpoint": "unknown",
+            "reason": "No annotated viewpoint; image plane applicability cannot be established"
+          },
+          {
+            "viewpoint": "front",
+            "reason": "Front projection is outside this sagittal candidate policy; no symmetry/form inference"
+          },
+          {
+            "viewpoint": "oblique",
+            "reason": "Oblique projection/foreshortening protocol has not been validated"
+          }
+        ],
+        "policy_reason": "Conservative S3 side-view candidate policy, not a validated camera protocol; HSPU also needs visible joints",
+        "source_tier": "S3"
+      },
+      "quality_policy": {
+        "metric_key": "squat_torso_angle_vertical_deg",
+        "require_sequence_allow": true,
+        "require_metric_allow": true,
+        "require_exact_metric_joints": true,
+        "requires_valid_scale": false,
+        "requires_mid_hip_origin": false,
+        "reason": "Conservative S3 allow-only quality policy; no degrade/skip promotion; distance/ratio forbid normalization fallbacks"
+      },
+      "roles": [
+        "descriptive",
+        "informational"
+      ],
+      "unavailable_reasons": [
+        "unsupported_exercise",
+        "invalid_feature_input",
+        "feature_definition_blocked",
+        "missing_joint",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "non_finite_landmark",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch"
+      ],
+      "limitations": [
+        "Single-camera 2D image projection, no physical calibration or expert form ground truth",
+        "Side viewpoint is supplied metadata, not classified or empirically validated",
+        "Degenerate vectors and arithmetic safety remain calculation-stage checks; readiness is not a numeric result",
+        "No bilateral fusion, side switching, repetition or phase logic"
+      ]
+    }
+  ]
+}

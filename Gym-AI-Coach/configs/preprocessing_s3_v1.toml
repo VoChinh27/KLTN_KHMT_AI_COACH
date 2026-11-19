@@ -1,0 +1,12 @@
+# S3 engineering baseline: 5 missing samples and 11 smoothing samples at 30 FPS.
+# A window of 11 samples spans 10 sample intervals. No form thresholds.
+profile_schema_version = "0.1.0"
+profile_version = "preprocessing-s3-v1"
+source_tier = "S3"
+max_gap_seconds = 0.16666666666666666
+interpolate_low_visibility = false
+smoothing_span_seconds = 0.3333333333333333
+smoothing_polyorder = 2
+smoothing_method = "savitzky_golay"
+smoothing_mode = "interp"
+min_torso_scale = 0.00000001

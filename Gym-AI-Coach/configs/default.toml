@@ -1,0 +1,13 @@
+# Portable paths are resolved relative to this file's parent directory.
+config_schema_version = "0.1.0"
+config_version = "foundation-v1"
+exercise = "BodyWeightSquats"
+viewpoint = "unknown"
+
+[paths]
+input_dir = "../Data"
+output_dir = "../outputs"
+
+[assessment]
+enabled = false
+status = "NOT_AVAILABLE_PENDING_EXPERT_VALIDATION"

@@ -1,0 +1,1554 @@
+{
+  "$defs": {
+    "ErrorCategory": {
+      "enum": [
+        "technical_error",
+        "measurement_error",
+        "insufficient_data",
+        "segmentation_error",
+        "informational_observation",
+        "input_error",
+        "configuration_error",
+        "operational_error"
+      ],
+      "title": "ErrorCategory",
+      "type": "string"
+    },
+    "Exercise": {
+      "enum": [
+        "BodyWeightSquats",
+        "HandstandPushups"
+      ],
+      "title": "Exercise",
+      "type": "string"
+    },
+    "FeatureAvailability": {
+      "additionalProperties": false,
+      "description": "Ready means prerequisites pass; it never means geometry has been computed.",
+      "properties": {
+        "feature_schema_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Feature Schema Version",
+          "type": "string"
+        },
+        "registry_version": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Registry Version",
+          "type": "string"
+        },
+        "registry_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Registry Hash",
+          "type": "string"
+        },
+        "definition": {
+          "$ref": "#/$defs/FeatureDefinition"
+        },
+        "definition_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Definition Hash",
+          "type": "string"
+        },
+        "input": {
+          "$ref": "#/$defs/FeatureInputContext"
+        },
+        "input_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "ready_for_calculation",
+            "unavailable"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "reasons": {
+          "items": {
+            "$ref": "#/$defs/FlagCode"
+          },
+          "title": "Reasons",
+          "type": "array"
+        },
+        "flags": {
+          "items": {
+            "$ref": "#/$defs/StructuredFlag"
+          },
+          "title": "Flags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "registry_version",
+        "registry_hash",
+        "definition",
+        "definition_hash",
+        "input",
+        "input_hash",
+        "status",
+        "reasons",
+        "flags"
+      ],
+      "title": "FeatureAvailability",
+      "type": "object"
+    },
+    "FeatureDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "feature_schema_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Feature Schema Version",
+          "type": "string"
+        },
+        "definition_version": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Definition Version",
+          "type": "string"
+        },
+        "feature_id": {
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Feature Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Name",
+          "type": "string"
+        },
+        "exercises": {
+          "items": {
+            "$ref": "#/$defs/Exercise"
+          },
+          "minItems": 1,
+          "title": "Exercises",
+          "type": "array"
+        },
+        "measurement_definition": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Measurement Definition",
+          "type": "string"
+        },
+        "measurement_method": {
+          "enum": [
+            "joint_angle_abc",
+            "midpoint_axis_angle_vertical",
+            "horizontal_offset_torso_ratio",
+            "normalized_euclidean_distance"
+          ],
+          "title": "Measurement Method",
+          "type": "string"
+        },
+        "formula": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Formula",
+          "type": "string"
+        },
+        "required_joints": {
+          "items": {
+            "$ref": "#/$defs/JointName"
+          },
+          "minItems": 1,
+          "title": "Required Joints",
+          "type": "array"
+        },
+        "joint_policy": {
+          "$ref": "#/$defs/JointInputPolicy"
+        },
+        "quantity_kind": {
+          "$ref": "#/$defs/QuantityKind"
+        },
+        "unit": {
+          "$ref": "#/$defs/FeatureUnit"
+        },
+        "measurement_tier": {
+          "$ref": "#/$defs/MeasurementTier"
+        },
+        "source_tiers": {
+          "items": {
+            "$ref": "#/$defs/SourceTier"
+          },
+          "minItems": 1,
+          "title": "Source Tiers",
+          "type": "array"
+        },
+        "source_references": {
+          "items": {
+            "minLength": 1,
+            "pattern": ".*\\S.*",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source References",
+          "type": "array"
+        },
+        "validation": {
+          "$ref": "#/$defs/FeatureValidation"
+        },
+        "viewpoint_policy": {
+          "$ref": "#/$defs/ViewpointPolicy"
+        },
+        "quality_policy": {
+          "$ref": "#/$defs/FeatureQualityPolicy"
+        },
+        "roles": {
+          "items": {
+            "enum": [
+              "descriptive",
+              "informational",
+              "segmentation_candidate"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Roles",
+          "type": "array"
+        },
+        "unavailable_reasons": {
+          "items": {
+            "$ref": "#/$defs/FlagCode"
+          },
+          "minItems": 1,
+          "title": "Unavailable Reasons",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "minLength": 1,
+            "pattern": ".*\\S.*",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Limitations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "definition_version",
+        "feature_id",
+        "name",
+        "exercises",
+        "measurement_definition",
+        "measurement_method",
+        "formula",
+        "required_joints",
+        "joint_policy",
+        "quantity_kind",
+        "unit",
+        "measurement_tier",
+        "source_tiers",
+        "source_references",
+        "validation",
+        "viewpoint_policy",
+        "quality_policy",
+        "roles",
+        "unavailable_reasons",
+        "limitations"
+      ],
+      "title": "FeatureDefinition",
+      "type": "object"
+    },
+    "FeatureInputContext": {
+      "additionalProperties": false,
+      "description": "Snapshots of existing contracts; no new coordinates or quality decisions.",
+      "properties": {
+        "frame": {
+          "$ref": "#/$defs/ProcessedPoseFrame"
+        },
+        "quality": {
+          "$ref": "#/$defs/QualityReport"
+        }
+      },
+      "required": [
+        "frame",
+        "quality"
+      ],
+      "title": "FeatureInputContext",
+      "type": "object"
+    },
+    "FeatureQualityPolicy": {
+      "additionalProperties": false,
+      "properties": {
+        "metric_key": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Metric Key",
+          "type": "string"
+        },
+        "require_sequence_allow": {
+          "const": true,
+          "title": "Require Sequence Allow",
+          "type": "boolean"
+        },
+        "require_metric_allow": {
+          "const": true,
+          "title": "Require Metric Allow",
+          "type": "boolean"
+        },
+        "require_exact_metric_joints": {
+          "const": true,
+          "title": "Require Exact Metric Joints",
+          "type": "boolean"
+        },
+        "requires_valid_scale": {
+          "title": "Requires Valid Scale",
+          "type": "boolean"
+        },
+        "requires_mid_hip_origin": {
+          "title": "Requires Mid Hip Origin",
+          "type": "boolean"
+        },
+        "reason": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "metric_key",
+        "require_sequence_allow",
+        "require_metric_allow",
+        "require_exact_metric_joints",
+        "requires_valid_scale",
+        "requires_mid_hip_origin",
+        "reason"
+      ],
+      "title": "FeatureQualityPolicy",
+      "type": "object"
+    },
+    "FeatureUnit": {
+      "enum": [
+        "degrees",
+        "torso_lengths",
+        "dimensionless_ratio"
+      ],
+      "title": "FeatureUnit",
+      "type": "string"
+    },
+    "FeatureValidation": {
+      "additionalProperties": false,
+      "properties": {
+        "measurement_status": {
+          "enum": [
+            "unvalidated",
+            "blocked"
+          ],
+          "title": "Measurement Status",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Reason",
+          "type": "string"
+        },
+        "calculation_status": {
+          "const": "not_implemented",
+          "title": "Calculation Status",
+          "type": "string"
+        },
+        "assessment_status": {
+          "const": "blocked_pending_expert_validation",
+          "title": "Assessment Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "measurement_status",
+        "reason",
+        "calculation_status",
+        "assessment_status"
+      ],
+      "title": "FeatureValidation",
+      "type": "object"
+    },
+    "FlagCode": {
+      "enum": [
+        "invalid_config",
+        "invalid_pose_input",
+        "invalid_pose_sequence",
+        "invalid_preprocessing_input",
+        "quality_input_mismatch",
+        "smoothing_short_run",
+        "preprocessing_error",
+        "preprocessing_serialization_error",
+        "unknown_feature_id",
+        "unsupported_exercise",
+        "invalid_viewpoint",
+        "invalid_feature_input",
+        "unsupported_feature_calculation",
+        "invalid_geometry_input",
+        "degenerate_geometry",
+        "geometry_numerical_error",
+        "feature_definition_blocked",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch",
+        "pose_backend_error",
+        "pose_not_detected",
+        "missing_joint",
+        "missing_landmark_field",
+        "non_finite_landmark",
+        "invalid_landmark_confidence",
+        "pose_serialization_error",
+        "unreadable_video",
+        "video_too_short",
+        "invalid_fps",
+        "invalid_video_resolution",
+        "invalid_frame_count",
+        "insufficient_sequence_length",
+        "excessive_missingness",
+        "low_pose_visibility",
+        "partial_joint_coverage",
+        "single_side_only",
+        "side_switch_discontinuity",
+        "normalization_origin_fallback",
+        "normalization_scale_fallback",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "partial_rep_start",
+        "partial_rep_end",
+        "multi_person",
+        "out_of_frame",
+        "low_signal_range",
+        "unstable_signal",
+        "segmentation_failed",
+        "assessment_unavailable"
+      ],
+      "title": "FlagCode",
+      "type": "string"
+    },
+    "FlagLocation": {
+      "additionalProperties": false,
+      "properties": {
+        "video_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Video Id"
+        },
+        "frame_start": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frame Start"
+        },
+        "frame_end": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frame End"
+        },
+        "joint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Joint"
+        },
+        "feature": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Feature"
+        },
+        "rep_index": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rep Index"
+        }
+      },
+      "title": "FlagLocation",
+      "type": "object"
+    },
+    "InterpolationSource": {
+      "additionalProperties": false,
+      "properties": {
+        "left_frame_index": {
+          "minimum": 0,
+          "title": "Left Frame Index",
+          "type": "integer"
+        },
+        "right_frame_index": {
+          "minimum": 0,
+          "title": "Right Frame Index",
+          "type": "integer"
+        },
+        "left_timestamp_seconds": {
+          "minimum": 0,
+          "title": "Left Timestamp Seconds",
+          "type": "number"
+        },
+        "right_timestamp_seconds": {
+          "minimum": 0,
+          "title": "Right Timestamp Seconds",
+          "type": "number"
+        },
+        "left_status": {
+          "const": "observed",
+          "default": "observed",
+          "title": "Left Status",
+          "type": "string"
+        },
+        "right_status": {
+          "const": "observed",
+          "default": "observed",
+          "title": "Right Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "left_frame_index",
+        "right_frame_index",
+        "left_timestamp_seconds",
+        "right_timestamp_seconds"
+      ],
+      "title": "InterpolationSource",
+      "type": "object"
+    },
+    "JointGapSpan": {
+      "additionalProperties": false,
+      "properties": {
+        "start_frame": {
+          "minimum": 0,
+          "title": "Start Frame",
+          "type": "integer"
+        },
+        "end_frame": {
+          "minimum": 0,
+          "title": "End Frame",
+          "type": "integer"
+        },
+        "length": {
+          "exclusiveMinimum": 0,
+          "title": "Length",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start_frame",
+        "end_frame",
+        "length"
+      ],
+      "title": "JointGapSpan",
+      "type": "object"
+    },
+    "JointInputPolicy": {
+      "additionalProperties": false,
+      "properties": {
+        "coordinate_source": {
+          "const": "stage4_processed_xy",
+          "title": "Coordinate Source",
+          "type": "string"
+        },
+        "allowed_provenance": {
+          "items": {
+            "$ref": "#/$defs/JointProvenance"
+          },
+          "minItems": 1,
+          "title": "Allowed Provenance",
+          "type": "array"
+        },
+        "require_usable": {
+          "const": true,
+          "title": "Require Usable",
+          "type": "boolean"
+        },
+        "require_finite_xy": {
+          "const": true,
+          "title": "Require Finite Xy",
+          "type": "boolean"
+        },
+        "imputation_policy_reason": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Imputation Policy Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "coordinate_source",
+        "allowed_provenance",
+        "require_usable",
+        "require_finite_xy",
+        "imputation_policy_reason"
+      ],
+      "title": "JointInputPolicy",
+      "type": "object"
+    },
+    "JointName": {
+      "enum": [
+        "nose",
+        "left_shoulder",
+        "right_shoulder",
+        "left_elbow",
+        "right_elbow",
+        "left_wrist",
+        "right_wrist",
+        "left_hip",
+        "right_hip",
+        "left_knee",
+        "right_knee",
+        "left_ankle",
+        "right_ankle"
+      ],
+      "title": "JointName",
+      "type": "string"
+    },
+    "JointProvenance": {
+      "enum": [
+        "observed",
+        "low_visibility",
+        "imputed",
+        "missing"
+      ],
+      "title": "JointProvenance",
+      "type": "string"
+    },
+    "JointQuality": {
+      "additionalProperties": false,
+      "properties": {
+        "total_frames": {
+          "minimum": 0,
+          "title": "Total Frames",
+          "type": "integer"
+        },
+        "observed_frames": {
+          "minimum": 0,
+          "title": "Observed Frames",
+          "type": "integer"
+        },
+        "low_visibility_frames": {
+          "minimum": 0,
+          "title": "Low Visibility Frames",
+          "type": "integer"
+        },
+        "missing_frames": {
+          "minimum": 0,
+          "title": "Missing Frames",
+          "type": "integer"
+        },
+        "out_of_frame_frames": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Out Of Frame Frames",
+          "type": "integer"
+        },
+        "out_of_frame_observed_frames": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Out Of Frame Observed Frames",
+          "type": "integer"
+        },
+        "observed_ratio": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Observed Ratio"
+        },
+        "invalid_ratio": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Invalid Ratio"
+        },
+        "consecutive_invalid_spans": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/JointGapSpan"
+          },
+          "title": "Consecutive Invalid Spans",
+          "type": "array"
+        },
+        "max_consecutive_invalid_frames": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Max Consecutive Invalid Frames",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "total_frames",
+        "observed_frames",
+        "low_visibility_frames",
+        "missing_frames"
+      ],
+      "title": "JointQuality",
+      "type": "object"
+    },
+    "MeasurementTier": {
+      "enum": [
+        "M0",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "title": "MeasurementTier",
+      "type": "string"
+    },
+    "MetricEligibility": {
+      "additionalProperties": false,
+      "properties": {
+        "eligible": {
+          "title": "Eligible",
+          "type": "boolean"
+        },
+        "action": {
+          "enum": [
+            "allow",
+            "degrade",
+            "skip"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "required_joints": {
+          "items": {
+            "$ref": "#/$defs/JointName"
+          },
+          "title": "Required Joints",
+          "type": "array"
+        },
+        "reasons": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reasons",
+          "type": "array"
+        }
+      },
+      "required": [
+        "eligible",
+        "action",
+        "required_joints"
+      ],
+      "title": "MetricEligibility",
+      "type": "object"
+    },
+    "NormalizationTransform": {
+      "additionalProperties": false,
+      "properties": {
+        "translation_status": {
+          "enum": [
+            "mid_hip",
+            "fallback_origin"
+          ],
+          "title": "Translation Status",
+          "type": "string"
+        },
+        "scale_status": {
+          "enum": [
+            "torso",
+            "fallback_unit"
+          ],
+          "title": "Scale Status",
+          "type": "string"
+        },
+        "origin_x": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Origin X"
+        },
+        "origin_y": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Origin Y"
+        },
+        "torso_scale": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Torso Scale"
+        },
+        "distance_ratio_eligible": {
+          "title": "Distance Ratio Eligible",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "translation_status",
+        "scale_status",
+        "distance_ratio_eligible"
+      ],
+      "title": "NormalizationTransform",
+      "type": "object"
+    },
+    "ProcessedJoint": {
+      "additionalProperties": false,
+      "properties": {
+        "joint": {
+          "$ref": "#/$defs/JointName"
+        },
+        "source_status": {
+          "enum": [
+            "observed",
+            "low_visibility",
+            "missing"
+          ],
+          "title": "Source Status",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/JointProvenance"
+        },
+        "usable": {
+          "title": "Usable",
+          "type": "boolean"
+        },
+        "pre_normalization_x": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pre Normalization X"
+        },
+        "pre_normalization_y": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pre Normalization Y"
+        },
+        "unsmoothed_x": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unsmoothed X"
+        },
+        "unsmoothed_y": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unsmoothed Y"
+        },
+        "x": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "X"
+        },
+        "y": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Y"
+        },
+        "interpolation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/InterpolationSource"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "unavailable_reason": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FlagCode"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "smoothing_status": {
+          "enum": [
+            "smoothed",
+            "skipped_short_run",
+            "unavailable"
+          ],
+          "title": "Smoothing Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "joint",
+        "source_status",
+        "status",
+        "usable",
+        "smoothing_status"
+      ],
+      "title": "ProcessedJoint",
+      "type": "object"
+    },
+    "ProcessedPoseFrame": {
+      "additionalProperties": false,
+      "properties": {
+        "video_id": {
+          "minLength": 1,
+          "title": "Video Id",
+          "type": "string"
+        },
+        "frame_index": {
+          "minimum": 0,
+          "title": "Frame Index",
+          "type": "integer"
+        },
+        "timestamp_seconds": {
+          "minimum": 0,
+          "title": "Timestamp Seconds",
+          "type": "number"
+        },
+        "raw_frame_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Raw Frame Hash",
+          "type": "string"
+        },
+        "normalization": {
+          "$ref": "#/$defs/NormalizationTransform"
+        },
+        "joints": {
+          "items": {
+            "$ref": "#/$defs/ProcessedJoint"
+          },
+          "title": "Joints",
+          "type": "array"
+        },
+        "flags": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/StructuredFlag"
+          },
+          "title": "Flags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "video_id",
+        "frame_index",
+        "timestamp_seconds",
+        "raw_frame_hash",
+        "normalization",
+        "joints"
+      ],
+      "title": "ProcessedPoseFrame",
+      "type": "object"
+    },
+    "QualityProfile": {
+      "additionalProperties": false,
+      "description": "Engineering gates from the current specification; not form standards.",
+      "properties": {
+        "profile_version": {
+          "default": "quality-s3-v1",
+          "minLength": 1,
+          "title": "Profile Version",
+          "type": "string"
+        },
+        "source_tier": {
+          "const": "S3",
+          "default": "S3",
+          "title": "Source Tier",
+          "type": "string"
+        },
+        "min_sequence_frames": {
+          "default": 5,
+          "exclusiveMinimum": 0,
+          "title": "Min Sequence Frames",
+          "type": "integer"
+        },
+        "max_missing_ratio": {
+          "default": 0.3,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Max Missing Ratio",
+          "type": "number"
+        },
+        "max_low_visibility_ratio": {
+          "default": 0.3,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Max Low Visibility Ratio",
+          "type": "number"
+        },
+        "max_consecutive_invalid_frames": {
+          "default": 10,
+          "minimum": 0,
+          "title": "Max Consecutive Invalid Frames",
+          "type": "integer"
+        }
+      },
+      "title": "QualityProfile",
+      "type": "object"
+    },
+    "QualityReport": {
+      "additionalProperties": false,
+      "properties": {
+        "quality_schema_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Quality Schema Version",
+          "type": "string"
+        },
+        "video_id": {
+          "minLength": 1,
+          "title": "Video Id",
+          "type": "string"
+        },
+        "exercise": {
+          "$ref": "#/$defs/Exercise"
+        },
+        "viewpoint": {
+          "$ref": "#/$defs/Viewpoint"
+        },
+        "profile": {
+          "$ref": "#/$defs/QualityProfile"
+        },
+        "profile_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Profile Hash",
+          "type": "string"
+        },
+        "total_frames": {
+          "minimum": 0,
+          "title": "Total Frames",
+          "type": "integer"
+        },
+        "frames_with_pose": {
+          "minimum": 0,
+          "title": "Frames With Pose",
+          "type": "integer"
+        },
+        "frames_without_pose": {
+          "minimum": 0,
+          "title": "Frames Without Pose",
+          "type": "integer"
+        },
+        "sequence_status": {
+          "enum": [
+            "eligible",
+            "degraded",
+            "skipped"
+          ],
+          "title": "Sequence Status",
+          "type": "string"
+        },
+        "eligibility": {
+          "$ref": "#/$defs/MetricEligibility"
+        },
+        "metric_eligibility": {
+          "additionalProperties": {
+            "$ref": "#/$defs/MetricEligibility"
+          },
+          "title": "Metric Eligibility",
+          "type": "object"
+        },
+        "by_joint": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JointQuality"
+          },
+          "propertyNames": {
+            "$ref": "#/$defs/JointName"
+          },
+          "title": "By Joint",
+          "type": "object"
+        },
+        "flags": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/StructuredFlag"
+          },
+          "title": "Flags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "video_id",
+        "exercise",
+        "viewpoint",
+        "profile",
+        "profile_hash",
+        "total_frames",
+        "frames_with_pose",
+        "frames_without_pose",
+        "sequence_status",
+        "eligibility",
+        "by_joint"
+      ],
+      "title": "QualityReport",
+      "type": "object"
+    },
+    "QuantityKind": {
+      "enum": [
+        "angle",
+        "distance",
+        "ratio"
+      ],
+      "title": "QuantityKind",
+      "type": "string"
+    },
+    "Severity": {
+      "enum": [
+        "info",
+        "warning",
+        "error"
+      ],
+      "title": "Severity",
+      "type": "string"
+    },
+    "SourceTier": {
+      "enum": [
+        "S1",
+        "S2",
+        "S3",
+        "OBS",
+        "TBD-EXPERT"
+      ],
+      "title": "SourceTier",
+      "type": "string"
+    },
+    "Stage": {
+      "enum": [
+        "configuration",
+        "video",
+        "pose",
+        "quality",
+        "preprocessing",
+        "features",
+        "segmentation",
+        "assessment",
+        "reporting"
+      ],
+      "title": "Stage",
+      "type": "string"
+    },
+    "StructuredFlag": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/FlagCode"
+        },
+        "category": {
+          "$ref": "#/$defs/ErrorCategory"
+        },
+        "severity": {
+          "$ref": "#/$defs/Severity"
+        },
+        "stage": {
+          "$ref": "#/$defs/Stage"
+        },
+        "message": {
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        },
+        "source_tier": {
+          "$ref": "#/$defs/SourceTier"
+        },
+        "location": {
+          "$ref": "#/$defs/FlagLocation"
+        },
+        "evidence": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Evidence",
+          "type": "object"
+        }
+      },
+      "required": [
+        "code",
+        "category",
+        "severity",
+        "stage",
+        "message",
+        "source_tier"
+      ],
+      "title": "StructuredFlag",
+      "type": "object"
+    },
+    "UnsupportedViewpoint": {
+      "additionalProperties": false,
+      "properties": {
+        "viewpoint": {
+          "$ref": "#/$defs/Viewpoint"
+        },
+        "reason": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "viewpoint",
+        "reason"
+      ],
+      "title": "UnsupportedViewpoint",
+      "type": "object"
+    },
+    "Viewpoint": {
+      "enum": [
+        "unknown",
+        "side",
+        "front",
+        "oblique"
+      ],
+      "title": "Viewpoint",
+      "type": "string"
+    },
+    "ViewpointPolicy": {
+      "additionalProperties": false,
+      "properties": {
+        "supported": {
+          "items": {
+            "$ref": "#/$defs/Viewpoint"
+          },
+          "minItems": 1,
+          "title": "Supported",
+          "type": "array"
+        },
+        "unsupported": {
+          "items": {
+            "$ref": "#/$defs/UnsupportedViewpoint"
+          },
+          "minItems": 1,
+          "title": "Unsupported",
+          "type": "array"
+        },
+        "policy_reason": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Policy Reason",
+          "type": "string"
+        },
+        "source_tier": {
+          "const": "S3",
+          "title": "Source Tier",
+          "type": "string"
+        }
+      },
+      "required": [
+        "supported",
+        "unsupported",
+        "policy_reason",
+        "source_tier"
+      ],
+      "title": "ViewpointPolicy",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Descriptive, unvalidated angle or explicit unavailable, with full audit input.\n\nThis schema is intentionally restricted to one registry feature. Expanding\nsupported methods/features requires a deliberate versioned implementation.",
+  "properties": {
+    "numeric_feature_schema_version": {
+      "const": "0.2.0",
+      "default": "0.2.0",
+      "title": "Numeric Feature Schema Version",
+      "type": "string"
+    },
+    "adapter_version": {
+      "const": "squat-left-knee-v1",
+      "default": "squat-left-knee-v1",
+      "title": "Adapter Version",
+      "type": "string"
+    },
+    "primitive_name": {
+      "const": "joint_angle",
+      "default": "joint_angle",
+      "title": "Primitive Name",
+      "type": "string"
+    },
+    "primitive_version": {
+      "const": "joint-angle-2d-v1",
+      "default": "joint-angle-2d-v1",
+      "title": "Primitive Version",
+      "type": "string"
+    },
+    "feature_id": {
+      "const": "squat_knee_angle_left_deg",
+      "title": "Feature Id",
+      "type": "string"
+    },
+    "exercise": {
+      "$ref": "#/$defs/Exercise"
+    },
+    "viewpoint": {
+      "$ref": "#/$defs/Viewpoint"
+    },
+    "video_id": {
+      "minLength": 1,
+      "pattern": ".*\\S.*",
+      "title": "Video Id",
+      "type": "string"
+    },
+    "frame_index": {
+      "minimum": 0,
+      "title": "Frame Index",
+      "type": "integer"
+    },
+    "timestamp_seconds": {
+      "minimum": 0,
+      "title": "Timestamp Seconds",
+      "type": "number"
+    },
+    "measurement_method": {
+      "const": "joint_angle_abc",
+      "title": "Measurement Method",
+      "type": "string"
+    },
+    "quantity_kind": {
+      "$ref": "#/$defs/QuantityKind"
+    },
+    "unit": {
+      "$ref": "#/$defs/FeatureUnit"
+    },
+    "measurement_tier": {
+      "$ref": "#/$defs/MeasurementTier"
+    },
+    "source_tiers": {
+      "items": {
+        "$ref": "#/$defs/SourceTier"
+      },
+      "title": "Source Tiers",
+      "type": "array"
+    },
+    "measurement_validation_status": {
+      "enum": [
+        "unvalidated",
+        "blocked"
+      ],
+      "title": "Measurement Validation Status",
+      "type": "string"
+    },
+    "assessment_status": {
+      "const": "blocked_pending_expert_validation",
+      "title": "Assessment Status",
+      "type": "string"
+    },
+    "availability": {
+      "$ref": "#/$defs/FeatureAvailability"
+    },
+    "joint_inputs": {
+      "items": {
+        "$ref": "#/$defs/ProcessedJoint"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Joint Inputs",
+      "type": "array"
+    },
+    "quality_report_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Quality Report Hash",
+      "type": "string"
+    },
+    "quality_policy_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Quality Policy Hash",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "available",
+        "unavailable"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "computation_status": {
+      "enum": [
+        "computed",
+        "not_computed",
+        "failed_measurement"
+      ],
+      "title": "Computation Status",
+      "type": "string"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "maximum": 180,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Value"
+    },
+    "reasons": {
+      "items": {
+        "$ref": "#/$defs/FlagCode"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "flags": {
+      "items": {
+        "$ref": "#/$defs/StructuredFlag"
+      },
+      "title": "Flags",
+      "type": "array"
+    }
+  },
+  "required": [
+    "feature_id",
+    "exercise",
+    "viewpoint",
+    "video_id",
+    "frame_index",
+    "timestamp_seconds",
+    "measurement_method",
+    "quantity_kind",
+    "unit",
+    "measurement_tier",
+    "source_tiers",
+    "measurement_validation_status",
+    "assessment_status",
+    "availability",
+    "joint_inputs",
+    "quality_report_hash",
+    "quality_policy_hash",
+    "status",
+    "computation_status",
+    "value",
+    "reasons",
+    "flags"
+  ],
+  "title": "NumericFeatureObservation",
+  "type": "object"
+}

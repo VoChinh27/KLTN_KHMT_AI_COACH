@@ -1,0 +1,1607 @@
+{
+  "$defs": {
+    "ErrorCategory": {
+      "enum": [
+        "technical_error",
+        "measurement_error",
+        "insufficient_data",
+        "segmentation_error",
+        "informational_observation",
+        "input_error",
+        "configuration_error",
+        "operational_error"
+      ],
+      "title": "ErrorCategory",
+      "type": "string"
+    },
+    "Exercise": {
+      "enum": [
+        "BodyWeightSquats",
+        "HandstandPushups"
+      ],
+      "title": "Exercise",
+      "type": "string"
+    },
+    "FlagCode": {
+      "enum": [
+        "invalid_config",
+        "invalid_pose_input",
+        "invalid_pose_sequence",
+        "invalid_preprocessing_input",
+        "quality_input_mismatch",
+        "smoothing_short_run",
+        "preprocessing_error",
+        "preprocessing_serialization_error",
+        "unknown_feature_id",
+        "unsupported_exercise",
+        "invalid_viewpoint",
+        "invalid_feature_input",
+        "invalid_feature_context_index",
+        "feature_context_mismatch",
+        "unsupported_feature_calculation",
+        "invalid_geometry_input",
+        "degenerate_geometry",
+        "geometry_numerical_error",
+        "feature_definition_blocked",
+        "feature_joint_unusable",
+        "feature_provenance_rejected",
+        "feature_quality_blocked",
+        "feature_metric_eligibility_missing",
+        "feature_quality_policy_mismatch",
+        "pose_backend_error",
+        "pose_not_detected",
+        "missing_joint",
+        "missing_landmark_field",
+        "non_finite_landmark",
+        "invalid_landmark_confidence",
+        "pose_serialization_error",
+        "unreadable_video",
+        "video_too_short",
+        "invalid_fps",
+        "invalid_video_resolution",
+        "invalid_frame_count",
+        "insufficient_sequence_length",
+        "excessive_missingness",
+        "low_pose_visibility",
+        "partial_joint_coverage",
+        "single_side_only",
+        "side_switch_discontinuity",
+        "normalization_origin_fallback",
+        "normalization_scale_fallback",
+        "viewpoint_unknown",
+        "viewpoint_mismatch",
+        "partial_rep_start",
+        "partial_rep_end",
+        "multi_person",
+        "out_of_frame",
+        "low_signal_range",
+        "unstable_signal",
+        "segmentation_failed",
+        "assessment_unavailable"
+      ],
+      "title": "FlagCode",
+      "type": "string"
+    },
+    "FlagLocation": {
+      "additionalProperties": false,
+      "properties": {
+        "feature": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Feature"
+        },
+        "frame_end": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frame End"
+        },
+        "frame_start": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frame Start"
+        },
+        "joint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Joint"
+        },
+        "rep_index": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rep Index"
+        },
+        "video_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Video Id"
+        }
+      },
+      "title": "FlagLocation",
+      "type": "object"
+    },
+    "InterpolationSource": {
+      "additionalProperties": false,
+      "properties": {
+        "left_frame_index": {
+          "minimum": 0,
+          "title": "Left Frame Index",
+          "type": "integer"
+        },
+        "left_status": {
+          "const": "observed",
+          "default": "observed",
+          "title": "Left Status",
+          "type": "string"
+        },
+        "left_timestamp_seconds": {
+          "minimum": 0,
+          "title": "Left Timestamp Seconds",
+          "type": "number"
+        },
+        "right_frame_index": {
+          "minimum": 0,
+          "title": "Right Frame Index",
+          "type": "integer"
+        },
+        "right_status": {
+          "const": "observed",
+          "default": "observed",
+          "title": "Right Status",
+          "type": "string"
+        },
+        "right_timestamp_seconds": {
+          "minimum": 0,
+          "title": "Right Timestamp Seconds",
+          "type": "number"
+        }
+      },
+      "required": [
+        "left_frame_index",
+        "right_frame_index",
+        "left_timestamp_seconds",
+        "right_timestamp_seconds"
+      ],
+      "title": "InterpolationSource",
+      "type": "object"
+    },
+    "JointGapSpan": {
+      "additionalProperties": false,
+      "properties": {
+        "end_frame": {
+          "minimum": 0,
+          "title": "End Frame",
+          "type": "integer"
+        },
+        "length": {
+          "exclusiveMinimum": 0,
+          "title": "Length",
+          "type": "integer"
+        },
+        "start_frame": {
+          "minimum": 0,
+          "title": "Start Frame",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start_frame",
+        "end_frame",
+        "length"
+      ],
+      "title": "JointGapSpan",
+      "type": "object"
+    },
+    "JointName": {
+      "enum": [
+        "nose",
+        "left_shoulder",
+        "right_shoulder",
+        "left_elbow",
+        "right_elbow",
+        "left_wrist",
+        "right_wrist",
+        "left_hip",
+        "right_hip",
+        "left_knee",
+        "right_knee",
+        "left_ankle",
+        "right_ankle"
+      ],
+      "title": "JointName",
+      "type": "string"
+    },
+    "JointObservation": {
+      "additionalProperties": false,
+      "properties": {
+        "joint": {
+          "$ref": "#/$defs/JointName"
+        },
+        "missing_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "pose_not_detected",
+                "missing_joint",
+                "missing_landmark_field",
+                "non_finite_landmark",
+                "invalid_landmark_confidence"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Missing Reason"
+        },
+        "presence": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Presence"
+        },
+        "status": {
+          "enum": [
+            "observed",
+            "low_visibility",
+            "missing"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "visibility": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Visibility"
+        },
+        "visibility_threshold": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Visibility Threshold",
+          "type": "number"
+        },
+        "x": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "X"
+        },
+        "y": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Y"
+        }
+      },
+      "required": [
+        "joint",
+        "status"
+      ],
+      "title": "JointObservation",
+      "type": "object"
+    },
+    "JointProvenance": {
+      "enum": [
+        "observed",
+        "low_visibility",
+        "imputed",
+        "missing"
+      ],
+      "title": "JointProvenance",
+      "type": "string"
+    },
+    "JointQuality": {
+      "additionalProperties": false,
+      "properties": {
+        "consecutive_invalid_spans": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/JointGapSpan"
+          },
+          "title": "Consecutive Invalid Spans",
+          "type": "array"
+        },
+        "invalid_ratio": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Invalid Ratio"
+        },
+        "low_visibility_frames": {
+          "minimum": 0,
+          "title": "Low Visibility Frames",
+          "type": "integer"
+        },
+        "max_consecutive_invalid_frames": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Max Consecutive Invalid Frames",
+          "type": "integer"
+        },
+        "missing_frames": {
+          "minimum": 0,
+          "title": "Missing Frames",
+          "type": "integer"
+        },
+        "observed_frames": {
+          "minimum": 0,
+          "title": "Observed Frames",
+          "type": "integer"
+        },
+        "observed_ratio": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Observed Ratio"
+        },
+        "out_of_frame_frames": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Out Of Frame Frames",
+          "type": "integer"
+        },
+        "out_of_frame_observed_frames": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Out Of Frame Observed Frames",
+          "type": "integer"
+        },
+        "total_frames": {
+          "minimum": 0,
+          "title": "Total Frames",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "total_frames",
+        "observed_frames",
+        "low_visibility_frames",
+        "missing_frames"
+      ],
+      "title": "JointQuality",
+      "type": "object"
+    },
+    "MetricEligibility": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "enum": [
+            "allow",
+            "degrade",
+            "skip"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "eligible": {
+          "title": "Eligible",
+          "type": "boolean"
+        },
+        "reasons": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reasons",
+          "type": "array"
+        },
+        "required_joints": {
+          "items": {
+            "$ref": "#/$defs/JointName"
+          },
+          "title": "Required Joints",
+          "type": "array"
+        }
+      },
+      "required": [
+        "eligible",
+        "action",
+        "required_joints"
+      ],
+      "title": "MetricEligibility",
+      "type": "object"
+    },
+    "NormalizationTransform": {
+      "additionalProperties": false,
+      "properties": {
+        "distance_ratio_eligible": {
+          "title": "Distance Ratio Eligible",
+          "type": "boolean"
+        },
+        "origin_x": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Origin X"
+        },
+        "origin_y": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Origin Y"
+        },
+        "scale_status": {
+          "enum": [
+            "torso",
+            "fallback_unit"
+          ],
+          "title": "Scale Status",
+          "type": "string"
+        },
+        "torso_scale": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Torso Scale"
+        },
+        "translation_status": {
+          "enum": [
+            "mid_hip",
+            "fallback_origin"
+          ],
+          "title": "Translation Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "translation_status",
+        "scale_status",
+        "distance_ratio_eligible"
+      ],
+      "title": "NormalizationTransform",
+      "type": "object"
+    },
+    "PoseBackendIdentity": {
+      "additionalProperties": false,
+      "properties": {
+        "axes": {
+          "const": "x_right_y_down",
+          "default": "x_right_y_down",
+          "title": "Axes",
+          "type": "string"
+        },
+        "backend": {
+          "const": "mediapipe.solutions.pose.Pose",
+          "default": "mediapipe.solutions.pose.Pose",
+          "title": "Backend",
+          "type": "string"
+        },
+        "coordinate_space": {
+          "const": "image_normalized_xy",
+          "default": "image_normalized_xy",
+          "title": "Coordinate Space",
+          "type": "string"
+        },
+        "joint_mapping_version": {
+          "const": "mediapipe-pose-13-v1",
+          "default": "mediapipe-pose-13-v1",
+          "title": "Joint Mapping Version",
+          "type": "string"
+        },
+        "limitations": {
+          "default": [
+            "No multi-person enumeration, explicit subject selection or identity guarantee",
+            "Inverted orientation/occlusion can reduce detection and visibility",
+            "Native 2D estimates are not calibrated physical measurements"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "mediapipe_version": {
+          "minLength": 1,
+          "title": "Mediapipe Version",
+          "type": "string"
+        },
+        "model_asset_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Asset Sha256"
+        },
+        "subject_selection_policy": {
+          "const": "backend_most_prominent_single_subject",
+          "default": "backend_most_prominent_single_subject",
+          "title": "Subject Selection Policy",
+          "type": "string"
+        },
+        "units": {
+          "const": "dimensionless_image_width_height",
+          "default": "dimensionless_image_width_height",
+          "title": "Units",
+          "type": "string"
+        }
+      },
+      "required": [
+        "mediapipe_version"
+      ],
+      "title": "PoseBackendIdentity",
+      "type": "object"
+    },
+    "PoseExtractionConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "config_version": {
+          "default": "pose-extraction-v1",
+          "minLength": 1,
+          "title": "Config Version",
+          "type": "string"
+        },
+        "enable_segmentation": {
+          "const": false,
+          "default": false,
+          "title": "Enable Segmentation",
+          "type": "boolean"
+        },
+        "min_detection_confidence": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Detection Confidence",
+          "type": "number"
+        },
+        "min_tracking_confidence": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Tracking Confidence",
+          "type": "number"
+        },
+        "model_complexity": {
+          "const": 1,
+          "default": 1,
+          "title": "Model Complexity",
+          "type": "integer"
+        },
+        "smooth_landmarks": {
+          "const": false,
+          "default": false,
+          "title": "Smooth Landmarks",
+          "type": "boolean"
+        },
+        "smooth_segmentation": {
+          "const": false,
+          "default": false,
+          "title": "Smooth Segmentation",
+          "type": "boolean"
+        },
+        "source_tier": {
+          "const": "S3",
+          "default": "S3",
+          "title": "Source Tier",
+          "type": "string"
+        },
+        "static_image_mode": {
+          "const": false,
+          "default": false,
+          "title": "Static Image Mode",
+          "type": "boolean"
+        },
+        "visibility_threshold": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Visibility Threshold",
+          "type": "number"
+        }
+      },
+      "title": "PoseExtractionConfig",
+      "type": "object"
+    },
+    "PoseFrame": {
+      "additionalProperties": false,
+      "properties": {
+        "backend": {
+          "$ref": "#/$defs/PoseBackendIdentity"
+        },
+        "config": {
+          "$ref": "#/$defs/PoseExtractionConfig"
+        },
+        "exercise": {
+          "$ref": "#/$defs/Exercise"
+        },
+        "flags": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/StructuredFlag"
+          },
+          "title": "Flags",
+          "type": "array"
+        },
+        "frame_index": {
+          "minimum": 0,
+          "title": "Frame Index",
+          "type": "integer"
+        },
+        "has_pose": {
+          "title": "Has Pose",
+          "type": "boolean"
+        },
+        "joints": {
+          "items": {
+            "$ref": "#/$defs/JointObservation"
+          },
+          "title": "Joints",
+          "type": "array"
+        },
+        "pose_schema_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Pose Schema Version",
+          "type": "string"
+        },
+        "timestamp_seconds": {
+          "minimum": 0,
+          "title": "Timestamp Seconds",
+          "type": "number"
+        },
+        "video_id": {
+          "minLength": 1,
+          "title": "Video Id",
+          "type": "string"
+        },
+        "viewpoint": {
+          "$ref": "#/$defs/Viewpoint",
+          "default": "unknown"
+        }
+      },
+      "required": [
+        "video_id",
+        "exercise",
+        "frame_index",
+        "timestamp_seconds",
+        "has_pose",
+        "backend",
+        "config",
+        "joints"
+      ],
+      "title": "PoseFrame",
+      "type": "object"
+    },
+    "PreprocessingProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "interpolate_low_visibility": {
+          "default": false,
+          "title": "Interpolate Low Visibility",
+          "type": "boolean"
+        },
+        "max_gap_seconds": {
+          "default": 0.16666666666666666,
+          "minimum": 0,
+          "title": "Max Gap Seconds",
+          "type": "number"
+        },
+        "min_torso_scale": {
+          "default": 1e-08,
+          "exclusiveMinimum": 0,
+          "title": "Min Torso Scale",
+          "type": "number"
+        },
+        "profile_schema_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Profile Schema Version",
+          "type": "string"
+        },
+        "profile_version": {
+          "default": "preprocessing-s3-v1",
+          "minLength": 1,
+          "title": "Profile Version",
+          "type": "string"
+        },
+        "smoothing_method": {
+          "const": "savitzky_golay",
+          "default": "savitzky_golay",
+          "title": "Smoothing Method",
+          "type": "string"
+        },
+        "smoothing_mode": {
+          "const": "interp",
+          "default": "interp",
+          "title": "Smoothing Mode",
+          "type": "string"
+        },
+        "smoothing_polyorder": {
+          "default": 2,
+          "maximum": 10,
+          "minimum": 0,
+          "title": "Smoothing Polyorder",
+          "type": "integer"
+        },
+        "smoothing_span_seconds": {
+          "default": 0.3333333333333333,
+          "exclusiveMinimum": 0,
+          "title": "Smoothing Span Seconds",
+          "type": "number"
+        },
+        "source_tier": {
+          "const": "S3",
+          "default": "S3",
+          "title": "Source Tier",
+          "type": "string"
+        }
+      },
+      "title": "PreprocessingProfile",
+      "type": "object"
+    },
+    "PreprocessingResult": {
+      "additionalProperties": false,
+      "properties": {
+        "frames": {
+          "items": {
+            "$ref": "#/$defs/ProcessedPoseFrame"
+          },
+          "title": "Frames",
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/$defs/VideoMetadata"
+        },
+        "output_units": {
+          "const": "torso_units_when_valid_else_working_units",
+          "default": "torso_units_when_valid_else_working_units",
+          "title": "Output Units",
+          "type": "string"
+        },
+        "preprocessing_schema_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Preprocessing Schema Version",
+          "type": "string"
+        },
+        "profile": {
+          "$ref": "#/$defs/PreprocessingProfile"
+        },
+        "profile_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Profile Hash",
+          "type": "string"
+        },
+        "quality": {
+          "$ref": "#/$defs/QualityReport"
+        },
+        "quality_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Quality Hash",
+          "type": "string"
+        },
+        "raw_frames": {
+          "items": {
+            "$ref": "#/$defs/PoseFrame"
+          },
+          "title": "Raw Frames",
+          "type": "array"
+        },
+        "raw_sequence_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Raw Sequence Hash",
+          "type": "string"
+        },
+        "resolved_profile": {
+          "$ref": "#/$defs/ResolvedProfile"
+        },
+        "smoothing_runs": {
+          "items": {
+            "$ref": "#/$defs/SmoothingRun"
+          },
+          "title": "Smoothing Runs",
+          "type": "array"
+        },
+        "working_coordinate_space": {
+          "const": "image_width_units_xy",
+          "default": "image_width_units_xy",
+          "title": "Working Coordinate Space",
+          "type": "string"
+        }
+      },
+      "required": [
+        "profile",
+        "profile_hash",
+        "resolved_profile",
+        "metadata",
+        "quality",
+        "quality_hash",
+        "raw_sequence_hash",
+        "raw_frames",
+        "frames",
+        "smoothing_runs"
+      ],
+      "title": "PreprocessingResult",
+      "type": "object"
+    },
+    "ProcessedJoint": {
+      "additionalProperties": false,
+      "properties": {
+        "interpolation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/InterpolationSource"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "joint": {
+          "$ref": "#/$defs/JointName"
+        },
+        "pre_normalization_x": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pre Normalization X"
+        },
+        "pre_normalization_y": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pre Normalization Y"
+        },
+        "smoothing_status": {
+          "enum": [
+            "smoothed",
+            "skipped_short_run",
+            "unavailable"
+          ],
+          "title": "Smoothing Status",
+          "type": "string"
+        },
+        "source_status": {
+          "enum": [
+            "observed",
+            "low_visibility",
+            "missing"
+          ],
+          "title": "Source Status",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/JointProvenance"
+        },
+        "unavailable_reason": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FlagCode"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "unsmoothed_x": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unsmoothed X"
+        },
+        "unsmoothed_y": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unsmoothed Y"
+        },
+        "usable": {
+          "title": "Usable",
+          "type": "boolean"
+        },
+        "x": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "X"
+        },
+        "y": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Y"
+        }
+      },
+      "required": [
+        "joint",
+        "source_status",
+        "status",
+        "usable",
+        "smoothing_status"
+      ],
+      "title": "ProcessedJoint",
+      "type": "object"
+    },
+    "ProcessedPoseFrame": {
+      "additionalProperties": false,
+      "properties": {
+        "flags": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/StructuredFlag"
+          },
+          "title": "Flags",
+          "type": "array"
+        },
+        "frame_index": {
+          "minimum": 0,
+          "title": "Frame Index",
+          "type": "integer"
+        },
+        "joints": {
+          "items": {
+            "$ref": "#/$defs/ProcessedJoint"
+          },
+          "title": "Joints",
+          "type": "array"
+        },
+        "normalization": {
+          "$ref": "#/$defs/NormalizationTransform"
+        },
+        "raw_frame_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Raw Frame Hash",
+          "type": "string"
+        },
+        "timestamp_seconds": {
+          "minimum": 0,
+          "title": "Timestamp Seconds",
+          "type": "number"
+        },
+        "video_id": {
+          "minLength": 1,
+          "title": "Video Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "video_id",
+        "frame_index",
+        "timestamp_seconds",
+        "raw_frame_hash",
+        "normalization",
+        "joints"
+      ],
+      "title": "ProcessedPoseFrame",
+      "type": "object"
+    },
+    "QualityProfile": {
+      "additionalProperties": false,
+      "description": "Engineering gates from the current specification; not form standards.",
+      "properties": {
+        "max_consecutive_invalid_frames": {
+          "default": 10,
+          "minimum": 0,
+          "title": "Max Consecutive Invalid Frames",
+          "type": "integer"
+        },
+        "max_low_visibility_ratio": {
+          "default": 0.3,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Max Low Visibility Ratio",
+          "type": "number"
+        },
+        "max_missing_ratio": {
+          "default": 0.3,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Max Missing Ratio",
+          "type": "number"
+        },
+        "min_sequence_frames": {
+          "default": 5,
+          "exclusiveMinimum": 0,
+          "title": "Min Sequence Frames",
+          "type": "integer"
+        },
+        "profile_version": {
+          "default": "quality-s3-v1",
+          "minLength": 1,
+          "title": "Profile Version",
+          "type": "string"
+        },
+        "source_tier": {
+          "const": "S3",
+          "default": "S3",
+          "title": "Source Tier",
+          "type": "string"
+        }
+      },
+      "title": "QualityProfile",
+      "type": "object"
+    },
+    "QualityReport": {
+      "additionalProperties": false,
+      "properties": {
+        "by_joint": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JointQuality"
+          },
+          "propertyNames": {
+            "$ref": "#/$defs/JointName"
+          },
+          "title": "By Joint",
+          "type": "object"
+        },
+        "eligibility": {
+          "$ref": "#/$defs/MetricEligibility"
+        },
+        "exercise": {
+          "$ref": "#/$defs/Exercise"
+        },
+        "flags": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/StructuredFlag"
+          },
+          "title": "Flags",
+          "type": "array"
+        },
+        "frames_with_pose": {
+          "minimum": 0,
+          "title": "Frames With Pose",
+          "type": "integer"
+        },
+        "frames_without_pose": {
+          "minimum": 0,
+          "title": "Frames Without Pose",
+          "type": "integer"
+        },
+        "metric_eligibility": {
+          "additionalProperties": {
+            "$ref": "#/$defs/MetricEligibility"
+          },
+          "title": "Metric Eligibility",
+          "type": "object"
+        },
+        "profile": {
+          "$ref": "#/$defs/QualityProfile"
+        },
+        "profile_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Profile Hash",
+          "type": "string"
+        },
+        "quality_schema_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Quality Schema Version",
+          "type": "string"
+        },
+        "sequence_status": {
+          "enum": [
+            "eligible",
+            "degraded",
+            "skipped"
+          ],
+          "title": "Sequence Status",
+          "type": "string"
+        },
+        "total_frames": {
+          "minimum": 0,
+          "title": "Total Frames",
+          "type": "integer"
+        },
+        "video_id": {
+          "minLength": 1,
+          "title": "Video Id",
+          "type": "string"
+        },
+        "viewpoint": {
+          "$ref": "#/$defs/Viewpoint"
+        }
+      },
+      "required": [
+        "video_id",
+        "exercise",
+        "viewpoint",
+        "profile",
+        "profile_hash",
+        "total_frames",
+        "frames_with_pose",
+        "frames_without_pose",
+        "sequence_status",
+        "eligibility",
+        "by_joint"
+      ],
+      "title": "QualityReport",
+      "type": "object"
+    },
+    "ResolvedProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "actual_smoothing_span_seconds": {
+          "exclusiveMinimum": 0,
+          "title": "Actual Smoothing Span Seconds",
+          "type": "number"
+        },
+        "fps": {
+          "exclusiveMinimum": 0,
+          "title": "Fps",
+          "type": "number"
+        },
+        "max_gap_frames": {
+          "minimum": 0,
+          "title": "Max Gap Frames",
+          "type": "integer"
+        },
+        "smoothing_window_frames": {
+          "minimum": 3,
+          "title": "Smoothing Window Frames",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fps",
+        "max_gap_frames",
+        "smoothing_window_frames",
+        "actual_smoothing_span_seconds"
+      ],
+      "title": "ResolvedProfile",
+      "type": "object"
+    },
+    "Severity": {
+      "enum": [
+        "info",
+        "warning",
+        "error"
+      ],
+      "title": "Severity",
+      "type": "string"
+    },
+    "SmoothingRun": {
+      "additionalProperties": false,
+      "properties": {
+        "end_frame": {
+          "minimum": 0,
+          "title": "End Frame",
+          "type": "integer"
+        },
+        "joint": {
+          "$ref": "#/$defs/JointName"
+        },
+        "scale_status": {
+          "enum": [
+            "torso",
+            "fallback_unit"
+          ],
+          "title": "Scale Status",
+          "type": "string"
+        },
+        "start_frame": {
+          "minimum": 0,
+          "title": "Start Frame",
+          "type": "integer"
+        },
+        "status": {
+          "enum": [
+            "smoothed",
+            "skipped_short_run"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "translation_status": {
+          "enum": [
+            "mid_hip",
+            "fallback_origin"
+          ],
+          "title": "Translation Status",
+          "type": "string"
+        },
+        "window_frames": {
+          "minimum": 3,
+          "title": "Window Frames",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "joint",
+        "start_frame",
+        "end_frame",
+        "status",
+        "window_frames",
+        "translation_status",
+        "scale_status"
+      ],
+      "title": "SmoothingRun",
+      "type": "object"
+    },
+    "SourceTier": {
+      "enum": [
+        "S1",
+        "S2",
+        "S3",
+        "OBS",
+        "TBD-EXPERT"
+      ],
+      "title": "SourceTier",
+      "type": "string"
+    },
+    "Stage": {
+      "enum": [
+        "configuration",
+        "video",
+        "pose",
+        "quality",
+        "preprocessing",
+        "features",
+        "segmentation",
+        "assessment",
+        "reporting"
+      ],
+      "title": "Stage",
+      "type": "string"
+    },
+    "StructuredFlag": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/ErrorCategory"
+        },
+        "code": {
+          "$ref": "#/$defs/FlagCode"
+        },
+        "evidence": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Evidence",
+          "type": "object"
+        },
+        "location": {
+          "$ref": "#/$defs/FlagLocation"
+        },
+        "message": {
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        },
+        "severity": {
+          "$ref": "#/$defs/Severity"
+        },
+        "source_tier": {
+          "$ref": "#/$defs/SourceTier"
+        },
+        "stage": {
+          "$ref": "#/$defs/Stage"
+        }
+      },
+      "required": [
+        "code",
+        "category",
+        "severity",
+        "stage",
+        "message",
+        "source_tier"
+      ],
+      "title": "StructuredFlag",
+      "type": "object"
+    },
+    "TimestampPolicy": {
+      "description": "How frame timestamps are produced.\n\nOpenCV does not expose a dependable VFR audit. Phase 1 therefore makes the\nCFR assumption explicit instead of presenting derived timestamps as source\npresentation timestamps.",
+      "enum": [
+        "fps_derived_cfr_assumption"
+      ],
+      "title": "TimestampPolicy",
+      "type": "string"
+    },
+    "VideoMetadata": {
+      "additionalProperties": false,
+      "properties": {
+        "decoder": {
+          "minLength": 1,
+          "title": "Decoder",
+          "type": "string"
+        },
+        "fps": {
+          "exclusiveMinimum": 0.0,
+          "title": "Fps",
+          "type": "number"
+        },
+        "frame_count": {
+          "minimum": 0,
+          "title": "Frame Count",
+          "type": "integer"
+        },
+        "height": {
+          "exclusiveMinimum": 0,
+          "title": "Height",
+          "type": "integer"
+        },
+        "source_path": {
+          "format": "path",
+          "title": "Source Path",
+          "type": "string"
+        },
+        "timestamp_policy": {
+          "$ref": "#/$defs/TimestampPolicy",
+          "default": "fps_derived_cfr_assumption"
+        },
+        "video_id": {
+          "minLength": 1,
+          "title": "Video Id",
+          "type": "string"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "video_id",
+        "source_path",
+        "fps",
+        "frame_count",
+        "width",
+        "height",
+        "decoder"
+      ],
+      "title": "VideoMetadata",
+      "type": "object"
+    },
+    "Viewpoint": {
+      "enum": [
+        "unknown",
+        "side",
+        "front",
+        "oblique"
+      ],
+      "title": "Viewpoint",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "A detached snapshot linked to one complete, validated PreprocessingResult.\n\nLegacy FeatureInputContext and numeric observation schemas stay unchanged.\nPersist this context alongside the numeric observation to retain linkage.\nHashes detect inconsistent content; they do not authenticate its producer.",
+  "properties": {
+    "context_factory_version": {
+      "const": "preprocessing-context-v1",
+      "default": "preprocessing-context-v1",
+      "title": "Context Factory Version",
+      "type": "string"
+    },
+    "context_schema_version": {
+      "const": "0.2.0",
+      "default": "0.2.0",
+      "title": "Context Schema Version",
+      "type": "string"
+    },
+    "frame": {
+      "$ref": "#/$defs/ProcessedPoseFrame"
+    },
+    "metadata_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Metadata Hash",
+      "type": "string"
+    },
+    "preprocessing_result": {
+      "$ref": "#/$defs/PreprocessingResult"
+    },
+    "preprocessing_result_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Preprocessing Result Hash",
+      "type": "string"
+    },
+    "processed_frame_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Processed Frame Hash",
+      "type": "string"
+    },
+    "profile_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Profile Hash",
+      "type": "string"
+    },
+    "profile_version": {
+      "minLength": 1,
+      "pattern": ".*\\S.*",
+      "title": "Profile Version",
+      "type": "string"
+    },
+    "quality": {
+      "$ref": "#/$defs/QualityReport"
+    },
+    "quality_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Quality Hash",
+      "type": "string"
+    },
+    "raw_frame_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Raw Frame Hash",
+      "type": "string"
+    },
+    "raw_sequence_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Raw Sequence Hash",
+      "type": "string"
+    }
+  },
+  "required": [
+    "frame",
+    "quality",
+    "preprocessing_result",
+    "preprocessing_result_hash",
+    "raw_sequence_hash",
+    "raw_frame_hash",
+    "processed_frame_hash",
+    "quality_hash",
+    "profile_hash",
+    "profile_version",
+    "metadata_hash"
+  ],
+  "title": "LinkedFeatureInputContext",
+  "type": "object"
+}

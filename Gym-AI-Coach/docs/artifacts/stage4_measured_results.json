@@ -1,0 +1,628 @@
+{
+  "measurement_date": "2026-10-08",
+  "source_tier": "OBS",
+  "package_version": "0.4.0",
+  "python": "3.11.9",
+  "dependencies": {
+    "pydantic": "2.13.5",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "mediapipe": "0.10.14",
+    "opencv-contrib-python": "5.0.0.93",
+    "opencv-python": "5.0.0.93",
+    "protobuf": "4.25.9",
+    "pytest": "9.1.1",
+    "setuptools": "84.0.0"
+  },
+  "test_command": ".venv/Scripts/python.exe -m pytest -q --junitxml=outputs/stage4/verification-final.xml",
+  "test_stdout_result": "145 passed, 4 warnings in 31.37s",
+  "junit": {
+    "relative_path": "outputs/stage4/verification-final.xml",
+    "sha256": "1ac5f29c5f68a0bbcc6edea57b41aa889512cdf4f7de558eb22c5c6f50346361",
+    "attributes": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "145",
+      "time": "31.361",
+      "timestamp": "2026-10-08T19:07:16.911526+07:00",
+      "hostname": "VoChinh"
+    }
+  },
+  "integration_directory": "outputs/stage4/integration-7fba808fe3d54a57b5d132b037d574bb",
+  "videos": [
+    {
+      "video_id": "v_BodyWeightSquats_g01_c01.avi",
+      "total_frames": 267,
+      "fps": 25.0,
+      "profile_hash": "33edf08cdafea19ef0ae67b67ce02b9f53b1b1764641bc9df7af58259d387c33",
+      "resolved_profile": {
+        "fps": 25.0,
+        "max_gap_frames": 4,
+        "smoothing_window_frames": 9,
+        "actual_smoothing_span_seconds": 0.32
+      },
+      "raw_provenance": {
+        "observed": 2515,
+        "low_visibility": 956,
+        "missing": 0
+      },
+      "processed_provenance": {
+        "observed": 2515,
+        "low_visibility": 956,
+        "imputed": 0,
+        "missing": 0
+      },
+      "raw_observed_coverage": 0.7245750504177471,
+      "usable_coverage_before": 0.7245750504177471,
+      "usable_coverage_after": 0.7245750504177471,
+      "imputed_points": 0,
+      "fallback_origin_frames": 0,
+      "fallback_scale_frames": 0,
+      "finite_runs": 33,
+      "smoothed_runs": 14,
+      "short_runs": 19,
+      "quality_sequence_status": "skipped",
+      "by_joint": {
+        "nose": {
+          "raw_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 267,
+          "usable_after": 267,
+          "usable_coverage_after": 1.0
+        },
+        "left_shoulder": {
+          "raw_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 267,
+          "usable_after": 267,
+          "usable_coverage_after": 1.0
+        },
+        "right_shoulder": {
+          "raw_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 267,
+          "usable_after": 267,
+          "usable_coverage_after": 1.0
+        },
+        "left_elbow": {
+          "raw_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 267,
+          "usable_after": 267,
+          "usable_coverage_after": 1.0
+        },
+        "right_elbow": {
+          "raw_provenance": {
+            "observed": 0,
+            "low_visibility": 267,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 0,
+            "low_visibility": 267,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 0.0,
+          "usable_before": 0,
+          "usable_after": 0,
+          "usable_coverage_after": 0.0
+        },
+        "left_wrist": {
+          "raw_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 267,
+          "usable_after": 267,
+          "usable_coverage_after": 1.0
+        },
+        "right_wrist": {
+          "raw_provenance": {
+            "observed": 2,
+            "low_visibility": 265,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 2,
+            "low_visibility": 265,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 0.00749063670411985,
+          "usable_before": 2,
+          "usable_after": 2,
+          "usable_coverage_after": 0.00749063670411985
+        },
+        "left_hip": {
+          "raw_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 267,
+          "usable_after": 267,
+          "usable_coverage_after": 1.0
+        },
+        "right_hip": {
+          "raw_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 267,
+          "usable_after": 267,
+          "usable_coverage_after": 1.0
+        },
+        "left_knee": {
+          "raw_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 267,
+          "usable_after": 267,
+          "usable_coverage_after": 1.0
+        },
+        "right_knee": {
+          "raw_provenance": {
+            "observed": 8,
+            "low_visibility": 259,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 8,
+            "low_visibility": 259,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 0.0299625468164794,
+          "usable_before": 8,
+          "usable_after": 8,
+          "usable_coverage_after": 0.0299625468164794
+        },
+        "left_ankle": {
+          "raw_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 267,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 267,
+          "usable_after": 267,
+          "usable_coverage_after": 1.0
+        },
+        "right_ankle": {
+          "raw_provenance": {
+            "observed": 102,
+            "low_visibility": 165,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 102,
+            "low_visibility": 165,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 0.38202247191011235,
+          "usable_before": 102,
+          "usable_after": 102,
+          "usable_coverage_after": 0.38202247191011235
+        }
+      },
+      "exercise": "BodyWeightSquats",
+      "source_relative_path": "Data/UCF-101_GYM/BodyWeightSquats/v_BodyWeightSquats_g01_c01.avi",
+      "artifact_relative_path": "outputs/stage4/integration-7fba808fe3d54a57b5d132b037d574bb/BodyWeightSquats.processed.json",
+      "mediapipe_version": "0.10.14",
+      "model_asset_sha256": "e9a5c5cb17f736fafd4c2ec1da3b3d331d6edbe8a0d32395855aeb2cdfd64b9f",
+      "raw_sequence_hash": "d59fcaff47bb4ea1abbb71a1176ec65aa348b9b13841a8b6f9e7cbdbb26b8277",
+      "quality_hash": "eddd725246c269162eea7803c38f20da17b8f31f466f23b2019f8fa9a81bd88b",
+      "quality_preserved": true,
+      "raw_preserved": true,
+      "identity_preserved": true
+    },
+    {
+      "video_id": "v_HandStandPushups_g01_c01.avi",
+      "total_frames": 78,
+      "fps": 25.0,
+      "profile_hash": "33edf08cdafea19ef0ae67b67ce02b9f53b1b1764641bc9df7af58259d387c33",
+      "resolved_profile": {
+        "fps": 25.0,
+        "max_gap_frames": 4,
+        "smoothing_window_frames": 9,
+        "actual_smoothing_span_seconds": 0.32
+      },
+      "raw_provenance": {
+        "observed": 871,
+        "low_visibility": 143,
+        "missing": 0
+      },
+      "processed_provenance": {
+        "observed": 871,
+        "low_visibility": 143,
+        "imputed": 0,
+        "missing": 0
+      },
+      "raw_observed_coverage": 0.8589743589743589,
+      "usable_coverage_before": 0.6903353057199211,
+      "usable_coverage_after": 0.6903353057199211,
+      "imputed_points": 0,
+      "fallback_origin_frames": 0,
+      "fallback_scale_frames": 0,
+      "finite_runs": 14,
+      "smoothed_runs": 11,
+      "short_runs": 3,
+      "quality_sequence_status": "skipped",
+      "by_joint": {
+        "nose": {
+          "raw_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 78,
+          "usable_after": 78,
+          "usable_coverage_after": 1.0
+        },
+        "left_shoulder": {
+          "raw_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 78,
+          "usable_after": 78,
+          "usable_coverage_after": 1.0
+        },
+        "right_shoulder": {
+          "raw_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 78,
+          "usable_after": 78,
+          "usable_coverage_after": 1.0
+        },
+        "left_elbow": {
+          "raw_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 78,
+          "usable_after": 78,
+          "usable_coverage_after": 1.0
+        },
+        "right_elbow": {
+          "raw_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 78,
+          "usable_after": 78,
+          "usable_coverage_after": 1.0
+        },
+        "left_wrist": {
+          "raw_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 3,
+          "usable_after": 3,
+          "usable_coverage_after": 0.038461538461538464
+        },
+        "right_wrist": {
+          "raw_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 0,
+          "usable_after": 0,
+          "usable_coverage_after": 0.0
+        },
+        "left_hip": {
+          "raw_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 78,
+          "usable_after": 78,
+          "usable_coverage_after": 1.0
+        },
+        "right_hip": {
+          "raw_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 78,
+          "usable_after": 78,
+          "usable_coverage_after": 1.0
+        },
+        "left_knee": {
+          "raw_provenance": {
+            "observed": 77,
+            "low_visibility": 1,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 77,
+            "low_visibility": 1,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 0.9871794871794872,
+          "usable_before": 73,
+          "usable_after": 73,
+          "usable_coverage_after": 0.9358974358974359
+        },
+        "right_knee": {
+          "raw_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 78,
+            "low_visibility": 0,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 1.0,
+          "usable_before": 78,
+          "usable_after": 78,
+          "usable_coverage_after": 1.0
+        },
+        "left_ankle": {
+          "raw_provenance": {
+            "observed": 13,
+            "low_visibility": 65,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 13,
+            "low_visibility": 65,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 0.16666666666666666,
+          "usable_before": 0,
+          "usable_after": 0,
+          "usable_coverage_after": 0.0
+        },
+        "right_ankle": {
+          "raw_provenance": {
+            "observed": 1,
+            "low_visibility": 77,
+            "missing": 0
+          },
+          "processed_provenance": {
+            "observed": 1,
+            "low_visibility": 77,
+            "imputed": 0,
+            "missing": 0
+          },
+          "raw_observed_coverage": 0.01282051282051282,
+          "usable_before": 0,
+          "usable_after": 0,
+          "usable_coverage_after": 0.0
+        }
+      },
+      "exercise": "HandstandPushups",
+      "source_relative_path": "Data/UCF-101_GYM/HandstandPushups/v_HandStandPushups_g01_c01.avi",
+      "artifact_relative_path": "outputs/stage4/integration-7fba808fe3d54a57b5d132b037d574bb/HandstandPushups.processed.json",
+      "mediapipe_version": "0.10.14",
+      "model_asset_sha256": "e9a5c5cb17f736fafd4c2ec1da3b3d331d6edbe8a0d32395855aeb2cdfd64b9f",
+      "raw_sequence_hash": "7af44a315a1db51bbf338082b38bdddbc3968789afe6251021b078d245f27581",
+      "quality_hash": "09193a1fa27d6a7e43be01dc44887caa88b204a3ca73ddc6004ee7b86145b907",
+      "quality_preserved": true,
+      "raw_preserved": true,
+      "identity_preserved": true
+    }
+  ],
+  "input_video_sha256": {
+    "Data/UCF-101_GYM/BodyWeightSquats/v_BodyWeightSquats_g01_c01.avi": "1a199bf3ad385a66505fa0864a48fb9b9f9c1edfd1306d8345729ab06742c9e0",
+    "Data/UCF-101_GYM/HandstandPushups/v_HandStandPushups_g01_c01.avi": "05a3bc07db1baa3b64a63d987fe8691df13852b1ae1519d3eb6c0601a7825697"
+  },
+  "artifact_sha256": {
+    "outputs/stage4/integration-7fba808fe3d54a57b5d132b037d574bb/BodyWeightSquats.processed.json": "a32034ff7b3e47b9c51351e3d539435b16c87c5ad6313298b2b09c4dd4dd8f02",
+    "outputs/stage4/integration-7fba808fe3d54a57b5d132b037d574bb/HandstandPushups.processed.json": "9cc26f853e9c8ccc82506aee1ddf38ed0608bd62c5ede543dd0dbc3dd4744b82"
+  },
+  "source_tree_sha256": "34edb4b2ef8242732de2d41afe1339f12fca05d6575371ff454a54d62112f44c",
+  "source_file_sha256": {
+    "configs/default.toml": "59dab11637458f6e1a21be8a8dee62c2d72fae77942f868f16bc15f4bb5b23ec",
+    "configs/preprocessing_s3_v1.toml": "506e223606255b36465e30269986b65307f8a9797f6a7abbaa60a820a3bcb2e7",
+    "pyproject.toml": "5dc9d4b253096db37364547ccc14ab953903b5a6fd3ff4b94e9f81742cb63d62",
+    "src/gym_coach/__init__.py": "a0888bc3e10cd4d885c5e98ab299b020e40cd0e58af9b3ff402754fd584e7a17",
+    "src/gym_coach/_version.py": "bf900665ea8455e631ba71403d552c5b517434734c4f6f4ee45586a9a4774c21",
+    "src/gym_coach/assessment/__init__.py": "7e1955cf7c2ef3e8d4b49d23f7454cf1b9b622e93c428c06baac17d76cbc4adb",
+    "src/gym_coach/config.py": "0aad88c81854721eac323697f9dc648265892e85b87383bad347b75c72f91b3f",
+    "src/gym_coach/contracts.py": "ba88e3862e93042b4de6b2d5e23f94dc6f10a8a39b11b043af0209c864608ee9",
+    "src/gym_coach/features/__init__.py": "57f8603070130f9d1c88625ccff3ed0908f898320c919191e7993114ed5280ed",
+    "src/gym_coach/flags.py": "670c9fb0e13e1d5946d824056204b7a683bfbff25fe36a68bc26f683b8e88c4b",
+    "src/gym_coach/pose/__init__.py": "f244809c6f3225eafcdd50b2c9778db4357ba61daa002bfc69a9636495194206",
+    "src/gym_coach/pose/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/gym_coach/pose/cli.py": "a7a9aa3568f54c4bbe4fcc529d9d2de0e0e832115dfd8f43bf24c2123520faf7",
+    "src/gym_coach/pose/coverage.py": "073690381a3814718fa09c3302f55d5784505f75628ae2577d56640f2e808388",
+    "src/gym_coach/pose/extractor.py": "3fc518b5f84ac12727a1e3649834757335689bd1e5d3ff5884a8784fc536f87f",
+    "src/gym_coach/pose/mapping.py": "01d225b79ed468d84fc475d9010c222a0d1ccc7b69cdb88e49f2612b252c3d8e",
+    "src/gym_coach/pose/models.py": "0887d0321c4a2512d9551a46b94c4f4f0320146d25886b7a909d1be26051db12",
+    "src/gym_coach/pose/run.py": "9ddfc9b828a15f334610b27d95187a56eef18b168023b022d559da2bd546f890",
+    "src/gym_coach/pose/serialization.py": "9b5a17ab30532bf7afe44c1c1bc39a628666a6ecf10468bebf808bb8aa46dd28",
+    "src/gym_coach/preprocessing/__init__.py": "c908343b79a741e5d34f7cf38e26640422703a25030efeafc2b9b2f0d4c75cb0",
+    "src/gym_coach/preprocessing/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/gym_coach/preprocessing/cli.py": "45bcb5f47cd0e9b16c339b40b0c45fdbc0ebcda3c8270722efd2484c4ee0ced6",
+    "src/gym_coach/preprocessing/diagnostics.py": "a469903bd5727274109d7b98e696ca51d8050e373bfc9de277d11590b0d61c2a",
+    "src/gym_coach/preprocessing/models.py": "7ffb6f69be09f28e1153b9b666da0455a4b969e8c07732252217d98ca13ba6fd",
+    "src/gym_coach/preprocessing/pipeline.py": "bdd2a4b2591836fc5d6bdd09332fa9233dbc3ee2f69fb0a347eaa85d041ab012",
+    "src/gym_coach/preprocessing/serialization.py": "519ef4c53d8600249e4fa5c9754d780bea8b4fc4a4058ada51f18ff22b70cdb3",
+    "src/gym_coach/quality/__init__.py": "315e6371f913af1080e90f0b79e8beae87641d938570be9f2da44ce0afa881fb",
+    "src/gym_coach/quality/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/gym_coach/quality/cli.py": "109fda9fbadce6d75bba28f262793a1c34a32daa84263db2391756cb2e410bfb",
+    "src/gym_coach/quality/gate.py": "5cfab6c590daedb692aaf861ea54e1e8d2539f191c1d2ad14b2cb4dbaf38b515",
+    "src/gym_coach/quality/models.py": "186bb80235656a6abcb2514588b8293fac024f2b873a19c858242d3af539cd25",
+    "src/gym_coach/reporting/__init__.py": "4aa9ea2bb8a6e720950e5a9cdd87d9cd80e28f3104e6f7c3fda5fe15faa49999",
+    "src/gym_coach/reporting/schema.py": "d4e98dd8eb5be1ec187258683a830a118b1de8184f43ebf3cd09b8cda3b0232c",
+    "src/gym_coach/segmentation/__init__.py": "5e4619db787ba97a561d4085672d9bffe2727025c672a5f8b237905a2cccfe14",
+    "src/gym_coach/video/__init__.py": "6d7a35757c76ffe690fac9513f052b5a8fc384d0ceefea5d5492bb264984ace4",
+    "src/gym_coach/video/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/gym_coach/video/cli.py": "907c7995091e8146db8304f390a208dac1a703d68af82700b2109254f4f16bb6",
+    "src/gym_coach/video/models.py": "daaa7e33633c3fa7458ecc79cb2da7d20ae320601ade42ea23a3aead0904cd83",
+    "src/gym_coach/video/reader.py": "a18633ac17f86eb38df83b94afd73d5f072cd8cf8e792f8c614eaef353f23fd2",
+    "tests/test_foundation.py": "186eea5b3f4f5d1ac6da514e9b147adc9d2ddb815d1a4dc9c57613dacebe98f5",
+    "tests/test_pose.py": "5621fdde1c6d8a2e2f6948a4e4768eee8c89dcd69128f0d5e84baf3e8433d3e7",
+    "tests/test_pose_integration.py": "a22ad07e85c996b8c7d5b0f1bf67dac898b0395073e3160ac7b9d65b7e4f27a3",
+    "tests/test_preprocessing.py": "f892404bac6868605fcbc9e328afdff20b07c6a98857a5e69edf7ae0f6bd8200",
+    "tests/test_preprocessing_integration.py": "f608e81f3c926659081ceabfcf08ceba9c176035aa7befd06ff8fbdd925d1ddf",
+    "tests/test_quality.py": "d8a7f80fcfb61973a79c7c5ff9313a582a9bb0920506eca6bed377aac342e701",
+    "tests/test_video.py": "1cba6302371333154c3cccc684009b4275d394457b0be8ad10e278039ea3dcd7"
+  },
+  "identity_scope": "src Python + configs TOML + tests Python + pyproject; no Git repository, no docs/data/archive in source hash",
+  "pip_check": "No broken requirements found.",
+  "clean_environment_tested": false
+}
