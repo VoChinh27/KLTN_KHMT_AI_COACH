@@ -1,0 +1,231 @@
+{
+  "video": "coach_ready_01",
+  "role": "coach",
+  "exercise": "ready",
+  "fps": 29.988,
+  "n_frames": 542,
+  "duration_s": 18.07389622515673,
+  "quality": {
+    "legacy_valid_pct": 92.8,
+    "feature_valid_pct": {
+      "knee_mean": 100.0,
+      "hip_mean": 100.0,
+      "elbow_mean": 100.0,
+      "shoulder_mean": 100.0,
+      "trunk_lean": 100.0,
+      "stance_ratio": 96.9
+    },
+    "feature_substituted_pct": {
+      "knee_mean": 3.1,
+      "hip_mean": 0.0,
+      "elbow_mean": 0.0,
+      "shoulder_mean": 0.0,
+      "trunk_lean": 0.0,
+      "stance_ratio": 0.0
+    },
+    "joint_valid_pct": {
+      "left_shoulder": 100.0,
+      "right_shoulder": 100.0,
+      "left_elbow": 100.0,
+      "right_elbow": 100.0,
+      "left_wrist": 100.0,
+      "right_wrist": 100.0,
+      "left_hip": 100.0,
+      "right_hip": 100.0,
+      "left_knee": 100.0,
+      "right_knee": 100.0,
+      "left_ankle": 96.9,
+      "right_ankle": 100.0
+    },
+    "view_yaw_deg": 30.6,
+    "interpolated_frames": {
+      "left_elbow": 30,
+      "right_elbow": 3,
+      "left_wrist": 19,
+      "right_wrist": 4,
+      "left_knee": 3,
+      "right_knee": 3,
+      "left_ankle": 35,
+      "right_ankle": 16
+    }
+  },
+  "segmentation": {
+    "episodes": [
+      [
+        122,
+        212,
+        3.03
+      ]
+    ],
+    "state_pct": {
+      "INVALID": 0.0,
+      "MOVING": 75.3,
+      "SETTLING": 7.9,
+      "READY": 16.8
+    },
+    "scored_seconds": 3.03
+  },
+  "reference": {
+    "built_from": [
+      "coach_ready_01",
+      "coach_ready_04"
+    ],
+    "n_videos": 2,
+    "in_sample": true
+  },
+  "status": "SCORED",
+  "score": {
+    "overall": 100.0,
+    "grade": "Tốt",
+    "units": [
+      {
+        "id": "R1",
+        "frames": [
+          122,
+          212
+        ],
+        "duration_s": 3.034547152194211,
+        "score": 100.0,
+        "raw_score": 100.0,
+        "critical": [],
+        "weight_sum": 4.284210109890109,
+        "features": [
+          {
+            "feature": "knee_mean",
+            "label": "Góc gối (TB hai bên)",
+            "unit": "°",
+            "level": "PRIMARY",
+            "center": 125.89997426935804,
+            "tol": 12.0,
+            "value": 121.17932871498186,
+            "dev": -4.720645554376176,
+            "score": 100.0,
+            "weight": 0.9456941758241759,
+            "rel": 0.9456941758241759,
+            "coverage": 1.0,
+            "substituted": 0.0,
+            "status": "OK"
+          },
+          {
+            "feature": "hip_mean",
+            "label": "Góc hông (thân–đùi)",
+            "unit": "°",
+            "level": "SECONDARY",
+            "center": 116.51896814048803,
+            "tol": 15.0,
+            "value": 108.22542962193717,
+            "dev": -8.29353851855086,
+            "score": 100.0,
+            "weight": 0.4886186263736263,
+            "rel": 0.9772372527472526,
+            "coverage": 1.0,
+            "substituted": 0.0,
+            "status": "OK"
+          },
+          {
+            "feature": "elbow_mean",
+            "label": "Góc khuỷu tay",
+            "unit": "°",
+            "level": "SECONDARY",
+            "center": 135.41397456839502,
+            "tol": 18.0,
+            "value": 146.27314081402488,
+            "dev": 10.859166245629865,
+            "score": 100.0,
+            "weight": 0.4770958241758241,
+            "rel": 0.9541916483516482,
+            "coverage": 1.0,
+            "substituted": 0.0,
+            "status": "OK"
+          },
+          {
+            "feature": "shoulder_mean",
+            "label": "Góc nâng tay (vai)",
+            "unit": "°",
+            "level": "SECONDARY",
+            "center": 71.8529981306117,
+            "tol": 18.0,
+            "value": 78.39431345680082,
+            "dev": 6.541315326189121,
+            "score": 100.0,
+            "weight": 0.47779846153846156,
+            "rel": 0.9555969230769231,
+            "coverage": 1.0,
+            "substituted": 0.0,
+            "status": "OK"
+          },
+          {
+            "feature": "trunk_lean",
+            "label": "Độ nghiêng thân",
+            "unit": "°",
+            "level": "PRIMARY",
+            "center": 32.077497430144724,
+            "tol": 9.0,
+            "value": 35.71203227920554,
+            "dev": 3.634534849060813,
+            "score": 100.0,
+            "weight": 0.9999351098901099,
+            "rel": 0.9999351098901099,
+            "coverage": 1.0,
+            "substituted": 0.0,
+            "status": "OK"
+          },
+          {
+            "feature": "stance_ratio",
+            "label": "Độ rộng chân / vai",
+            "unit": "x",
+            "level": "PRIMARY",
+            "center": 1.6960023768321462,
+            "tol": 0.42836494263537334,
+            "value": 1.3533104227238475,
+            "dev": -0.34269195410829867,
+            "score": 100.0,
+            "weight": 0.8950679120879118,
+            "rel": 0.8950679120879118,
+            "coverage": 1.0,
+            "substituted": 0.0,
+            "status": "OK"
+          }
+        ]
+      }
+    ],
+    "scored_seconds": 3.034547152194211,
+    "errors": []
+  },
+  "warnings": [
+    "Chuẩn HLV chỉ dựng từ 2 video: dung sai đang dựa vào mức tối thiểu trong cấu hình, nên điểm mang tính tham khảo.",
+    "Video này nằm trong tập video dựng chuẩn: điểm mang tính lạc quan (không phải đánh giá độc lập).",
+    "Có nhiều người trong khung (18% frame). Hệ thống chọn người mục tiêu theo 'largest' và bám theo; nếu chọn sai người, khai báo vùng người tập bằng \"person_roi\": [x0, y0, x1, y1] (tỉ lệ 0–1) trong Input/<video>.json và chạy lại với --force-pose.",
+    "16% frame bị trùng lặp (video bị nội suy tăng FPS hoặc đứt nhịp): tốc độ/chuyển động đo được có thể thiếu chính xác."
+  ],
+  "annotation_used": false,
+  "video_qc": {
+    "fps": 29.99,
+    "width": 854,
+    "height": 480,
+    "frames": 542,
+    "duplicate_frame_pct": 15.9,
+    "subject_height_frac": 0.33,
+    "subject_height_px": 157,
+    "jitter_raw_pct_torso": 61.99,
+    "jitter_clean_pct_torso": 13.3,
+    "jitter_reduction_pct": 78.5,
+    "smooth_window_frames": 7,
+    "shake_rms_pct": 0.088,
+    "shake_peak_pct": 0.555,
+    "frames_used": 399,
+    "warnings": [
+      "16% frame bị trùng lặp (video bị nội suy tăng FPS hoặc đứt nhịp): tốc độ/chuyển động đo được có thể thiếu chính xác."
+    ]
+  },
+  "files": {
+    "report_json": "report.json",
+    "report_html": "report.html",
+    "dashboard": "dashboard.png",
+    "angles_timeline": "angles_timeline.png",
+    "quality": "quality.png",
+    "angles_csv": "angles.csv",
+    "pose_csv": "pose.csv",
+    "overlay": "overlay.mp4"
+  }
+}

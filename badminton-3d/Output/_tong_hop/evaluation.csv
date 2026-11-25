@@ -1,0 +1,11 @@
+video,role,exercise,in_reference,mode,ref_videos,score,grade,units,status
+coach_ready_01,coach,ready,True,bỏ-một-video,1,92.71451911701402,Tốt,1,SCORED
+coach_ready_04,coach,ready,True,bỏ-một-video,1,94.02253599909481,Tốt,2,SCORED
+trainee_ready_04,trainee,ready,False,độc lập,2,37.41245561458647,Chưa đạt,1,SCORED
+trainee_ready_08,trainee,ready,False,độc lập,2,29.54216876425234,Chưa đạt,3,SCORED
+coach_serve_02,coach,serve,True,bỏ-một-video,1,95.89508969030258,Tốt,1,SCORED
+coach_serve_07,coach,serve,True,bỏ-một-video,1,95.9339677757782,Tốt,1,SCORED
+trainee_serve_01,trainee,serve,False,độc lập,2,65.0,Cần cải thiện,1,SCORED
+trainee_serve_05,trainee,serve,False,độc lập,2,47.805760005944386,Chưa đạt,1,SCORED
+trainee_serve_07,trainee,serve,False,độc lập,2,88.97090661412814,Tốt,1,SCORED
+trainee_serve_09,trainee,serve,False,độc lập,2,59.0,Cần cải thiện,1,SCORED

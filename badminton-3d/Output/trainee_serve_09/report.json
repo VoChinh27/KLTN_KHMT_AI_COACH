@@ -1,0 +1,690 @@
+{
+  "video": "trainee_serve_09",
+  "role": "trainee",
+  "exercise": "serve",
+  "fps": 30.0,
+  "n_frames": 120,
+  "duration_s": 4.0,
+  "quality": {
+    "legacy_valid_pct": 100.0,
+    "feature_valid_pct": {
+      "elbow_arm": 100.0,
+      "shoulder_arm": 100.0,
+      "wrist_height": 100.0,
+      "wrist_reach": 100.0,
+      "knee_mean": 100.0,
+      "hip_mean": 100.0,
+      "trunk_lean": 100.0
+    },
+    "feature_substituted_pct": {
+      "elbow_arm": 0.0,
+      "shoulder_arm": 0.0,
+      "wrist_height": 0.0,
+      "wrist_reach": 0.0,
+      "knee_mean": 0.0,
+      "hip_mean": 0.0,
+      "trunk_lean": 0.0
+    },
+    "joint_valid_pct": {
+      "left_shoulder": 100.0,
+      "right_shoulder": 100.0,
+      "left_elbow": 100.0,
+      "right_elbow": 100.0,
+      "left_wrist": 100.0,
+      "right_wrist": 100.0,
+      "left_hip": 100.0,
+      "right_hip": 100.0,
+      "left_knee": 100.0,
+      "right_knee": 100.0,
+      "left_ankle": 100.0,
+      "right_ankle": 100.0
+    },
+    "view_yaw_deg": 16.9,
+    "interpolated_frames": {},
+    "arm": {
+      "side": "right",
+      "mode": "racket_arm",
+      "substituted": false,
+      "path_m": {
+        "left": 1.2462245052401446,
+        "right": 1.6102717236654507
+      },
+      "scores": {
+        "left": 0.987,
+        "right": 0.992
+      }
+    }
+  },
+  "segmentation": {
+    "reps": [
+      {
+        "prep_start": 50,
+        "swing_start": 80,
+        "peak": 86,
+        "end": 98,
+        "peak_activity_mps": 3.32,
+        "phases": {
+          "chuan_bi": [
+            50,
+            79
+          ],
+          "danh_cau": [
+            80,
+            89
+          ],
+          "ket_thuc": [
+            90,
+            98
+          ]
+        },
+        "truncated": false,
+        "no_prep": false
+      }
+    ],
+    "not_scored_pct": 59.2
+  },
+  "reference": {
+    "built_from": [
+      "coach_serve_02",
+      "coach_serve_07"
+    ],
+    "n_videos": 2,
+    "in_sample": false
+  },
+  "fault_metrics": [
+    {
+      "follow_through_above_shoulder_m": 0.441,
+      "heel_lift_ratio": 0.102
+    }
+  ],
+  "status": "SCORED",
+  "score": {
+    "overall": 59.0,
+    "grade": "Cần cải thiện",
+    "units": [
+      {
+        "id": "S1",
+        "frames": [
+          50,
+          98
+        ],
+        "duration_s": 1.6333333333333333,
+        "truncated": false,
+        "no_prep": false,
+        "score": 59.0,
+        "raw_score": 75.48747466294027,
+        "critical": [
+          "wrist_height"
+        ],
+        "phase_weight_covered": 0.8,
+        "phases": {
+          "chuan_bi": {
+            "score": 94.94989865176113,
+            "raw_score": 94.94989865176113,
+            "critical": [],
+            "weight_sum": 5.467066416666667,
+            "features": [
+              {
+                "feature": "elbow_arm",
+                "label": "Góc khuỷu tay (tay thấy rõ)",
+                "unit": "°",
+                "level": "PRIMARY",
+                "center": 147.4165378299116,
+                "tol": 22.5,
+                "value": 128.97773681693891,
+                "dev": -18.438801012972675,
+                "score": 100.0,
+                "weight": 0.9908506666666668,
+                "rel": 0.9908506666666668,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              },
+              {
+                "feature": "shoulder_arm",
+                "label": "Góc nâng tay (tay thấy rõ)",
+                "unit": "°",
+                "level": "SECONDARY",
+                "center": 33.725924127003395,
+                "tol": 22.5,
+                "value": 39.98878051026776,
+                "dev": 6.262856383264364,
+                "score": 100.0,
+                "weight": 0.49783283333333334,
+                "rel": 0.9956656666666667,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              },
+              {
+                "feature": "wrist_height",
+                "label": "Độ cao cổ tay so với hông",
+                "unit": "m",
+                "level": "PRIMARY",
+                "center": -0.08740809523809531,
+                "tol": 0.15000000000000002,
+                "value": 0.10883380952380962,
+                "dev": 0.19624190476190495,
+                "score": 79.44804232804226,
+                "weight": 0.9908506666666668,
+                "rel": 0.9908506666666668,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "HIGH"
+              },
+              {
+                "feature": "wrist_reach",
+                "label": "Tầm với của cổ tay (ngang)",
+                "unit": "m",
+                "level": "SECONDARY",
+                "center": 0.33318140058044055,
+                "tol": 0.15000000000000002,
+                "value": 0.292347036161057,
+                "dev": -0.04083436441938354,
+                "score": 100.0,
+                "weight": 0.4954253333333334,
+                "rel": 0.9908506666666668,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              },
+              {
+                "feature": "knee_mean",
+                "label": "Góc gối (TB hai bên)",
+                "unit": "°",
+                "level": "PRIMARY",
+                "center": 149.5653077575892,
+                "tol": 15.0,
+                "value": 163.5676251849008,
+                "dev": 14.002317427311596,
+                "score": 100.0,
+                "weight": 0.9940975,
+                "rel": 0.9940975,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              },
+              {
+                "feature": "hip_mean",
+                "label": "Góc hông (thân–đùi)",
+                "unit": "°",
+                "level": "SECONDARY",
+                "center": 153.06808555281665,
+                "tol": 18.75,
+                "value": 166.8472551854894,
+                "dev": 13.779169632672733,
+                "score": 100.0,
+                "weight": 0.49814958333333337,
+                "rel": 0.9962991666666667,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              },
+              {
+                "feature": "trunk_lean",
+                "label": "Độ nghiêng thân",
+                "unit": "°",
+                "level": "PRIMARY",
+                "center": 21.801981147473164,
+                "tol": 11.25,
+                "value": 9.32916224857921,
+                "dev": -12.472818898893953,
+                "score": 92.75366578433213,
+                "weight": 0.9998598333333334,
+                "rel": 0.9998598333333334,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "LOW"
+              }
+            ],
+            "frames": [
+              50,
+              79
+            ],
+            "weight": 0.2
+          },
+          "danh_cau": {
+            "score": 69.0,
+            "raw_score": 72.76575253060935,
+            "critical": [
+              "wrist_height"
+            ],
+            "weight_sum": 5.47187875,
+            "features": [
+              {
+                "feature": "elbow_arm",
+                "label": "Góc khuỷu tay (tay thấy rõ)",
+                "unit": "°",
+                "level": "PRIMARY",
+                "center": 133.06411301675848,
+                "tol": 15.0,
+                "value": 139.78101151960135,
+                "dev": 6.7168985028428665,
+                "score": 100.0,
+                "weight": 0.9918910000000001,
+                "rel": 0.9918910000000001,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              },
+              {
+                "feature": "shoulder_arm",
+                "label": "Góc nâng tay (tay thấy rõ)",
+                "unit": "°",
+                "level": "SECONDARY",
+                "center": 84.48176354160569,
+                "tol": 15.0,
+                "value": 123.68915601605553,
+                "dev": 39.20739247444985,
+                "score": 0.0,
+                "weight": 0.498334,
+                "rel": 0.996668,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "HIGH"
+              },
+              {
+                "feature": "wrist_height",
+                "label": "Độ cao cổ tay so với hông",
+                "unit": "m",
+                "level": "PRIMARY",
+                "center": 0.4399092857142861,
+                "tol": 0.1,
+                "value": 0.7595771428571435,
+                "dev": 0.3196678571428574,
+                "score": 0.0,
+                "weight": 0.9918910000000001,
+                "rel": 0.9918910000000001,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "HIGH"
+              },
+              {
+                "feature": "wrist_reach",
+                "label": "Tầm với của cổ tay (ngang)",
+                "unit": "m",
+                "level": "SECONDARY",
+                "center": 0.48656266713582386,
+                "tol": 0.1,
+                "value": 0.4021080084779293,
+                "dev": -0.08445465865789453,
+                "score": 100.0,
+                "weight": 0.49594550000000004,
+                "rel": 0.9918910000000001,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              },
+              {
+                "feature": "knee_mean",
+                "label": "Góc gối (TB hai bên)",
+                "unit": "°",
+                "level": "PRIMARY",
+                "center": 159.36220415724932,
+                "tol": 10.0,
+                "value": 164.36346096214538,
+                "dev": 5.001256804896059,
+                "score": 100.0,
+                "weight": 0.99566,
+                "rel": 0.99566,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              },
+              {
+                "feature": "hip_mean",
+                "label": "Góc hông (thân–đùi)",
+                "unit": "°",
+                "level": "SECONDARY",
+                "center": 167.0126225663608,
+                "tol": 12.5,
+                "value": 169.6617612646251,
+                "dev": 2.6491386982643235,
+                "score": 100.0,
+                "weight": 0.49829675000000007,
+                "rel": 0.9965935000000001,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              },
+              {
+                "feature": "trunk_lean",
+                "label": "Độ nghiêng thân",
+                "unit": "°",
+                "level": "PRIMARY",
+                "center": 9.024071271966424,
+                "tol": 7.5,
+                "value": 10.190597150926598,
+                "dev": 1.166525878960174,
+                "score": 100.0,
+                "weight": 0.9998604999999999,
+                "rel": 0.9998604999999999,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              }
+            ],
+            "frames": [
+              80,
+              89
+            ],
+            "weight": 0.4
+          },
+          "ket_thuc": {
+            "score": 69.0,
+            "raw_score": 72.66604939688972,
+            "critical": [
+              "wrist_height"
+            ],
+            "weight_sum": 5.480225833333334,
+            "features": [
+              {
+                "feature": "elbow_arm",
+                "label": "Góc khuỷu tay (tay thấy rõ)",
+                "unit": "°",
+                "level": "PRIMARY",
+                "center": 137.6725644785784,
+                "tol": 15.0,
+                "value": 138.12266424496195,
+                "dev": 0.4500997663835449,
+                "score": 100.0,
+                "weight": 0.998068888888889,
+                "rel": 0.998068888888889,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              },
+              {
+                "feature": "shoulder_arm",
+                "label": "Góc nâng tay (tay thấy rõ)",
+                "unit": "°",
+                "level": "SECONDARY",
+                "center": 42.03231838906075,
+                "tol": 20.761144436543255,
+                "value": 164.54005331961028,
+                "dev": 122.50773493054953,
+                "score": 0.0,
+                "weight": 0.4998933333333333,
+                "rel": 0.9997866666666666,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "HIGH"
+              },
+              {
+                "feature": "wrist_height",
+                "label": "Độ cao cổ tay so với hông",
+                "unit": "m",
+                "level": "PRIMARY",
+                "center": 0.2224657142857145,
+                "tol": 0.11980833333333343,
+                "value": 0.9634785714285723,
+                "dev": 0.7410128571428578,
+                "score": 0.0,
+                "weight": 0.998068888888889,
+                "rel": 0.998068888888889,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "HIGH"
+              },
+              {
+                "feature": "wrist_reach",
+                "label": "Tầm với của cổ tay (ngang)",
+                "unit": "m",
+                "level": "SECONDARY",
+                "center": 0.2801815941368457,
+                "tol": 0.13079609416516208,
+                "value": 0.20590240804621276,
+                "dev": -0.07427918609063291,
+                "score": 100.0,
+                "weight": 0.4990344444444445,
+                "rel": 0.998068888888889,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              },
+              {
+                "feature": "knee_mean",
+                "label": "Góc gối (TB hai bên)",
+                "unit": "°",
+                "level": "PRIMARY",
+                "center": 157.63713284149293,
+                "tol": 10.0,
+                "value": 162.51269095374226,
+                "dev": 4.875558112249337,
+                "score": 100.0,
+                "weight": 0.9898422222222223,
+                "rel": 0.9898422222222223,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              },
+              {
+                "feature": "hip_mean",
+                "label": "Góc hông (thân–đùi)",
+                "unit": "°",
+                "level": "SECONDARY",
+                "center": 165.7625878984906,
+                "tol": 12.5,
+                "value": 167.2767901967573,
+                "dev": 1.5142022982666958,
+                "score": 100.0,
+                "weight": 0.49540416666666665,
+                "rel": 0.9908083333333333,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              },
+              {
+                "feature": "trunk_lean",
+                "label": "Độ nghiêng thân",
+                "unit": "°",
+                "level": "PRIMARY",
+                "center": 4.305128877025254,
+                "tol": 7.5,
+                "value": 9.519140684529603,
+                "dev": 5.214011807504349,
+                "score": 100.0,
+                "weight": 0.9999138888888888,
+                "rel": 0.9999138888888888,
+                "coverage": 1.0,
+                "substituted": 0.0,
+                "status": "OK"
+              }
+            ],
+            "frames": [
+              90,
+              98
+            ],
+            "weight": 0.2
+          }
+        },
+        "faults": [
+          {
+            "feature": "follow_through",
+            "label": "Vung theo sau cú chạm (cổ tay so với vai)",
+            "kind": "LỖI HIỆU QUẢ",
+            "severity": "nặng",
+            "unit": "m",
+            "value": 0.4405452380952386,
+            "center": 0.0,
+            "tol": 0.15,
+            "dev": 0.4405452380952386,
+            "penalty": 10.0,
+            "frames": [
+              86,
+              107
+            ],
+            "advice": "Sau khi chạm cầu tay vợt vung lên quá đầu (44 cm trên vai): kết thúc động tác sớm, để vợt dừng ngang/dưới ngực để cầu không bay ra ngoài."
+          }
+        ],
+        "fault_metrics": {
+          "follow_through_above_shoulder_m": 0.441,
+          "heel_lift_ratio": 0.102
+        },
+        "penalty": 10.0,
+        "score_before_faults": 69.0
+      }
+    ],
+    "errors": [
+      {
+        "where": "Sau cú chạm",
+        "feature": "follow_through",
+        "label": "Vung theo sau cú chạm (cổ tay so với vai)",
+        "unit": "m",
+        "value": 0.4405452380952386,
+        "center": 0.0,
+        "tol": 0.15,
+        "dev": 0.4405452380952386,
+        "direction": "cao hơn chuẩn",
+        "score": 0.0,
+        "lost_points": 10.0,
+        "potential_gain": 10.0,
+        "advice": "Sau khi chạm cầu tay vợt vung lên quá đầu (44 cm trên vai): kết thúc động tác sớm, để vợt dừng ngang/dưới ngực để cầu không bay ra ngoài.",
+        "n_units": 1,
+        "severity": "nặng",
+        "kind": "LỖI HIỆU QUẢ"
+      },
+      {
+        "where": "Pha Chạm cầu",
+        "feature": "wrist_height",
+        "label": "Độ cao cổ tay so với hông",
+        "unit": "m",
+        "value": 0.7595771428571435,
+        "center": 0.4399092857142861,
+        "tol": 0.1,
+        "dev": 0.3196678571428574,
+        "direction": "cao hơn chuẩn",
+        "score": 0.0,
+        "lost_points": 9.063532337956136,
+        "potential_gain": 9.063532337956136,
+        "advice": "Tay cao hơn chuẩn 32 cm: hạ tay xuống (điểm chạm cầu phải thấp).",
+        "n_units": 1,
+        "severity": "nặng",
+        "kind": "LỖI CƠ BẢN"
+      },
+      {
+        "where": "Pha Chạm cầu",
+        "feature": "shoulder_arm",
+        "label": "Góc nâng tay (tay thấy rõ)",
+        "unit": "°",
+        "value": 123.68915601605553,
+        "center": 84.48176354160569,
+        "tol": 15.0,
+        "dev": 39.20739247444985,
+        "direction": "cao hơn chuẩn",
+        "score": 0.0,
+        "lost_points": 4.553591396739191,
+        "potential_gain": 4.553591396739191,
+        "advice": "Tay nâng/dang cao hơn chuẩn 39°: hạ tay xuống.",
+        "n_units": 1,
+        "severity": "nặng",
+        "kind": "LỖI CƠ BẢN"
+      },
+      {
+        "where": "Pha Kết thúc",
+        "feature": "wrist_height",
+        "label": "Độ cao cổ tay so với hông",
+        "unit": "m",
+        "value": 0.9634785714285723,
+        "center": 0.2224657142857145,
+        "tol": 0.11980833333333343,
+        "dev": 0.7410128571428578,
+        "direction": "cao hơn chuẩn",
+        "score": 0.0,
+        "lost_points": 4.553046349012483,
+        "potential_gain": 4.553046349012483,
+        "advice": "Tay cao hơn chuẩn 74 cm: hạ tay xuống (điểm chạm cầu phải thấp).",
+        "n_units": 1,
+        "severity": "nặng",
+        "kind": "LỖI CƠ BẢN"
+      },
+      {
+        "where": "Pha Kết thúc",
+        "feature": "shoulder_arm",
+        "label": "Góc nâng tay (tay thấy rõ)",
+        "unit": "°",
+        "value": 164.54005331961028,
+        "center": 42.03231838906075,
+        "tol": 20.761144436543255,
+        "dev": 122.50773493054953,
+        "direction": "cao hơn chuẩn",
+        "score": 0.0,
+        "lost_points": 2.280441301765088,
+        "potential_gain": 2.280441301765088,
+        "advice": "Tay nâng/dang cao hơn chuẩn 123°: hạ tay xuống.",
+        "n_units": 1,
+        "severity": "nặng",
+        "kind": "LỖI CƠ BẢN"
+      },
+      {
+        "where": "Pha Chuẩn bị",
+        "feature": "wrist_height",
+        "label": "Độ cao cổ tay so với hông",
+        "unit": "m",
+        "value": 0.10883380952380962,
+        "center": -0.08740809523809531,
+        "tol": 0.15000000000000002,
+        "dev": 0.19624190476190495,
+        "direction": "cao hơn chuẩn",
+        "score": 79.44804232804226,
+        "lost_points": 0.9312087785546127,
+        "potential_gain": 0.9312087785546127,
+        "advice": "Tay cao hơn chuẩn 20 cm: hạ tay xuống (điểm chạm cầu phải thấp).",
+        "n_units": 1,
+        "severity": "nhẹ",
+        "kind": "LỖI CƠ BẢN"
+      },
+      {
+        "where": "Pha Chuẩn bị",
+        "feature": "trunk_lean",
+        "label": "Độ nghiêng thân",
+        "unit": "°",
+        "value": 9.32916224857921,
+        "center": 21.801981147473164,
+        "tol": 11.25,
+        "dev": -12.472818898893953,
+        "direction": "thấp hơn chuẩn",
+        "score": 92.75366578433213,
+        "lost_points": 0.3313165585051033,
+        "potential_gain": 0.3313165585051033,
+        "advice": "Thân còn thẳng hơn chuẩn 12°: đổ nhẹ ra trước.",
+        "n_units": 1,
+        "severity": "nhẹ",
+        "kind": "LỖI CƠ BẢN"
+      }
+    ]
+  },
+  "warnings": [
+    "Chuẩn HLV chỉ dựng từ 2 video: dung sai đang dựa vào mức tối thiểu trong cấu hình, nên điểm mang tính tham khảo.",
+    "Lần phát S1: góc quan trọng lệch rất xa chuẩn (độ cao cổ tay) nên điểm bị giới hạn tối đa 69.",
+    "Lần phát S1: lỗi hiệu quả - Vung theo sau cú chạm (cổ tay so với vai) (trừ 10 điểm)."
+  ],
+  "annotation_used": true,
+  "video_qc": {
+    "fps": 30.0,
+    "width": 1920,
+    "height": 1080,
+    "frames": 120,
+    "duplicate_frame_pct": 0.0,
+    "subject_height_frac": 0.41,
+    "subject_height_px": 439,
+    "jitter_raw_pct_torso": 2.16,
+    "jitter_clean_pct_torso": 0.68,
+    "jitter_reduction_pct": 68.4,
+    "smooth_window_frames": 7,
+    "shake_rms_pct": 0.004,
+    "shake_peak_pct": 0.011,
+    "frames_used": 119,
+    "warnings": []
+  },
+  "files": {
+    "report_json": "report.json",
+    "report_html": "report.html",
+    "dashboard": "dashboard.png",
+    "angles_timeline": "angles_timeline.png",
+    "quality": "quality.png",
+    "angles_csv": "angles.csv",
+    "pose_csv": "pose.csv",
+    "overlay": "overlay.mp4"
+  }
+}

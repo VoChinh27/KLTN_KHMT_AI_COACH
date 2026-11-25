@@ -1,0 +1,119 @@
+{
+  "exercise": "ready",
+  "built_from": [
+    "coach_ready_01",
+    "coach_ready_04"
+  ],
+  "n_videos": 2,
+  "built_on": "2026-11-16",
+  "n_units": {
+    "coach_ready_01": 1,
+    "coach_ready_04": 2
+  },
+  "meta": {
+    "arm_side": {},
+    "view_yaw_deg": {
+      "coach_ready_01": 31.2,
+      "coach_ready_04": 13.9
+    },
+    "racket_hand": "auto"
+  },
+  "features": {
+    "knee_mean": {
+      "center": 125.89997426935804,
+      "tol": 12.0,
+      "spread": [
+        121.17932871498186,
+        130.62061982373422
+      ],
+      "n_videos": 2,
+      "level": "PRIMARY",
+      "unit": "°",
+      "label": "Góc gối (TB hai bên)",
+      "per_video": {
+        "coach_ready_01": 121.17932871498186,
+        "coach_ready_04": 130.62061982373422
+      }
+    },
+    "hip_mean": {
+      "center": 116.51896814048803,
+      "tol": 15.0,
+      "spread": [
+        108.22542962193717,
+        124.81250665903889
+      ],
+      "n_videos": 2,
+      "level": "SECONDARY",
+      "unit": "°",
+      "label": "Góc hông (thân–đùi)",
+      "per_video": {
+        "coach_ready_01": 108.22542962193717,
+        "coach_ready_04": 124.81250665903889
+      }
+    },
+    "elbow_mean": {
+      "center": 135.41397456839502,
+      "tol": 18.0,
+      "spread": [
+        124.55480832276515,
+        146.27314081402488
+      ],
+      "n_videos": 2,
+      "level": "SECONDARY",
+      "unit": "°",
+      "label": "Góc khuỷu tay",
+      "per_video": {
+        "coach_ready_01": 146.27314081402488,
+        "coach_ready_04": 124.55480832276515
+      }
+    },
+    "shoulder_mean": {
+      "center": 71.8529981306117,
+      "tol": 18.0,
+      "spread": [
+        65.31168280442256,
+        78.39431345680082
+      ],
+      "n_videos": 2,
+      "level": "SECONDARY",
+      "unit": "°",
+      "label": "Góc nâng tay (vai)",
+      "per_video": {
+        "coach_ready_01": 78.39431345680082,
+        "coach_ready_04": 65.31168280442256
+      }
+    },
+    "trunk_lean": {
+      "center": 32.077497430144724,
+      "tol": 9.0,
+      "spread": [
+        28.442962581083908,
+        35.71203227920554
+      ],
+      "n_videos": 2,
+      "level": "PRIMARY",
+      "unit": "°",
+      "label": "Độ nghiêng thân",
+      "per_video": {
+        "coach_ready_01": 35.71203227920554,
+        "coach_ready_04": 28.442962581083908
+      }
+    },
+    "stance_ratio": {
+      "center": 1.6960023768321462,
+      "tol": 0.42836494263537334,
+      "spread": [
+        1.3533104227238475,
+        2.038694330940445
+      ],
+      "n_videos": 2,
+      "level": "PRIMARY",
+      "unit": "x",
+      "label": "Độ rộng chân / vai",
+      "per_video": {
+        "coach_ready_01": 1.3533104227238475,
+        "coach_ready_04": 2.038694330940445
+      }
+    }
+  }
+}

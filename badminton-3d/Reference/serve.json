@@ -1,0 +1,475 @@
+{
+  "exercise": "serve",
+  "built_from": [
+    "coach_serve_02",
+    "coach_serve_07"
+  ],
+  "n_videos": 2,
+  "built_on": "2026-11-16",
+  "n_units": {
+    "coach_serve_02": 1,
+    "coach_serve_07": 1
+  },
+  "meta": {
+    "arm_side": {
+      "coach_serve_02": "right",
+      "coach_serve_07": "right"
+    },
+    "view_yaw_deg": {
+      "coach_serve_02": 10.8,
+      "coach_serve_07": 23.6
+    },
+    "racket_hand": "auto"
+  },
+  "phases": {
+    "chuan_bi": {
+      "elbow_arm": {
+        "center": 147.4165378299116,
+        "tol": 22.5,
+        "spread": [
+          147.4165378299116,
+          147.4165378299116
+        ],
+        "n_videos": 1,
+        "level": "PRIMARY",
+        "unit": "°",
+        "label": "Góc khuỷu tay (tay thấy rõ)",
+        "per_video": {
+          "coach_serve_02": 147.4165378299116
+        }
+      },
+      "shoulder_arm": {
+        "center": 33.725924127003395,
+        "tol": 22.5,
+        "spread": [
+          33.725924127003395,
+          33.725924127003395
+        ],
+        "n_videos": 1,
+        "level": "SECONDARY",
+        "unit": "°",
+        "label": "Góc nâng tay (tay thấy rõ)",
+        "per_video": {
+          "coach_serve_02": 33.725924127003395
+        }
+      },
+      "wrist_height": {
+        "center": -0.08740809523809531,
+        "tol": 0.15000000000000002,
+        "spread": [
+          -0.08740809523809531,
+          -0.08740809523809531
+        ],
+        "n_videos": 1,
+        "level": "PRIMARY",
+        "unit": "m",
+        "label": "Độ cao cổ tay so với hông",
+        "per_video": {
+          "coach_serve_02": -0.08740809523809531
+        }
+      },
+      "wrist_reach": {
+        "center": 0.33318140058044055,
+        "tol": 0.15000000000000002,
+        "spread": [
+          0.33318140058044055,
+          0.33318140058044055
+        ],
+        "n_videos": 1,
+        "level": "SECONDARY",
+        "unit": "m",
+        "label": "Tầm với của cổ tay (ngang)",
+        "per_video": {
+          "coach_serve_02": 0.33318140058044055
+        }
+      },
+      "knee_mean": {
+        "center": 149.5653077575892,
+        "tol": 15.0,
+        "spread": [
+          149.5653077575892,
+          149.5653077575892
+        ],
+        "n_videos": 1,
+        "level": "PRIMARY",
+        "unit": "°",
+        "label": "Góc gối (TB hai bên)",
+        "per_video": {
+          "coach_serve_02": 149.5653077575892
+        }
+      },
+      "hip_mean": {
+        "center": 153.06808555281665,
+        "tol": 18.75,
+        "spread": [
+          153.06808555281665,
+          153.06808555281665
+        ],
+        "n_videos": 1,
+        "level": "SECONDARY",
+        "unit": "°",
+        "label": "Góc hông (thân–đùi)",
+        "per_video": {
+          "coach_serve_02": 153.06808555281665
+        }
+      },
+      "trunk_lean": {
+        "center": 21.801981147473164,
+        "tol": 11.25,
+        "spread": [
+          21.801981147473164,
+          21.801981147473164
+        ],
+        "n_videos": 1,
+        "level": "PRIMARY",
+        "unit": "°",
+        "label": "Độ nghiêng thân",
+        "per_video": {
+          "coach_serve_02": 21.801981147473164
+        }
+      }
+    },
+    "rut_vot": {
+      "elbow_arm": {
+        "center": 141.68663968617938,
+        "tol": 15.0,
+        "spread": [
+          140.43750986438576,
+          142.93576950797296
+        ],
+        "n_videos": 2,
+        "level": "PRIMARY",
+        "unit": "°",
+        "label": "Góc khuỷu tay (tay thấy rõ)",
+        "per_video": {
+          "coach_serve_02": 140.43750986438576,
+          "coach_serve_07": 142.93576950797296
+        }
+      },
+      "shoulder_arm": {
+        "center": 62.305902419239956,
+        "tol": 20.341359980402256,
+        "spread": [
+          46.03281443491815,
+          78.57899040356176
+        ],
+        "n_videos": 2,
+        "level": "SECONDARY",
+        "unit": "°",
+        "label": "Góc nâng tay (tay thấy rõ)",
+        "per_video": {
+          "coach_serve_02": 46.03281443491815,
+          "coach_serve_07": 78.57899040356176
+        }
+      },
+      "wrist_height": {
+        "center": 0.22514761904761926,
+        "tol": 0.13203273809523824,
+        "spread": [
+          0.11952142857142867,
+          0.33077380952380986
+        ],
+        "n_videos": 2,
+        "level": "PRIMARY",
+        "unit": "m",
+        "label": "Độ cao cổ tay so với hông",
+        "per_video": {
+          "coach_serve_02": 0.11952142857142867,
+          "coach_serve_07": 0.33077380952380986
+        }
+      },
+      "wrist_reach": {
+        "center": 0.4168947634800876,
+        "tol": 0.1003028209907719,
+        "spread": [
+          0.3366525066874701,
+          0.4971370202727051
+        ],
+        "n_videos": 2,
+        "level": "SECONDARY",
+        "unit": "m",
+        "label": "Tầm với của cổ tay (ngang)",
+        "per_video": {
+          "coach_serve_02": 0.3366525066874701,
+          "coach_serve_07": 0.4971370202727051
+        }
+      },
+      "knee_mean": {
+        "center": 161.1380899204703,
+        "tol": 10.0,
+        "spread": [
+          159.56474267369327,
+          162.71143716724728
+        ],
+        "n_videos": 2,
+        "level": "PRIMARY",
+        "unit": "°",
+        "label": "Góc gối (TB hai bên)",
+        "per_video": {
+          "coach_serve_02": 159.56474267369327,
+          "coach_serve_07": 162.71143716724728
+        }
+      },
+      "hip_mean": {
+        "center": 164.20290293214094,
+        "tol": 12.5,
+        "spread": [
+          163.53159480113948,
+          164.8742110631424
+        ],
+        "n_videos": 2,
+        "level": "SECONDARY",
+        "unit": "°",
+        "label": "Góc hông (thân–đùi)",
+        "per_video": {
+          "coach_serve_02": 163.53159480113948,
+          "coach_serve_07": 164.8742110631424
+        }
+      },
+      "trunk_lean": {
+        "center": 8.887168141088894,
+        "tol": 7.5,
+        "spread": [
+          8.482032799974315,
+          9.292303482203474
+        ],
+        "n_videos": 2,
+        "level": "PRIMARY",
+        "unit": "°",
+        "label": "Độ nghiêng thân",
+        "per_video": {
+          "coach_serve_02": 8.482032799974315,
+          "coach_serve_07": 9.292303482203474
+        }
+      }
+    },
+    "danh_cau": {
+      "elbow_arm": {
+        "center": 133.06411301675848,
+        "tol": 15.0,
+        "spread": [
+          122.77534855466388,
+          143.35287747885306
+        ],
+        "n_videos": 2,
+        "level": "PRIMARY",
+        "unit": "°",
+        "label": "Góc khuỷu tay (tay thấy rõ)",
+        "per_video": {
+          "coach_serve_02": 122.77534855466388,
+          "coach_serve_07": 143.35287747885306
+        }
+      },
+      "shoulder_arm": {
+        "center": 84.48176354160569,
+        "tol": 15.0,
+        "spread": [
+          74.65827448714774,
+          94.30525259606364
+        ],
+        "n_videos": 2,
+        "level": "SECONDARY",
+        "unit": "°",
+        "label": "Góc nâng tay (tay thấy rõ)",
+        "per_video": {
+          "coach_serve_02": 74.65827448714774,
+          "coach_serve_07": 94.30525259606364
+        }
+      },
+      "wrist_height": {
+        "center": 0.4399092857142861,
+        "tol": 0.1,
+        "spread": [
+          0.3641414285714289,
+          0.5156771428571433
+        ],
+        "n_videos": 2,
+        "level": "PRIMARY",
+        "unit": "m",
+        "label": "Độ cao cổ tay so với hông",
+        "per_video": {
+          "coach_serve_02": 0.3641414285714289,
+          "coach_serve_07": 0.5156771428571433
+        }
+      },
+      "wrist_reach": {
+        "center": 0.48656266713582386,
+        "tol": 0.1,
+        "spread": [
+          0.43879869659923626,
+          0.5343266376724114
+        ],
+        "n_videos": 2,
+        "level": "SECONDARY",
+        "unit": "m",
+        "label": "Tầm với của cổ tay (ngang)",
+        "per_video": {
+          "coach_serve_02": 0.43879869659923626,
+          "coach_serve_07": 0.5343266376724114
+        }
+      },
+      "knee_mean": {
+        "center": 159.36220415724932,
+        "tol": 10.0,
+        "spread": [
+          153.84375323776732,
+          164.8806550767313
+        ],
+        "n_videos": 2,
+        "level": "PRIMARY",
+        "unit": "°",
+        "label": "Góc gối (TB hai bên)",
+        "per_video": {
+          "coach_serve_02": 153.84375323776732,
+          "coach_serve_07": 164.8806550767313
+        }
+      },
+      "hip_mean": {
+        "center": 167.0126225663608,
+        "tol": 12.5,
+        "spread": [
+          166.19152944882754,
+          167.833715683894
+        ],
+        "n_videos": 2,
+        "level": "SECONDARY",
+        "unit": "°",
+        "label": "Góc hông (thân–đùi)",
+        "per_video": {
+          "coach_serve_02": 167.833715683894,
+          "coach_serve_07": 166.19152944882754
+        }
+      },
+      "trunk_lean": {
+        "center": 9.024071271966424,
+        "tol": 7.5,
+        "spread": [
+          8.032493962855243,
+          10.015648581077604
+        ],
+        "n_videos": 2,
+        "level": "PRIMARY",
+        "unit": "°",
+        "label": "Độ nghiêng thân",
+        "per_video": {
+          "coach_serve_02": 8.032493962855243,
+          "coach_serve_07": 10.015648581077604
+        }
+      }
+    },
+    "ket_thuc": {
+      "elbow_arm": {
+        "center": 137.6725644785784,
+        "tol": 15.0,
+        "spread": [
+          131.36049733286464,
+          143.98463162429215
+        ],
+        "n_videos": 2,
+        "level": "PRIMARY",
+        "unit": "°",
+        "label": "Góc khuỷu tay (tay thấy rõ)",
+        "per_video": {
+          "coach_serve_02": 143.98463162429215,
+          "coach_serve_07": 131.36049733286464
+        }
+      },
+      "shoulder_arm": {
+        "center": 42.03231838906075,
+        "tol": 20.761144436543255,
+        "spread": [
+          25.423402839826146,
+          58.64123393829535
+        ],
+        "n_videos": 2,
+        "level": "SECONDARY",
+        "unit": "°",
+        "label": "Góc nâng tay (tay thấy rõ)",
+        "per_video": {
+          "coach_serve_02": 58.64123393829535,
+          "coach_serve_07": 25.423402839826146
+        }
+      },
+      "wrist_height": {
+        "center": 0.2224657142857145,
+        "tol": 0.11980833333333343,
+        "spread": [
+          0.12661904761904774,
+          0.31831238095238124
+        ],
+        "n_videos": 2,
+        "level": "PRIMARY",
+        "unit": "m",
+        "label": "Độ cao cổ tay so với hông",
+        "per_video": {
+          "coach_serve_02": 0.31831238095238124,
+          "coach_serve_07": 0.12661904761904774
+        }
+      },
+      "wrist_reach": {
+        "center": 0.2801815941368457,
+        "tol": 0.13079609416516208,
+        "spread": [
+          0.175544718804716,
+          0.38481846946897535
+        ],
+        "n_videos": 2,
+        "level": "SECONDARY",
+        "unit": "m",
+        "label": "Tầm với của cổ tay (ngang)",
+        "per_video": {
+          "coach_serve_02": 0.38481846946897535,
+          "coach_serve_07": 0.175544718804716
+        }
+      },
+      "knee_mean": {
+        "center": 157.63713284149293,
+        "tol": 10.0,
+        "spread": [
+          156.56847442778337,
+          158.70579125520246
+        ],
+        "n_videos": 2,
+        "level": "PRIMARY",
+        "unit": "°",
+        "label": "Góc gối (TB hai bên)",
+        "per_video": {
+          "coach_serve_02": 156.56847442778337,
+          "coach_serve_07": 158.70579125520246
+        }
+      },
+      "hip_mean": {
+        "center": 165.7625878984906,
+        "tol": 12.5,
+        "spread": [
+          161.13847315052087,
+          170.38670264646032
+        ],
+        "n_videos": 2,
+        "level": "SECONDARY",
+        "unit": "°",
+        "label": "Góc hông (thân–đùi)",
+        "per_video": {
+          "coach_serve_02": 170.38670264646032,
+          "coach_serve_07": 161.13847315052087
+        }
+      },
+      "trunk_lean": {
+        "center": 4.305128877025254,
+        "tol": 7.5,
+        "spread": [
+          2.0024831016353177,
+          6.607774652415191
+        ],
+        "n_videos": 2,
+        "level": "PRIMARY",
+        "unit": "°",
+        "label": "Độ nghiêng thân",
+        "per_video": {
+          "coach_serve_02": 2.0024831016353177,
+          "coach_serve_07": 6.607774652415191
+        }
+      }
+    }
+  }
+}

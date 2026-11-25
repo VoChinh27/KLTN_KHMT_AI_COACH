@@ -1,0 +1,27 @@
+# config/sports.yaml — danh sách môn thể thao và bài tập (giao diện đọc file này; xem docs/MULTISPORT.md)
+default: badminton
+sports:
+  badminton:
+    name: Cầu lông (Badminton)
+    icon: 🏸
+    engine: badminton3d.engine_badminton:BadmintonEngine
+    config: config/badminton3d.yaml
+    input: Input
+    reference: Reference
+    output: Output
+    hand_label: Tay cầm vợt
+    tips:
+    - Máy cố định (chân đế), thấy toàn thân
+    - Người chiếm ≥ 50% chiều cao khung hình
+    - Cùng góc quay với video HLV
+    - 'Bài phát cầu: quay từ phía tay vợt'
+    - Từ 30 FPS, đủ sáng
+    actions:
+      ready:
+        label: Tư thế sẵn sàng (ready)
+        short: Sẵn sàng
+        hand: false
+      serve:
+        label: Phát cầu trái tay (serve)
+        short: Phát cầu
+        hand: true

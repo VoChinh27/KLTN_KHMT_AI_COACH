@@ -1,0 +1,320 @@
+{
+  "video": "trainee_ready_04",
+  "role": "trainee",
+  "exercise": "ready",
+  "fps": 30.0,
+  "n_frames": 145,
+  "duration_s": 4.833333333333333,
+  "quality": {
+    "legacy_valid_pct": 89.0,
+    "feature_valid_pct": {
+      "knee_mean": 100.0,
+      "hip_mean": 100.0,
+      "elbow_mean": 100.0,
+      "shoulder_mean": 100.0,
+      "trunk_lean": 100.0,
+      "stance_ratio": 100.0
+    },
+    "feature_substituted_pct": {
+      "knee_mean": 0.0,
+      "hip_mean": 0.0,
+      "elbow_mean": 17.9,
+      "shoulder_mean": 17.9,
+      "trunk_lean": 0.0,
+      "stance_ratio": 0.0
+    },
+    "joint_valid_pct": {
+      "left_shoulder": 100.0,
+      "right_shoulder": 100.0,
+      "left_elbow": 100.0,
+      "right_elbow": 82.1,
+      "left_wrist": 100.0,
+      "right_wrist": 89.0,
+      "left_hip": 100.0,
+      "right_hip": 100.0,
+      "left_knee": 100.0,
+      "right_knee": 100.0,
+      "left_ankle": 100.0,
+      "right_ankle": 100.0
+    },
+    "view_yaw_deg": 21.6,
+    "interpolated_frames": {
+      "left_elbow": 1,
+      "left_wrist": 1,
+      "right_wrist": 3,
+      "right_knee": 3,
+      "right_ankle": 2
+    }
+  },
+  "segmentation": {
+    "episodes": [
+      [
+        63,
+        144,
+        2.73
+      ]
+    ],
+    "state_pct": {
+      "INVALID": 0.0,
+      "MOVING": 24.8,
+      "SETTLING": 18.6,
+      "READY": 56.6
+    },
+    "scored_seconds": 2.73
+  },
+  "reference": {
+    "built_from": [
+      "coach_ready_01",
+      "coach_ready_04"
+    ],
+    "n_videos": 2,
+    "in_sample": false
+  },
+  "status": "SCORED",
+  "score": {
+    "overall": 37.41245561458647,
+    "grade": "Chưa đạt",
+    "units": [
+      {
+        "id": "R1",
+        "frames": [
+          63,
+          144
+        ],
+        "duration_s": 2.7333333333333334,
+        "score": 37.41245561458647,
+        "raw_score": 37.41245561458647,
+        "critical": [
+          "knee_mean"
+        ],
+        "weight_sum": 4.208995460365853,
+        "features": [
+          {
+            "feature": "knee_mean",
+            "label": "Góc gối (TB hai bên)",
+            "unit": "°",
+            "level": "PRIMARY",
+            "center": 125.89997426935804,
+            "tol": 12.0,
+            "value": 157.57593582693207,
+            "dev": 31.675961557574027,
+            "score": 0.0,
+            "weight": 0.9301807621951219,
+            "rel": 0.9301807621951219,
+            "coverage": 1.0,
+            "substituted": 0.0,
+            "status": "HIGH"
+          },
+          {
+            "feature": "hip_mean",
+            "label": "Góc hông (thân–đùi)",
+            "unit": "°",
+            "level": "SECONDARY",
+            "center": 116.51896814048803,
+            "tol": 15.0,
+            "value": 161.82261855234447,
+            "dev": 45.30365041185644,
+            "score": 0.0,
+            "weight": 0.4722845335365852,
+            "rel": 0.9445690670731705,
+            "coverage": 1.0,
+            "substituted": 0.0,
+            "status": "HIGH"
+          },
+          {
+            "feature": "elbow_mean",
+            "label": "Góc khuỷu tay",
+            "unit": "°",
+            "level": "SECONDARY",
+            "center": 135.41397456839502,
+            "tol": 18.0,
+            "value": 125.63331164410427,
+            "dev": -9.780662924290752,
+            "score": 100.0,
+            "weight": 0.4467922987804878,
+            "rel": 0.8935845975609756,
+            "coverage": 1.0,
+            "substituted": 0.25609756097560976,
+            "status": "OK"
+          },
+          {
+            "feature": "shoulder_mean",
+            "label": "Góc nâng tay (vai)",
+            "unit": "°",
+            "level": "SECONDARY",
+            "center": 71.8529981306117,
+            "tol": 18.0,
+            "value": 42.08510339881261,
+            "dev": -29.767894731799082,
+            "score": 56.415204697040444,
+            "weight": 0.45168081707317076,
+            "rel": 0.9033616341463415,
+            "coverage": 1.0,
+            "substituted": 0.25609756097560976,
+            "status": "LOW"
+          },
+          {
+            "feature": "trunk_lean",
+            "label": "Độ nghiêng thân",
+            "unit": "°",
+            "level": "PRIMARY",
+            "center": 32.077497430144724,
+            "tol": 9.0,
+            "value": 9.608167284777712,
+            "dev": -22.46933014536701,
+            "score": 0.22718410839251968,
+            "weight": 0.9996125609756097,
+            "rel": 0.9996125609756097,
+            "coverage": 1.0,
+            "substituted": 0.0,
+            "status": "LOW"
+          },
+          {
+            "feature": "stance_ratio",
+            "label": "Độ rộng chân / vai",
+            "unit": "x",
+            "level": "PRIMARY",
+            "center": 1.6960023768321462,
+            "tol": 0.42836494263537334,
+            "value": 1.2410174081967464,
+            "dev": -0.4549849686353997,
+            "score": 95.8571110206085,
+            "weight": 0.908444487804878,
+            "rel": 0.908444487804878,
+            "coverage": 1.0,
+            "substituted": 0.0,
+            "status": "LOW"
+          }
+        ]
+      }
+    ],
+    "scored_seconds": 2.7333333333333334,
+    "errors": [
+      {
+        "where": "Tư thế sẵn sàng",
+        "feature": "trunk_lean",
+        "label": "Độ nghiêng thân",
+        "unit": "°",
+        "value": 9.608167284777712,
+        "center": 32.077497430144724,
+        "tol": 9.0,
+        "dev": -22.46933014536701,
+        "direction": "thấp hơn chuẩn",
+        "score": 0.22718410839251968,
+        "lost_points": 23.69547816059861,
+        "potential_gain": 23.69547816059861,
+        "advice": "Thân còn thẳng hơn chuẩn 22°: đổ nhẹ ra trước.",
+        "n_units": 1,
+        "severity": "nặng",
+        "kind": "LỖI CƠ BẢN"
+      },
+      {
+        "where": "Tư thế sẵn sàng",
+        "feature": "knee_mean",
+        "label": "Góc gối (TB hai bên)",
+        "unit": "°",
+        "value": 157.57593582693207,
+        "center": 125.89997426935804,
+        "tol": 12.0,
+        "dev": 31.675961557574027,
+        "direction": "cao hơn chuẩn",
+        "score": 0.0,
+        "lost_points": 22.099828117045988,
+        "potential_gain": 22.099828117045988,
+        "advice": "Gối đang duỗi hơn chuẩn khoảng 32°: hạ trọng tâm, gập gối thêm.",
+        "n_units": 1,
+        "severity": "nặng",
+        "kind": "LỖI CƠ BẢN"
+      },
+      {
+        "where": "Tư thế sẵn sàng",
+        "feature": "hip_mean",
+        "label": "Góc hông (thân–đùi)",
+        "unit": "°",
+        "value": 161.82261855234447,
+        "center": 116.51896814048803,
+        "tol": 15.0,
+        "dev": 45.30365041185644,
+        "direction": "cao hơn chuẩn",
+        "score": 0.0,
+        "lost_points": 11.22083732291632,
+        "potential_gain": 11.22083732291632,
+        "advice": "Thân đang quá thẳng so với đùi (lệch 45°): gập hông, đổ người ra trước thêm.",
+        "n_units": 1,
+        "severity": "nặng",
+        "kind": "LỖI CƠ BẢN"
+      },
+      {
+        "where": "Tư thế sẵn sàng",
+        "feature": "shoulder_mean",
+        "label": "Góc nâng tay (vai)",
+        "unit": "°",
+        "value": 42.08510339881261,
+        "center": 71.8529981306117,
+        "tol": 18.0,
+        "dev": -29.767894731799082,
+        "direction": "thấp hơn chuẩn",
+        "score": 56.415204697040444,
+        "lost_points": 4.6772243258006485,
+        "potential_gain": 4.6772243258006485,
+        "advice": "Tay đang áp sát thân (lệch 30°): đưa vợt ra trước, nâng tay lên.",
+        "n_units": 1,
+        "severity": "vừa",
+        "kind": "LỖI CƠ BẢN"
+      },
+      {
+        "where": "Tư thế sẵn sàng",
+        "feature": "stance_ratio",
+        "label": "Độ rộng chân / vai",
+        "unit": "x",
+        "value": 1.2410174081967464,
+        "center": 1.6960023768321462,
+        "tol": 0.42836494263537334,
+        "dev": -0.4549849686353998,
+        "direction": "thấp hơn chuẩn",
+        "score": 95.8571110206085,
+        "lost_points": 0.8941764590519774,
+        "potential_gain": 0.8941764590519774,
+        "advice": "Hai chân hẹp hơn chuẩn: mở rộng chân tới bằng hoặc hơn bề rộng vai.",
+        "n_units": 1,
+        "severity": "nhẹ",
+        "kind": "LỖI CƠ BẢN"
+      }
+    ]
+  },
+  "warnings": [
+    "Chuẩn HLV chỉ dựng từ 2 video: dung sai đang dựa vào mức tối thiểu trong cấu hình, nên điểm mang tính tham khảo.",
+    "Đoạn R1: góc quan trọng lệch rất xa chuẩn (góc gối) nên điểm bị giới hạn tối đa 69.",
+    "Người chỉ cao 21% chiều cao khung hình (~394 px): khớp kém chính xác; quay gần hơn hoặc zoom để người chiếm ≥ 50% chiều cao khung."
+  ],
+  "annotation_used": false,
+  "video_qc": {
+    "fps": 30.0,
+    "width": 1080,
+    "height": 1920,
+    "frames": 145,
+    "duplicate_frame_pct": 0.0,
+    "subject_height_frac": 0.21,
+    "subject_height_px": 394,
+    "jitter_raw_pct_torso": 4.43,
+    "jitter_clean_pct_torso": 1.37,
+    "jitter_reduction_pct": 69.0,
+    "smooth_window_frames": 7,
+    "shake_rms_pct": 0.122,
+    "shake_peak_pct": 0.629,
+    "frames_used": 144,
+    "warnings": [
+      "Người chỉ cao 21% chiều cao khung hình (~394 px): khớp kém chính xác; quay gần hơn hoặc zoom để người chiếm ≥ 50% chiều cao khung."
+    ]
+  },
+  "files": {
+    "report_json": "report.json",
+    "report_html": "report.html",
+    "dashboard": "dashboard.png",
+    "angles_timeline": "angles_timeline.png",
+    "quality": "quality.png",
+    "angles_csv": "angles.csv",
+    "pose_csv": "pose.csv",
+    "overlay": "overlay.mp4"
+  }
+}

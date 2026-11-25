@@ -1,0 +1,11 @@
+video,role,exercise,status,score_with_full_reference,grade,legacy_valid_pct,mean_feature_valid_pct,unbiased_mode,score_unbiased
+coach_ready_01,coach,ready,SCORED,100.00,Tốt,92.80,99.48,bỏ-một-video,92.71
+coach_ready_04,coach,ready,SCORED,98.83,Tốt,96.10,96.10,bỏ-một-video,94.02
+coach_serve_02,coach,serve,SCORED,100.00,Tốt,97.40,100.00,bỏ-một-video,95.90
+coach_serve_07,coach,serve,SCORED,100.00,Tốt,100.00,100.00,bỏ-một-video,95.93
+trainee_ready_04,trainee,ready,SCORED,37.41,Chưa đạt,89.00,100.00,độc lập,37.41
+trainee_ready_08,trainee,ready,SCORED,29.54,Chưa đạt,98.90,100.00,độc lập,29.54
+trainee_serve_01,trainee,serve,SCORED,65.00,Cần cải thiện,100.00,100.00,độc lập,65.00
+trainee_serve_05,trainee,serve,SCORED,47.81,Chưa đạt,100.00,100.00,độc lập,47.81
+trainee_serve_07,trainee,serve,SCORED,88.97,Tốt,100.00,100.00,độc lập,88.97
+trainee_serve_09,trainee,serve,SCORED,59.00,Cần cải thiện,100.00,100.00,độc lập,59.00

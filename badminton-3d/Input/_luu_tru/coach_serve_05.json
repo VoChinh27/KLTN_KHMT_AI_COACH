@@ -1,0 +1,4 @@
+{
+  "serve_windows_s": [[2.6, 4.5]],
+  "note": "Đánh dấu tay: cú phát của video này không tự phát hiện được vì tay vợt (tay trái) bị che, tay thấy rõ gần như đứng yên. Cửa sổ lấy từ phân tích YOLO trước (chuẩn bị ~2,6 s → kết thúc ~4,5 s)."
+}

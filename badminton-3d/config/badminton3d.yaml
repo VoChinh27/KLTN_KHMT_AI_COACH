@@ -1,0 +1,120 @@
+# config/badminton3d.yaml — tham số hệ thống chấm tư thế cầu lông bằng MediaPipe 3D (v1.0)
+# Mọi ngưỡng nằm ở đây; sửa file này, không sửa code.
+
+pose:
+  model_path: models/pose_landmarker_full.task     # MediaPipe Pose Landmarker (file .task của dự án)
+  min_detection_conf: 0.5
+  min_presence_conf: 0.5
+  min_tracking_conf: 0.5
+  num_poses: 3                 # dò tối đa N người trong khung rồi chọn người mục tiêu (1 = chỉ một người, nhanh hơn)
+  select: largest              # chọn người đầu tiên: largest (hộp lớn nhất) | center (gần tâm khung); hoặc khai báo person_roi trong Input/<video>.json
+  lost_frames: 15              # mất dấu quá số frame này thì chọn lại người mục tiêu (và ghi cảnh báo)
+  detector: mediapipe          # mediapipe (mặc định, không cần cài thêm) | yolo_onnx (YOLOv8 ONNX dò hộp người rồi cắt vùng dò pose; cần file mô hình, xem models/README.md)
+  yolo_model: models/yolov8n.onnx
+  yolo_conf: 0.35
+  tiling: auto                 # auto = chỉ khi mất dấu người: quét theo ô vuông + cắt vùng quanh vị trí cũ; false = tắt
+  crop_refine: false           # true = top-down: dò lại pose trên vùng cắt quanh người (người nhỏ trong khung); chậm gấp ~2
+  crop_margin: 0.35
+  crop_min_side: 256
+
+quality:
+  visibility_min: 0.5          # khớp có visibility >= ngưỡng này mới tính là "thấy rõ" (dùng cho Valid theo từng góc)
+  legacy_valid_conf: 0.3       # ngưỡng của chỉ số %Valid cũ (10 khớp cùng lúc) để so sánh trước/sau
+  gap_interp_max_s: 0.25       # chỉ nội suy khoảng mất khớp ngắn hơn 0,25 giây (dài hơn = đoán không tin cậy)
+  interp_reliability: 0.7      # độ tin cậy của giá trị nội suy so với giá trị đo trực tiếp
+  substitute_reliability: 0.7  # độ tin cậy khi dùng bên còn lại thay cho bên bị mất
+  smooth_window_s: 0.23        # Savitzky-Golay theo THỜI GIAN (giây): 30 FPS = 7 frame, 60 FPS = 15 frame, 25 FPS = 7 frame. Đặt null để dùng smooth_window
+  smooth_window: 7             # chỉ dùng khi smooth_window_s = null (số frame, lẻ)
+  smooth_poly: 2
+  view_mismatch_deg: 30        # lệch góc quay so với chuẩn quá mức này thì cảnh báo
+  min_reliability_to_score: 0.4  # góc có độ tin cậy trung bình thấp hơn mức này thì "không đánh giá" (không phạt)
+
+ready:
+  # Chỉ chấm khi đã TRỞ VỀ tư thế sẵn sàng; khi di chuyển đỡ cầu thì không chấm (theo tốc độ thân, m/s)
+  v_move_mps: 0.60             # vượt ngưỡng này = đang di chuyển
+  v_settle_mps: 0.35           # phải xuống dưới ngưỡng này...
+  settle_time_s: 0.30          # ...liên tục ngần này giây mới coi là đã về tư thế sẵn sàng (khoảng này chưa chấm)
+  min_episode_s: 0.50          # đoạn sẵn sàng ngắn hơn không chấm
+  speed_window_s: 0.20
+
+serve:
+  # 1 lần chuẩn = từ BƯỚC CHUẨN BỊ PHÁT đến khi phát xong. Lúc nhặt cầu / đi lại trước đó không chấm.
+  # Cú phát = một ĐỈNH hoạt động của tay (m/s) nổi bật; cửa sổ cú phát = vùng quanh đỉnh còn hoạt động >= ngưỡng thấp.
+  min_peak_mps: 0.60           # đỉnh hoạt động tối thiểu để tính là 1 cú phát
+  min_prominence_mps: 0.30     # đỉnh phải nổi hẳn lên so với nền (loại nhiễu)
+  peak_distance_s: 0.80        # hai cú phát cách nhau tối thiểu
+  low_frac: 0.25               # ngưỡng thấp = 25% đỉnh...
+  low_abs_mps: 0.20            # ...nhưng không thấp hơn mức này
+  close_gap_s: 0.15            # khoảng tụt ngắn hơn mức này (vd. điểm quay đầu khi rút vợt) vẫn coi là liền một cú
+  max_rep_s: 3.00
+  prep_body_max_mps: 0.30      # chuẩn bị = đứng yên (tốc độ thân dưới ngưỡng này)...
+  prep_arm_max_mps: 0.40       # ...và tay chưa vung
+  prep_min_s: 0.30
+  prep_max_s: 1.00             # lấy tối đa 1 giây trước cú vung; trước đó (nhặt cầu...) không chấm
+  require_prep: true           # một lần phát PHẢI có bước chuẩn bị (đứng yên >= prep_min_s) ngay trước cú vung
+  ramp_max_s: 0.40             # đoạn tăng tốc của tay trước ngưỡng 25% đỉnh vẫn thuộc cú vung (không bắt buộc phải đứng yên tới sát đỉnh)
+  fallback_without_prep: true  # clip cắt sát không có đoạn đứng yên: vẫn lấy cú vung mạnh (kèm cảnh báo) thay vì bỏ cả video
+  fallback_min_rel_peak: 0.60  # ...chỉ giữ cú có đỉnh >= 60% cú mạnh nhất (bỏ nhịp thả tay sau cú phát)
+  contact_after_peak_s: 0.10
+  end_hold_s: 0.20             # thêm ngần này giây sau khi hoạt động hạ xuống để lấy trọn pha kết thúc
+  speed_window_s: 0.20
+
+# ---------------------------------------------------------------------------------------------
+# ĐẶC TRƯNG, CHUẨN & CHẤM ĐIỂM (angle-by-angle)
+# floor = dung sai tối thiểu (± đơn vị) khi chuẩn HLV quá ít để ước lượng độ lệch (1 video HLV: nhân single_video_floor_factor)
+# ---------------------------------------------------------------------------------------------
+features:
+  # floor đã HIỆU CHỈNH bằng dữ liệu (docs/RESULTS.md mục 5): hệ số nhỏ nhất để HLV (bỏ-một-video) đạt >= 85 điểm, rồi nới thêm 1 nấc (0,25) cho bài tập cơ bản.
+  #   ready = floor gốc x1,5 | serve = floor gốc x1,25   (floor gốc ready: gối 8, hông 10, khuỷu 12, vai 12, nghiêng 6, chân 0,20; serve: 12/12/0,08/0,08/8/10/6)
+  ready:
+    knee_mean:     {level: PRIMARY,   unit: "°", floor: 12,  label: "Góc gối (TB hai bên)"}
+    hip_mean:      {level: SECONDARY, unit: "°", floor: 15, label: "Góc hông (thân–đùi)"}
+    elbow_mean:    {level: SECONDARY, unit: "°", floor: 18, label: "Góc khuỷu tay"}
+    shoulder_mean: {level: SECONDARY, unit: "°", floor: 18, label: "Góc nâng tay (vai)"}
+    trunk_lean:    {level: PRIMARY,   unit: "°", floor: 9,  label: "Độ nghiêng thân"}
+    stance_ratio:  {level: PRIMARY,   unit: "x", floor: 0.3, label: "Độ rộng chân / vai"}
+  serve:
+    phase_weights: {chuan_bi: 0.20, rut_vot: 0.20, danh_cau: 0.40, ket_thuc: 0.20}
+    phase_labels:  {chuan_bi: "Chuẩn bị", rut_vot: "Rút vợt", danh_cau: "Chạm cầu", ket_thuc: "Kết thúc"}
+    elbow_arm:     {level: PRIMARY,   unit: "°", floor: 15, label: "Góc khuỷu tay (tay thấy rõ)"}
+    shoulder_arm:  {level: SECONDARY, unit: "°", floor: 15, label: "Góc nâng tay (tay thấy rõ)"}
+    wrist_height:  {level: PRIMARY,   unit: "m", floor: 0.1, label: "Độ cao cổ tay so với hông"}
+    wrist_reach:   {level: SECONDARY, unit: "m", floor: 0.1, label: "Tầm với của cổ tay (ngang)"}
+    knee_mean:     {level: PRIMARY,   unit: "°", floor: 10,  label: "Góc gối (TB hai bên)"}
+    hip_mean:      {level: SECONDARY, unit: "°", floor: 12.5, label: "Góc hông (thân–đùi)"}
+    trunk_lean:    {level: PRIMARY,   unit: "°", floor: 7.5,  label: "Độ nghiêng thân"}
+
+faults:                        # kiểm tra lỗi riêng của phát cầu (badminton3d/faults.py); chỉnh ngưỡng/điểm trừ tại đây
+  follow_through:              # vung xả đà quá dài: sau cú chạm, cổ tay tay vợt vẫn lên cao hơn vai (không phạm luật nhưng cầu dễ ra ngoài)
+    enabled: true
+    warn_m: 0.15               # cổ tay cao hơn vai > ngưỡng này: lỗi NHẸ (đo trên 21 video: HLV từ -0,41 đến -0,01 m; người tập vung cao 0,29–0,44 m)
+    high_m: 0.30               # >= ngưỡng này (xấp xỉ đỉnh đầu): lỗi NẶNG
+    penalty_warn: 4            # điểm trừ cả lần phát (lỗi nhẹ)
+    penalty_high: 10           # điểm trừ (lỗi nặng, vượt đầu)
+    window_after_end_s: 0.3    # theo dõi thêm sau khi hết pha kết thúc
+  heel_lift:                   # nhấc gót khi phát (phạm luật theo cách chấm của HLV). LƯU Ý: số đo nhấc gót của MediaPipe chưa đủ chính xác (xem docs/RESULTS.md mục 6)
+    enabled: true
+    threshold: 0.30            # tỉ lệ nhấc gót / chiều dài thân. Mặc định CAO để không báo nhầm HLV (HLV đo được 0,06–0,20; trainee_serve_01 = 0,16 nên CHƯA bị bắt).
+                               # Muốn bắt trainee_serve_01: hạ xuống ~0,15 (sẽ báo nhầm thêm một số video HLV); tốt nhất quay riêng cận cảnh bàn chân.
+    penalty: 15
+    lookback_s: 1.0            # xét từ ngần này giây trước khi bắt đầu vung tới sát cú chạm
+
+scoring:
+  level_weights: {PRIMARY: 1.0, SECONDARY: 0.5}
+  decay_factor: 1.5              # điểm về 0 khi lệch quá chuẩn (1 + decay_factor) x dung sai
+  range_margin: 1.25             # dung sai = nửa khoảng dao động giữa các HLV x hệ số này (nhưng không nhỏ hơn floor)
+  single_video_floor_factor: 1.5 # chỉ 1 video HLV: nhân dung sai tối thiểu với hệ số này
+  min_phase_weight_covered: 0.5  # serve: các pha chấm được phải chiếm >= 50% trọng số mới cho điểm tổng
+  critical_cap: 69               # một góc PRIMARY lệch quá (1+decay) x dung sai (điểm góc = 0) thì điểm đơn vị/lần phát tối đa = giá trị này (dưới ngưỡng "đạt" 70). null = tắt
+  grades: [[85, "Tốt"], [70, "Khá"], [50, "Cần cải thiện"], [0, "Chưa đạt"]]
+
+camera_protocol:
+  racket_hand: auto              # auto | left | right — tay vợt của người tập/HLV; auto = dùng tay camera thấy rõ nhất
+  note: "Quay serve từ phía TAY VỢT để tay vợt là tay gần camera (MediaPipe không thấy tay bị thân người che)."
+
+video_qc:                      # kiểm tra chất lượng video đầu vào (badminton3d/videoqc.py)
+  fps_min: 24                  # dưới ngưỡng: cảnh báo (cú vung nhanh bị lấy mẫu thưa)
+  shake_warn_pct: 0.25         # rung máy (RMS dịch chuyển nền sau khi bỏ chuyển động chậm) tính theo % bề rộng khung hình
+  shake_high_pct: 0.60
+  subject_min_frac: 0.25       # người cao dưới ngần này chiều cao khung hình: cảnh báo (người quá nhỏ, khớp kém chính xác)
+  dup_frame_warn_pct: 15       # % frame trùng lặp (video bị nội suy tăng FPS / đứt nhịp)
